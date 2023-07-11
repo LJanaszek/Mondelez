@@ -1,0 +1,12 @@
+.pageHeader {
+    min-height: 100px;
+    background: var(--baseColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        color: var(--textOnBaseColor);
+    }
+}

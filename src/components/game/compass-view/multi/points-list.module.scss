@@ -1,0 +1,10 @@
+.pointsList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    & > * {
+        justify-self: stretch;
+        width: 100%;
+    }
+}

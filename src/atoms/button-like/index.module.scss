@@ -1,0 +1,41 @@
+.buttonLike {
+    display: inline-block;
+}
+
+.buttonLike > * {
+    display: inline-block;
+
+    font-family: var(--baseFont);
+    background: var(--buttonBackground);
+    color: var(--buttonText);
+
+    padding: var(--buttonPadding);
+    text-decoration: none;
+
+    border: var(--buttonBorder);
+    border-radius: var(--buttonBorderRadius);
+}
+
+.buttonLike:hover > * {
+    background: var(--buttonHoverBackground);
+    color: var(--buttonHoverText);
+
+    border: var(--buttonHoverBorder);
+    border-radius: var(--buttonHoverBorderRadius);
+}
+
+.buttonLike.inverted > *  {
+    background: var(--buttonInvertedBackground);
+    color: var(--buttonInvertedText);
+
+    border: var(--buttonInvertedBorder);
+    border-radius: var(--buttonInvertedBorderRadius);
+
+    &:hover {
+        background: var(--buttonInvertedHoverBackground);
+        color: var(--buttonInvertedHoverText);
+
+        border: var(--buttonInvertedHoverBorder);
+        border-radius: var(--buttonInvertedHoverBorderRadius);
+    }
+}

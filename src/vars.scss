@@ -1,0 +1,46 @@
+:root {
+    // Base
+    --backgroundColor: #f6eadc;
+
+    --baseColor: #cf6954;
+    --secondColor: #707070;
+
+
+    --textColor: #707070;
+    --textOnBaseColor: #ffffff;
+    --textOnSecondColor: #ffffff;
+
+    --baseFont: 'Montserrat', sans-serif;
+
+    --separatorColor: #e1e1e1;
+
+
+    // Buttons
+    --buttonFont: var(--baseFont);
+    --buttonPadding: .3em .5em;
+    //  - primary
+    --buttonBackground: var(--baseColor);
+    --buttonText: var(--textOnBaseColor);
+    --buttonBorder: 3px solid var(--baseColor);
+    --buttonBorderRadius: 1em;
+    //  - :hover
+    --buttonHoverBackground: var(--secondColor);
+    --buttonHoverText: var(--textOnBaseColor);
+    --buttonHoverBorder: 3px solid var(--secondColor);
+    --buttonHoverBorderRadius: 1em;
+
+
+    //  - inverted
+    --buttonInvertedBackground: var(--backgroundColor);
+    --buttonInvertedText: var(--baseColor);
+    --buttonInvertedBorder: 3px solid var(--baseColor);
+    --buttonInvertedBorderRadius: 1em;
+    //  - :hover
+    --buttonInvertedHoverBackground: var(--backgroundColor);
+    --buttonInvertedHoverText: var(--secondColor);
+    --buttonInvertedHoverBorder: 3px solid var(--secondColor);
+    --buttonInvertedHoverBorderRadius: 1em;
+
+    // <Label>
+    --labelTextColor: #aaaaaa;
+}

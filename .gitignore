@@ -1,0 +1,7 @@
+/node_modules
+/build
+/coverage
+/public/api/vendor
+/public/api/config.php
+
+yarn-error.log

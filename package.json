@@ -1,0 +1,60 @@
+{
+  "name": "gde-geo-template",
+  "version": "1.2.0",
+  "private": true,
+  "dependencies": {
+    "@types/classnames": "^2.3.1",
+    "@types/google.maps": "^3.53.4",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "axios": "^1.4.0",
+    "classnames": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-query": "^3.39.3",
+    "react-router": "^6.14.1",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.63.6",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "test:all": "react-scripts test --coverage --watchAll=false --verbose --collectCoverageFrom=**/*.{ts,tsx}",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.26",
+    "@storybook/addon-interactions": "^7.0.26",
+    "@storybook/addon-links": "^7.0.26",
+    "@storybook/blocks": "^7.0.26",
+    "@storybook/preset-create-react-app": "^7.0.26",
+    "@storybook/react": "^7.0.26",
+    "@storybook/react-webpack5": "^7.0.26",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.0.26",
+    "webpack": "^5.88.1"
+  }
+}
