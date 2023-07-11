@@ -6,7 +6,7 @@ type Props = {
 
 export default function TaskOutro({onComplete}: Props) {
     return <Box>
-        <p>Super zrobiłeś zadanie 2!</p>
+        <p>gratki, coś jednak umiesz</p>
         <button onClick={onComplete}>Dalej</button>
     </Box>
 }

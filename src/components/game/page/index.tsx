@@ -8,6 +8,14 @@ import usePageStep from "../../../modules/game/hooks/use-page-step";
 const Page1 = lazy(() => import('./page-1'));
 const Page2 = lazy(() => import('./page-2'));
 const Page3 = lazy(() => import('./page-3'));
+const Page4 = lazy(() => import('./page-4'));
+const Page5 = lazy(() => import('./page-5'));
+const Page6 = lazy(() => import('./page-6'));
+const Page7 = lazy(() => import('./page-7'));
+const Page8 = lazy(() => import('./page-8'));
+const Page9 = lazy(() => import('./page-9'));
+const Page10 = lazy(() => import('./page-10'));
+const Page11 = lazy(() => import('./page-11'));
 
 type Props = {
     id: string
@@ -32,6 +40,22 @@ export default function PageView({ id }: Props) {
                 return <Page2 onNext={onNext} />
             case 'page-3':
                 return <Page3 onNext={onNext} />
+            case 'page-4':
+                return <Page4 onNext={onNext} />
+            case 'page-5':
+                return <Page5 onNext={onNext} />
+            case 'page-6':
+                return <Page6 onNext={onNext} />
+            case 'page-7':
+                return <Page7 onNext={onNext} />
+            case 'page-8':
+                return <Page8 onNext={onNext} />
+            case 'page-9':
+                return <Page9 onNext={onNext} />
+            case 'page-10':
+                return <Page10 onNext={onNext} />
+            case 'page-11':
+                return <Page11 onNext={onNext} />
             default:
                 return <PagePlaceholder onNext={onNext} />
         }

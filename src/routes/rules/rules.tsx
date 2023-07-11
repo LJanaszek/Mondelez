@@ -5,6 +5,7 @@ import {Popup} from "../../molecules/popup/popup";
 import Box from "../../components/layout/box/box";
 import styles from './rules.module.scss';
 import { ButtonsRow } from "../../atoms/buttons-row/buttons-row";
+import { ButtonLike } from "../../atoms/button-like";
 
 
 export default function RulesPage() {
@@ -30,8 +31,11 @@ export default function RulesPage() {
                 <li>Przemieszczając się pomiędzy kolejnymi miejscami – zachowaj ostrożność.</li>
                 <li>Gdy w zadaniach zobaczysz ikonę ? – kliknij, aby przeczytać treść pomocy.</li>
             </ul>
+
             <ButtonsRow as="nav">
-                <button className="button" onClick={() => { setShowGPSInfo(true) }}>Dalej</button>
+                <ButtonLike>
+                <button onClick={() => { setShowGPSInfo(true) }}>Dalej</button>
+                </ButtonLike>
             </ButtonsRow>
         </Box>
 

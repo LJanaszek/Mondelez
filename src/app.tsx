@@ -9,7 +9,7 @@ import { PageFooter } from './components/layout/footer/page-footer';
 import PolicyPage from './routes/policy';
 import { useEffect } from 'react';
 import { CONFIG_MODULE_ACTION, useConfigModuleDispatch } from './modules/config';
-import { CookiesInfo } from './components/layout/cookies/cookies';
+import { CookiesInfoComponent } from './components/layout/cookies';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
@@ -22,7 +22,7 @@ export default function App() {
     return (
         <>
             <BrowserRouter>
-                <CookiesInfo />
+                <CookiesInfoComponent />
                 {showHeader && <PageHeader />}
                 <main aria-live="polite">
                     <Suspense fallback={<Loader />}>

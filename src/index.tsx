@@ -14,8 +14,11 @@ import 'core-js/features/array/fill';
 import 'core-js/features/object/values'
 import 'core-js/features/number/is-nan';
 import 'core-js/features/string/starts-with';
+import { register } from './serviceWorker';
 
 const queryClient = new QueryClient()
+register();
+
 
 const root = createRoot(document.getElementById('root')!);
 

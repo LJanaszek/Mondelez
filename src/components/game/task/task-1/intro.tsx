@@ -6,7 +6,7 @@ type Props = {
 
 export default function TaskIntro({onComplete}: Props) {
     return <Box>
-        <p>Tutaj bedzie jakieś intro do zadania 1.</p>
+        <p>serio chcesz jakieś wprowadzenie?</p>
         <button onClick={onComplete}>Dalej</button>
     </Box>
 }

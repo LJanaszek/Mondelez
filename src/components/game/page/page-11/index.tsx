@@ -6,7 +6,7 @@ type Props = {
 
 export default function Page1({onNext}: Props) {
     return <Box>
-        <p>cześć sherlocku</p>
+        <p>brawo, ukończyłeś grę</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }

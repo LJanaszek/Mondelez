@@ -6,7 +6,7 @@ type Props = {
 
 export default function TaskMain({onComplete}: Props) {
     return <Box>
-        <p>Tutaj będzie zadanie do wykonania 2.</p>
+        <p>jakiś quest dla ciebie</p>
         <button onClick={onComplete}>Zrobione!</button>
     </Box>
 }

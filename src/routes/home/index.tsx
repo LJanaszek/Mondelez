@@ -25,7 +25,7 @@ export default function HomePage() {
             <p>To jest strona główna</p>
             <nav>
                 {!gameStarted && <ButtonLike>
-                    <Link className="button" to={getRulesPageRoute()}>Gra mobilna</Link>
+                    <Link to={getRulesPageRoute()}>Gra mobilna</Link>
                 </ButtonLike>
                 }
                 {gameStarted && <ButtonLike>

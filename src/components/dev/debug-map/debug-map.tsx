@@ -35,7 +35,7 @@ export default function DebugMap({onClose}: Props) {
     }, [geoPoints]);
 
     return <div className={styles.debugMap}>
-        <div id={styles.mapContainer}></div>
+        <div id="map-container" className={styles.mapContainer}></div>
         <button className={styles.close} onClick={onClose}>ZAMKNIJ</button>
     </div>
 }

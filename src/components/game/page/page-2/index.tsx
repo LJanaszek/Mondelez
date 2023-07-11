@@ -6,7 +6,7 @@ type Props = {
 
 export default function Page1({onNext}: Props) {
     return <Box>
-        <p>Strona 2</p>
+        <p>Doszedłeś do punktu geo 1, gratki</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }
