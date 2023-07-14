@@ -1,0 +1,15 @@
+input{
+    display: block;
+}
+.btn{
+    height: 4em;
+    width: 4em;
+}
+.task_4{
+    justify-content: space-around;
+    display: flex;
+}
+/* .images{
+    justify-content: space-between;
+    display: flex;
+} */

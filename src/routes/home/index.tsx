@@ -24,7 +24,7 @@ export default function HomePage() {
         <Box>
             <h2>Witaj</h2>
             <p>To jest strona główna</p>
-            <QuizQuestion id='2'></QuizQuestion>
+            
             <nav>
                 {!gameStarted && <ButtonLike>
                     <Link to={getRulesPageRoute()}>Gra mobilna</Link>

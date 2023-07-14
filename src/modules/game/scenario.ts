@@ -34,12 +34,8 @@ export const SCENARIO: GameScenario = {
         },
         {
             id: '2.1',
-            type: GAME_STEP_TYPE.GEO_STEP,
-            position: {
-                lat: 52.237488,
-                lng:  21.008548
-            },
-            name: ["Punkt geo 2"],
+            type: GAME_STEP_TYPE.TASK,
+            taskId: 'task-1',
             nextStep: '2.2'
         },
         {

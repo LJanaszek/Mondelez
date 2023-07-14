@@ -20,12 +20,16 @@ export const Base: Story = {
         id:'1',
         text: 'cos',
         answers: [{
+          id:'1',
             text:'o1'
         },{
+          id:'2',
             text:'o2'
         },{
+          id:'3',
             text:'03'
         },{
+          id:'4',
             text:'o4'
         }]
     }
@@ -43,12 +47,16 @@ export const WithImg: Story = {
           text: 'cos',
           imgSrc: 'http://placekitten.com/800/600',
           answers: [{
+            id:'1',
               text:'o1'
           },{
+            id:'2',
               text:'o2'
           },{
+            id:'3',
               text:'03'
           },{
+            id:'4',
               text:'o4'
           }]
       }
