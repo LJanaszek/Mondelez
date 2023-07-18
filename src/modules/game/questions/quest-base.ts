@@ -18,10 +18,12 @@ export const QUESTIONS: IQuizQuestion[] = [
         answers:[
             {
                 id: '1',
-                text: 'odp1'
+                text: 'odp21',
+                isCorrect: false
             },{
                 id: '2',
-                text:'odp2'
+                text:'odp2',
+                isCorrect: true
             },{
                 id: '3',
                 text:'odp3'
@@ -42,7 +44,33 @@ export const QUESTIONS: IQuizQuestion[] = [
         },{
             id: '2',
             text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4'
         }]
+    }
+]
+export interface QuizAnswers{
+    id: string,
+    correct:{
+        id:string
+    }[]
+}
+export const ANSWERS: QuizAnswers[]=[
+    {
+        id:'1',
+        correct:[{
+            id:'1'
+        }]
+    },
+    {
+        id:'2',
+        correct:[{
+            id:'3'
+        }] 
     }
 ]
 

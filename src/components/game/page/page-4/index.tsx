@@ -8,7 +8,7 @@ type Props = {
 export interface ForImg{
     images:ImagesBase
 } 
-export default function Page1({onNext}: Props, {images}:ForImg,) {
+export default function Page4({onNext}: Props, {images}:ForImg,) {
     return <Box>
         <p>zadanie 4</p>
             {IMAGES.map(a => {

@@ -5,9 +5,9 @@ import { ButtonLike } from "../../../atoms/button-like";
 
 
 export interface Props {
-    id: string
+    id: string,
   }
-  
+
   export function QuizQuestion({id}: Props) {
     const q = useQuestion(id);
     if (!q){
@@ -19,17 +19,31 @@ export interface Props {
   export interface ForQuizQuest{
     question: IQuizQuestion
   }
-  export function QuizQuestionDummy({question}:ForQuizQuest, ){
+  export function QuizQuestionDummy({question}:ForQuizQuest){
     // const {answers} = question
     return <div className={styles.question}>
           <h1>{question.text}</h1>
             <img src={question.imgSrc} alt="" className={styles.img_question}/>
             <form className={styles.answer_block}>
             {question.answers.map(a => {
-                            return <div key={a.id}>
+                            if(a.isCorrect==true){
+                                return <div key={a.id}>
+                                <label>
+                                <input type="radio" name="an" value={a.id} onClick={afterCorrectanswer}/>
+                                <div className={styles.ansCor}>
+                                  <span>{a.id}</span>
+                                  {a.text}
+                                </div>
+                              </label>
+
+                            </div>
+                            
+                            } 
+                            else{
+                              return <div key={a.id}>
                               
                               <label>
-                                <input type="radio" name="an" value={a.id}/>
+                                <input type="radio" name="an" value={a.id} onClick={afterIncorrectanswer}/>
                                 <div className={styles.ans}>
                                   <span>{a.id}</span>
                                   {a.text}
@@ -37,10 +51,27 @@ export interface Props {
                               </label>
                               
                             </div>
+                            }
                         })}
                         </form>
-        <ButtonLike>
-          <a href="#" className={styles.next}>dalej</a>
-        </ButtonLike>
+                        <div className={styles.questionAnswer} id="questionAnswer"></div>
+          {/* <button onClick={onNext} className={styles.next} id="next">dalej</button> */}
         </div>
   }
+const afterIncorrectanswer=(event:React.MouseEvent<HTMLElement>)=>{
+  let something = document.querySelectorAll('input')
+  for(let i=0; i<something.length; i++){
+    something[i].disabled = true;}
+    const myTry = document.getElementById("questionAnswer")!
+    myTry.innerHTML = "something"
+    document.getElementById("next")!.style.display = "block";
+  }
+const afterCorrectanswer=(event:React.MouseEvent<HTMLElement>)=>{
+  let something = document.querySelectorAll('input')
+  for(let i=0; i<something.length; i++){
+    something[i].disabled = true;
+}
+  const myTry = document.getElementById("questionAnswer")!
+    myTry.innerHTML = "correct"
+    document.getElementById("next")!.style.display = "block";
+}

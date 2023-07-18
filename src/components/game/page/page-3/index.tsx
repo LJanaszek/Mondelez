@@ -4,7 +4,7 @@ type Props = {
     onNext(): void
 }
 
-export default function Page1({onNext}: Props) {
+export default function Page3({onNext}: Props) {
     return <Box>
         <p>zadanie 3</p>
         <input type="text" /> wpisz cene paliwa <br />
