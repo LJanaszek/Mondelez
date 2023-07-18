@@ -25,5 +25,7 @@ export default function Page5({onNext}: Props) {
     />
         <button onClick={onNext}>Dalej</button>
         </Box>
+
         
 }
+
