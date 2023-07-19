@@ -1,21 +1,15 @@
 import createStore from "../../utils/store";
 import reducer from "./reducer";
 
+const LOCAL_STORAGE_KEY = 'geo-gra-main';
+
 export type GameState = {
-    parent: {
-        name: string,
+        // name: string,
         answers: {
             id: string,
             value: any
         }[]
-    },
-    child: {
-        name: string,
-        answers: {
-            id: string,
-            value: any
-        }[]
-    },
+    
     gameProgress: number
 }
 
@@ -46,7 +40,7 @@ const [
     MainModuleProvider,
     useMainModuleDispatch,
     useMainModuleState
-] = createStore(reducer, initMainModuleState)
+] = createStore(reducer, initMainModuleState, LOCAL_STORAGE_KEY)
 
 
 export {
