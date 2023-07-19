@@ -125,35 +125,8 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
   );
 }
 
-const afterIncorrectanswer = (event: React.MouseEvent<HTMLElement>) => {
-  let something = document.querySelectorAll("input");
-  for (let i = 0; i < something.length; i++) {
-    something[i].disabled = true;
-  }
-
-  const myTry = document.getElementById("questionAnswer")!;
-  myTry.innerHTML = "something";
-  document.getElementById("next")!.style.display = "block";
-};
-
-const afterCorrectanswer = (event: React.MouseEvent<HTMLElement>) => {
-  let something = document.querySelectorAll("input");
-  for (let i = 0; i < something.length; i++) {
-    something[i].disabled = true;
-  }
-
-  const myTry = document.getElementById("questionAnswer")!;
-  myTry.innerHTML = "correct";
-  document.getElementById("next")!.style.display = "block";
-};
-
-//   state.items.forEach((item, index) => {
-//     dispatch({
-//         type: MAIN_MODULE_ACTION.SAVE_ANSWER,
-//         payload: {
-//             questionId: `${questionId}-${index}`,
-//             answer: item.id,
-//         }
-//     });
-// })
-// }
+export function showAfterAnswerPage(){
+  return <div>
+    
+  </div>
+}

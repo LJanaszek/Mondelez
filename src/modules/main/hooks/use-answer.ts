@@ -8,7 +8,7 @@ export function useAnswer(id:string):any{
     const state = useMainModuleState();  
 
 
-    // Przypisuje do `andwer` obiekt odpowiedzi o answer.id === id lub undefined jezeli odpowiedx nie istnieje 
+    // Przypisuje do `answer` obiekt odpowiedzi o answer.id === id lub undefined jezeli odpowiedx nie istnieje 
     const answer = state.gameState?.answers.find(a => {
         return a.id === id;
     })
