@@ -163,6 +163,33 @@ Zestaw narzedzi widoczny na ekranach gry z kompasem.
 - pozwala na ignorowanie wymogu minimalnej dokładności odczytu GPS.
 - resetuje położenie punktów geo i rozstawia je wokół gracza
 
+
+## PWA
+
+Szablon ma domyślnie dodany service-worker i manifest dla PWA.
+
+```
+// /src/index.tsx
+
+import { register } from './serviceWorker';
+
+...
+// tutaj rejestrujemy service-workera do PWA (i generalnie do cashowania treści strony)
+register();
+...
+
+```
+
+Pliki:
+- `/src/serviceWorker.ts` - plik rejestrujący service-worker w przeglądarce
+- `/src/service-worker.ts` - service worker odpowiedzialny za lokalne cachowanie danych
+- `/public/manifest.json` - manifest PWA
+- `/public/favicon_*.png` - ikony PWA
+
+---
+
+
+
 ---
 
 ## Problemy

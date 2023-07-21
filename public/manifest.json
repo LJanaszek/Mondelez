@@ -1,0 +1,23 @@
+{
+    "short_name": "GEO Gra",
+    "name": "GeoGra by GDEvents",
+    "start_url": "/",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "/favicon_256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "/favicon_192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/favicon_512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
