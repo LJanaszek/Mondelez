@@ -4,11 +4,17 @@ import loadSprites from './utils/load-sprites';
 import { PointData } from './types';
 
 type AppConfig = {
+    // Bazowy adres pod którym Widget bedzie spodziewał sie grafik
     assetsPath: string,
+
+    // Callback po kliknieciu w punkt
     onPointerClicked(id: string): void;
 }
 
+// Szerokość grafiki mapy
 export const MAP_WIDTH = 529;
+
+// Wysokość grafiki mapy
 export const MAP_HEIGHT = 938;
 
 export default class PixiApp extends PIXI.Application {
