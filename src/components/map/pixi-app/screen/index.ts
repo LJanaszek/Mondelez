@@ -40,7 +40,6 @@ export default class GameScreen extends Container implements IScreen {
         this.mapPoints
             .filter(p => (this.activePoints.includes(p.id) || this.inactivePoints?.includes(p.id)))
             .forEach((p) => {
-                console.log(p);
                 const point = Sprite.from('pinezka');
                 point.anchor.set(.5, 1);
 
@@ -48,7 +47,7 @@ export default class GameScreen extends Container implements IScreen {
 
                 this.addChild(point);
 
-                point.interactive = true;
+                point.eventMode = 'static';
                 point.cursor = 'pointer';
 
                 const hisBoxSize = point.height * 1.2;
@@ -87,20 +86,17 @@ export default class GameScreen extends Container implements IScreen {
     }
 
     setPoints(active: string[], inactive: string[]) {
-        console.log(11,)
         this.activePoints = active;
         this.inactivePoints = inactive;
         this.updatePoints();
     }
 
     setMapPointData(points: PointData[]) {
-        console.log(22,)
         this.mapPoints = points;
         this.updatePoints();
     }
 
     setSelectedPoint(id: string | null) {
-        console.log(33,)
         this.activePointId = id;
         this.updatePoints();
     }

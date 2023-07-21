@@ -28,7 +28,8 @@ export default class PixiApp extends PIXI.Application {
             antialias: true
         });
 
-        this.renderer.plugins.interaction.autoPreventDefault = false;
+        this.renderer.events.autoPreventDefault = false;
+
         if (this.renderer.view.style) {
             this.renderer.view.style.touchAction = 'auto';
         }
