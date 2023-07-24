@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from "react"
 import PixiApp from "./pixi-app/app";
 import styles from './find-diff.module.scss';
+import { ItemData } from "./pixi-app/types";
 
 type Props = {
     onComplete(): void
     onGameStateChanged(data: FindDiffGameState): void
+    targets: ItemData[],
+    img1src: string,
+    img2src: string
 }
 
 export type FindDiffGameState = {
@@ -13,7 +17,13 @@ export type FindDiffGameState = {
     isComplete: boolean
 }
 
-export function FindDiff({ onComplete, onGameStateChanged }: Props) {
+export function FindDiff({
+    targets,
+    img1src,
+    img2src,
+    onComplete,
+    onGameStateChanged
+}: Props) {
     // Ref do kontenera w którym umieścimy Widget PIXI
     const widgetContainerRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +38,9 @@ export function FindDiff({ onComplete, onGameStateChanged }: Props) {
         if (appRef.current) return;
 
         const app = new PixiApp({
-            assetsPath: '/',
+            targets,
+            img1src,
+            img2src,
             onGameStateChanged
         });
 

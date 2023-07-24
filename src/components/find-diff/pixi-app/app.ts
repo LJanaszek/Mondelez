@@ -1,12 +1,14 @@
 import * as PIXI from 'pixi.js';
 import { FindDiffGameState } from '../find-diff';
-import { SCREEN } from './data';
+import { ItemData } from './types';
 import GameScreen from './screen';
 import loadSprites from './utils/load-sprites';
 
 type AppConfig = {
-    assetsPath: string,
-    onGameStateChanged(data: FindDiffGameState): void
+    onGameStateChanged(data: FindDiffGameState): void,
+    targets: ItemData[],
+    img1src: string,
+    img2src: string
 }
 
 export const IMG_WIDTH = 443;
@@ -34,8 +36,8 @@ export default class PixiApp extends PIXI.Application {
         }
 
         loadSprites([
-            ['img-left', `${config.assetsPath}find-diff-demo-1.jpg`],
-            ['img-right', `${config.assetsPath}find-diff-demo-2.jpg`]
+            ['img-left', config.img1src],
+            ['img-right', config.img2src]
         ]).then(() => {
             this.initApp();
         })
@@ -44,14 +46,14 @@ export default class PixiApp extends PIXI.Application {
     private gameScreen?: GameScreen;
 
     private initApp() {
-        this.gameScreen = new GameScreen();
+        this.gameScreen = new GameScreen(this.config.targets);
 
         this.gameScreen.events.on('update-game-state', (data) => {
             this.config.onGameStateChanged(data);
         })
 
         this.config.onGameStateChanged({
-            targetCount: SCREEN.ITEMS.length,
+            targetCount: this.config.targets.length,
             findedTargetCount: 0,
             isComplete: false
         })

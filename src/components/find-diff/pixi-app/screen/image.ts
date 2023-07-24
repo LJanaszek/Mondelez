@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { ItemData } from '../data';
+import { ItemData } from '../types';
 import Target from './target';
 import { IMG_WIDTH, IMG_HEIGHT } from '../app';
 

@@ -1,8 +1,8 @@
 import * as PIXI from 'pixi.js';
 import { FindDiffGameState } from '../../find-diff';
-import { IMG_HEIGHT, IMG_WIDTH, IScreen } from "../app";
-import { SCREEN } from '../data';
+import { IMG_WIDTH, IScreen } from "../app";
 import { GameImage } from './image';
+import { ItemData } from '../types';
 
 export default class GameScreen extends PIXI.Container implements IScreen {
 
@@ -12,13 +12,13 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
     events = new PIXI.utils.EventEmitter();
 
-    constructor() {
+    constructor(private targets: ItemData[]) {
         super();
 
         this.sortableChildren = true;
 
-        const imgLeft = new GameImage('img-left', SCREEN.ITEMS);
-        const imgRight = new GameImage('img-right', SCREEN.ITEMS);
+        const imgLeft = new GameImage('img-left', targets);
+        const imgRight = new GameImage('img-right', targets);
 
         imgLeft.events.on('target-clicked', (id) => this.onTargetClicked(id));
         imgRight.events.on('target-clicked', (id) => this.onTargetClicked(id));
@@ -38,9 +38,9 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
     private sendInfo() {
         this.events.emit('update-game-state', {
-            targetCount: SCREEN.ITEMS.length,
+            targetCount: this.targets.length,
             findedTargetCount: this.findedTargets.size,
-            isComplete: SCREEN.ITEMS.length === this.findedTargets.size
+            isComplete: this.targets.length === this.findedTargets.size
         } as FindDiffGameState)
     }
 
