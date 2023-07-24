@@ -1,14 +1,15 @@
 import * as PIXI from 'pixi.js';
 import { ItemData } from '../types';
 import Target from './target';
-import { IMG_WIDTH, IMG_HEIGHT } from '../app';
 
 export class GameImage extends PIXI.Container {
     events = new PIXI.utils.EventEmitter();
 
     constructor(
         private imgKey: string,
-        targets: ItemData[]
+        targets: ItemData[],
+        imgWidth: number,
+        imgHeight: number
     ) {
         super();
 
@@ -22,13 +23,8 @@ export class GameImage extends PIXI.Container {
             const target = new Target(item.id);
 
             target.position.set(
-                item.position.x % IMG_WIDTH,
-                item.position.y % IMG_HEIGHT
-            );
-
-            target.position.set(
-                item.position.x % IMG_WIDTH,
-                item.position.y % IMG_HEIGHT
+                item.position.x % imgWidth,
+                item.position.y % imgHeight
             );
 
             target.events.on('target-clicked', () => {

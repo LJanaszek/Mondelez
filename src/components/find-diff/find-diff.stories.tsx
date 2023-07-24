@@ -90,6 +90,8 @@ export const Base: Story = {
       }
     },
     ],
+    imgWidth: 443,
+    imgHeight: 788,
     img1src: '/find-diff-demo-1.jpg',
     img2src: '/find-diff-demo-2.jpg',
   },

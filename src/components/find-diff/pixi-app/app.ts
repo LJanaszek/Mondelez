@@ -8,14 +8,11 @@ type AppConfig = {
     onGameStateChanged(data: FindDiffGameState): void,
     targets: ItemData[],
     img1src: string,
-    img2src: string
+    img2src: string,
+    imgWidth: number,
+    imgHeight: number,
+
 }
-
-export const IMG_WIDTH = 443;
-export const IMG_HEIGHT = 788;
-
-export const APP_WIDTH = IMG_WIDTH*2;
-export const APP_HEIGHT = IMG_HEIGHT;
 
 export default class PixiApp extends PIXI.Application {
 
@@ -25,8 +22,8 @@ export default class PixiApp extends PIXI.Application {
         super({
             backgroundAlpha: 1,
             backgroundColor: 0xDFD7CD,
-            width: APP_WIDTH,
-            height: APP_HEIGHT,
+            width: config.imgWidth * 2,
+            height: config.imgHeight,
             antialias: true
         });
 
@@ -46,7 +43,11 @@ export default class PixiApp extends PIXI.Application {
     private gameScreen?: GameScreen;
 
     private initApp() {
-        this.gameScreen = new GameScreen(this.config.targets);
+        this.gameScreen = new GameScreen(
+            this.config.targets,
+            this.config.imgWidth,
+            this.config.imgHeight
+        );
 
         this.gameScreen.events.on('update-game-state', (data) => {
             this.config.onGameStateChanged(data);

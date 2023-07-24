@@ -7,6 +7,8 @@ type Props = {
     onComplete(): void
     onGameStateChanged(data: FindDiffGameState): void
     targets: ItemData[],
+    imgWidth: number,
+    imgHeight: number,
     img1src: string,
     img2src: string
 }
@@ -21,6 +23,8 @@ export function FindDiff({
     targets,
     img1src,
     img2src,
+    imgWidth,
+    imgHeight,
     onComplete,
     onGameStateChanged
 }: Props) {
@@ -41,6 +45,8 @@ export function FindDiff({
             targets,
             img1src,
             img2src,
+            imgWidth,
+            imgHeight,
             onGameStateChanged
         });
 
@@ -59,7 +65,7 @@ export function FindDiff({
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onComplete, setAppReady]);
+    }, [onComplete, setAppReady, targets, img1src, img2src, imgWidth, imgHeight,]);
 
     return <div className={styles.findDiffComponent} ref={widgetContainerRef}></div>
 }
