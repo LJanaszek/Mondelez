@@ -1,10 +1,10 @@
-import { useCallback, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import Box from "../../../layout/box/box"
 import { MapComponent } from "../../../map/map-component"
 import style from "../style.module.css"
 import { PointData } from "../../../map/pixi-app/types"
 import { Popup } from "../../../../molecules/popup/popup"
-import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../../../modules/game"
+import { GAME_MODULE_ACTION, useGameModuleDispatch, useGameModuleState } from "../../../../modules/game"
 
 type Props = {
     onNext(): void
@@ -54,13 +54,42 @@ export default function Page_map({onNext}: Props) {
     ];
     }, []);
 
+    const gameState = useGameModuleState();
+    const completedPoints = gameState.completedSteps;
+
     const activePointIds: string[] = useMemo(() => {
-        return ['1','2','3'];
-    }, [])
+        // Zwróć listę ID puktów mapy dla których geoPointId nie ma w tablicy completedPoints
+
+        // [].find, [].filter, [].includes, [].map
+
+        const result = mapPointsData.filter(x => !completedPoints.includes(x.geoPointId));
+        
+
+        return result.map((x) => {
+            return x.id
+        });
+    }, [completedPoints, mapPointsData]);
 
     const inactivePointIds: string[] = useMemo(() => {
-        return ['1','2','3'];
-    }, [])
+        // Zwróć listę ID puktów mapy dla których geoPointId jest w tablicy completedPoints
+
+        const result = mapPointsData.filter(x => completedPoints.includes(x.geoPointId));
+
+        return result.map((x) => {
+            return x.id
+        });
+    }, [completedPoints, mapPointsData]);
+
+    useEffect(() => {
+        if (activePointIds.length === 0) {
+            dispatch({
+                type: GAME_MODULE_ACTION.SET_GAME_STEP,
+                payload: {
+                    id: '13.2'
+                }
+            })
+        } 
+    }, [activePointIds])
 
     const onClosePopupClicked = useCallback(() => {
         setShowPopup(false);
