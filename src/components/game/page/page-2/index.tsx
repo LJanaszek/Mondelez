@@ -11,7 +11,6 @@ export default function Page2({onNext}: Props) {
     const [showNext, setShowNext] = useState(false);
 
     return <Box>
-        <p>Doszedłeś do punktu geo 1, gratki</p>
         <QuizQuestion id='1' onComplete={() => setShowNext(true)}></QuizQuestion>
         {showNext && <button onClick={onNext}>Dalej</button>}
     </Box>

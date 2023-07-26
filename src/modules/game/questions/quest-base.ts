@@ -2,10 +2,11 @@ export interface IQuizQuestion {
   id: string,
   text: string,
   imgSrc?: string,
+  description: string,
   answers: {
     id: string,
     text: string,
-    isCorrect?: boolean
+    isCorrect?: boolean,
   }[]
 };
 
@@ -15,11 +16,11 @@ export const QUESTIONS: IQuizQuestion[] = [
         id:'1',
         text:'pytanie tresc',
         imgSrc:'http://placekitten.com/400/300',
+        description:"bo ktoś tak chciał",
         answers:[
             {
                 id: '1',
-                text: 'odp21',
-                isCorrect: false
+                text: 'odp1',
             },{
                 id: '2',
                 text:'odp2',
@@ -38,6 +39,7 @@ export const QUESTIONS: IQuizQuestion[] = [
         id:'2',
         text:'pytanie 2 tresc',
         imgSrc: 'http://placekitten.com/400/300',
+        description:"",
         answers:[{
             id:'1',
             text:'odp1'
