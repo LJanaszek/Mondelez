@@ -1,16 +1,16 @@
 import styles from './popus.module.scss';
 
 type Props = React.PropsWithChildren<{
-    onClick(): void
+    onOKClick?(): void
 }>;
 
 
-export function Popup({ children, onClick }: Props) {
+export function Popup({ children, onOKClick }: Props) {
     return <div className={styles.popup} aria-modal="true">
 
         <div className={styles.inner}>
             {children}
-            <button className="button" onClick={onClick}>OK</button>
+            {onOKClick && <button className="button" onClick={onOKClick}>OK</button>}
         </div>
     </div>
 }

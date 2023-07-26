@@ -1,7 +1,7 @@
 /**
  * Dane punktu mapy
  */
-export type PointData = {
+export interface PointData {
     // ID punktu
     id: string,
 
