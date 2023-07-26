@@ -14,7 +14,7 @@ export default class GameScreen extends Container implements IScreen {
     inactivePoints: string[] = [];
     pointsMarkers: Container[] = [];
     mapPoints: PointData[] = [];
-    activePointId: string | null = null;
+    selectedPointId: string | null = null;
 
     events = new PIXI.utils.EventEmitter()
 
@@ -60,7 +60,7 @@ export default class GameScreen extends Container implements IScreen {
                     this.events.emit('pointer-clicked', p.id);
                 });
 
-                if (p.id === this.activePointId) {
+                if (p.id === this.selectedPointId) {
                     point.filters = [
                         ...(point.filters || []),
                         glowFilter
@@ -97,7 +97,7 @@ export default class GameScreen extends Container implements IScreen {
     }
 
     setSelectedPoint(id: string | null) {
-        this.activePointId = id;
+        this.selectedPointId = id;
         this.updatePoints();
     }
 }
