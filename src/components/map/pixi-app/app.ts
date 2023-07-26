@@ -51,15 +51,17 @@ export default class PixiApp extends PIXI.Application {
     private gameScreen?: GameScreen;
 
     private initApp() {
-        this.gameScreen = new GameScreen(this);
+        if(this.stage) {
+            this.gameScreen = new GameScreen(this);
 
-        this.gameScreen.events.on('pointer-clicked', (id) => {
-            this.config.onPointerClicked(id);
-        })
+            this.gameScreen.events.on('pointer-clicked', (id) => {
+                this.config.onPointerClicked(id);
+            })
 
-        this.stage.addChild(this.gameScreen);
-        this.events.emit('ready');
-        this.onResize();
+            this.stage.addChild(this.gameScreen);
+            this.events.emit('ready');
+            this.onResize();
+        }
     }
 
     private onResize() {}
