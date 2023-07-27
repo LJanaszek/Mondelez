@@ -8,6 +8,7 @@ const GAME_MODULE_LS_KEY = 'raszyn:game-v3'
 export type GameState = {
     // name: string,
     completedSteps: string[],
+    startGameTime: number | null,
     answers: {
         id: string,
         value: any
@@ -30,6 +31,7 @@ export const initGameModuleState: GameModuleState = {
     gameComplete: false,
     ignoreAccuracy: false,
     gameState: {
+        startGameTime: null,
         answers: [],
         completedSteps: [],
     }

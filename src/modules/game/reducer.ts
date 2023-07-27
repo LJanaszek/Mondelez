@@ -48,10 +48,20 @@ export default function UserReducer(
       };
 
     case GAME_MODULE_ACTION.START_GAME:
-      return {
-        ...state,
-        gameStarted: true,
-      };
+      console.log('Czy mam resetowac gre')
+      if (!state.gameStarted || !state.gameState.startGameTime) {
+        
+        return {
+          ...state,
+          gameState: {
+            ...state.gameState,
+            startGameTime: Date.now(),
+          },
+          gameStarted: true,
+        };
+      }
+
+      return {...state};
 
     case GAME_MODULE_ACTION.SET_GAME_STEP:
       return {
@@ -77,7 +87,7 @@ export default function UserReducer(
         gameState: {
           ...state.gameState,
           completedSteps: [...state.gameState.completedSteps, payload.stepId],
-        }
+        },
       };
 
     case GAME_MODULE_ACTION.PLACE_DEBUG_POINTS:
