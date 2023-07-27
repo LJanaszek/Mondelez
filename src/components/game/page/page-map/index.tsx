@@ -80,6 +80,7 @@ export default function Page_map({onNext}: Props) {
         });
     }, [completedPoints, mapPointsData]);
 
+    const dispatch = useGameModuleDispatch();
     useEffect(() => {
         if (activePointIds.length === 0) {
             dispatch({
@@ -89,14 +90,13 @@ export default function Page_map({onNext}: Props) {
                 }
             })
         } 
-    }, [activePointIds])
+    }, [activePointIds, dispatch])
 
     const onClosePopupClicked = useCallback(() => {
         setShowPopup(false);
         setSelectedPoint('')
     }, [setShowPopup, setSelectedPoint]);
 
-    const dispatch = useGameModuleDispatch();
 
     const onGoToClicked = useCallback(() => {
 
