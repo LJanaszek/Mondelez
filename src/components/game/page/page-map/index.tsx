@@ -55,7 +55,7 @@ export default function Page_map({onNext}: Props) {
     }, []);
 
     const gameState = useGameModuleState();
-    const completedPoints = gameState.completedSteps;
+    const completedPoints = gameState.gameState.completedSteps;
 
     const activePointIds: string[] = useMemo(() => {
         // Zwróć listę ID puktów mapy dla których geoPointId nie ma w tablicy completedPoints

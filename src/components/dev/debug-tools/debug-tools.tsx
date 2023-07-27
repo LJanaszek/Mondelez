@@ -5,13 +5,14 @@ import useGameStep from "../../../modules/game/hooks/use-game-step";
 import useScenario from "../../../modules/game/hooks/use-scenario";
 import { GameStep, GAME_STEP_TYPE } from "../../../modules/game/types";
 import styles from './debug-tools.module.scss';
+import { useGameState } from "../../../modules/game/hooks/use-game-state";
 
 export default function DebugTools() {
 
     const dispatch = useGameModuleDispatch();
     const gotoSelectRef = useRef<HTMLSelectElement>(null);
     const scenario = useScenario();
-    const { completedSteps } = useGameModuleState();
+    const { completedSteps } = useGameState();
 
     const onReset = useCallback(() => {
         dispatch({

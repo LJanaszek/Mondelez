@@ -74,7 +74,10 @@ export default function UserReducer(
     case GAME_MODULE_ACTION.COMPLETE_STEP:
       return {
         ...state,
-        completedSteps: [...state.completedSteps, payload.stepId],
+        gameState: {
+          ...state.gameState,
+          completedSteps: [...state.gameState.completedSteps, payload.stepId],
+        }
       };
 
     case GAME_MODULE_ACTION.PLACE_DEBUG_POINTS:
