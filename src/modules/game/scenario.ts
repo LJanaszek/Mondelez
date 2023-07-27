@@ -43,8 +43,8 @@ export const SCENARIO: GameScenario = {
         },
         {
             id: '3.2',
-            type: GAME_STEP_TYPE.TASK,
-            taskId: 'page-3',
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-3',
             nextStep: '1.1'
         },
         {
@@ -59,14 +59,26 @@ export const SCENARIO: GameScenario = {
         },
         {
             id: '4.2',
-            type: GAME_STEP_TYPE.TASK,
-            taskId: 'task-3',
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'task-3',
             nextStep: '1.1'
         },
         {
             id: '13.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-11',
+            pageId: 'page-time-end',
+            nextStep: '14.1'
+        },
+        {
+            id: '13.3',
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'game-complete',
+            nextStep: '14.1'
+        },
+        {
+            id: '14.1',
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'summary-page',
             nextStep: null
         },
     ]

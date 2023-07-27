@@ -86,7 +86,7 @@ export default function Page_map({onNext}: Props) {
             dispatch({
                 type: GAME_MODULE_ACTION.SET_GAME_STEP,
                 payload: {
-                    id: '13.2'
+                    id: '13.3'
                 }
             })
         } 

@@ -19,17 +19,17 @@ export const QUESTIONS: IQuizQuestion[] = [
         description:"bo ktoś tak chciał",
         answers:[
             {
-                id: '1',
+                id: 'a1',
                 text: 'odp1',
             },{
-                id: '2',
+                id: 'a2',
                 text:'odp2',
                 isCorrect: true
             },{
-                id: '3',
+                id: 'a3',
                 text:'odp3'
             },{
-                id: '4',
+                id: 'a4',
                 text:'odp4'
             }
         ]
@@ -51,7 +51,8 @@ export const QUESTIONS: IQuizQuestion[] = [
             text: 'odp3'
         },{
             id: '4',
-            text: 'odp4'
+            text: 'odp4',
+            isCorrect: true
         }]
     }
 ]
