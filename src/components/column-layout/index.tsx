@@ -1,5 +1,4 @@
 import React, { ReactElement, useCallback, useEffect, useRef, useState } from "react";
-import GameProgress from "../game-progress";
 
 type Props = {
     left?: ReactElement,

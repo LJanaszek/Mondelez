@@ -8,6 +8,7 @@ import style from "./style.module.css"
 import { useNavigate } from "react-router";
 import ColumnLayout from '../../../../column-layout';
 import { MAIN_MODULE_ACTION, useMainModuleDispatch } from "../../../../../modules/main";
+import { useSaveAnswer } from "../../../../../modules/game/hooks/use-save-answer";
 
 type Props = {
     previous: string,
@@ -56,21 +57,17 @@ export default function OrderQuestionLayout({ previous, previousLabel, next, nex
         itemMove({ dragIndex, hoverIndex })
     }, []);
 
-    const dispatch = useMainModuleDispatch();
+    const saveAnswer = useSaveAnswer();
+
     const navigate = useNavigate();
+    
     const onNext = useCallback((e: React.MouseEvent) => {
         e.preventDefault();
         state.items.forEach((item, index) => {
-            dispatch({
-                type: MAIN_MODULE_ACTION.SAVE_ANSWER,
-                payload: {
-                    questionId: `${questionId}-${index}`,
-                    answer: item.id,
-                }
-            });
+            saveAnswer(`${questionId}-${index}`, item.id)
         })
         navigate(next);
-    }, [dispatch, state, navigate, next, questionId]);
+    }, [saveAnswer, state, navigate, next, questionId]);
 
     const moveUp = useCallback((index: number) => {
         if (index > 0) {
