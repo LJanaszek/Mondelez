@@ -8,6 +8,7 @@ import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
 import { ButtonsRow } from "../../atoms/buttons-row/buttons-row";
 import { ButtonLike } from "../../atoms/button-like";
 import { QuizQuestion } from "../../modules/game/questions/quiz-questions";
+import { Timer } from "../../components/game-timer/timer";
 
 export default function HomePage() {
 
@@ -24,7 +25,7 @@ export default function HomePage() {
         <Box>
             <h2>Witaj</h2>
             <p>To jest strona główna</p>
-            
+            {/* <Timer></Timer> */}
             <nav>
                 {!gameStarted && <ButtonLike>
                     <Link to={getRulesPageRoute()}>Gra mobilna</Link>

@@ -13,9 +13,10 @@ const Page5 = lazy(() => import('./page-5'));
 const Page6 = lazy(() => import('./page-6'));
 const Page7 = lazy(() => import('./page-7'));
 const Page8 = lazy(() => import('./page-8'));
-const Page9 = lazy(() => import('./page-9'));
-const Page10 = lazy(() => import('./page-10'));
-const Page11 = lazy(() => import('./page-11'));
+const SummaryPage = lazy(() => import('./summary-page'));
+const GameComplete = lazy(() => import('./game-complete'));
+const PageTimeEnd = lazy(() => import('./page-time-end'));
+const Page_map = lazy(() => import('./page-map'));
 
 type Props = {
     id: string
@@ -50,12 +51,14 @@ export default function PageView({ id }: Props) {
                 return <Page7 onNext={onNext} />
             case 'page-8':
                 return <Page8 onNext={onNext} />
-            case 'page-9':
-                return <Page9 onNext={onNext} />
-            case 'page-10':
-                return <Page10 onNext={onNext} />
-            case 'page-11':
-                return <Page11 onNext={onNext} />
+            case 'summary-page':
+                return <SummaryPage onNext={onNext} />
+            case 'game-complete':
+                return <GameComplete onNext={onNext} />
+            case 'page-time-end':
+                return <PageTimeEnd onNext={onNext} />
+            case 'page-map':
+                    return <Page_map onNext={onNext} />
             default:
                 return <PagePlaceholder onNext={onNext} />
         }

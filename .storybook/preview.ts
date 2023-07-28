@@ -5,7 +5,7 @@ const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     backgrounds: {
-      default: 'var(----backgroundColor)'
+      default: 'var(--backgroundColor)'
     },
     controls: {
       matchers: {

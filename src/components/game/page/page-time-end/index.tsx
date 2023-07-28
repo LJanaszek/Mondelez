@@ -4,9 +4,9 @@ type Props = {
     onNext(): void
 }
 
-export default function Page1({onNext}: Props) {
+export default function PageTimeEnd({onNext}: Props) {
     return <Box>
-        <p>coś z tekstem 10 strony</p>
+        <p>koniec czasu</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }

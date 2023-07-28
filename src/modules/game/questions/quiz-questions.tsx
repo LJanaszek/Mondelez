@@ -1,15 +1,11 @@
 import { useQuestion } from "./use-question";
-import { IQuizQuestion, QUESTIONS } from "./quest-base";
+import { IQuizQuestion,} from "./quest-base";
 import styles from "./style.module.css";
-import { ButtonLike } from "../../../atoms/button-like";
-import {
-  GameState,
-  MAIN_MODULE_ACTION,
-  useMainModuleDispatch,
-} from "../../main";
-import { useCallback, useEffect, useReducer, useRef, useState } from "react";
+
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAnswer } from "../../main/hooks/use-answer";
+import { useSaveAnswer } from "../hooks/use-save-answer";
 
 export interface Props {
   id: string;
@@ -22,23 +18,18 @@ export interface Props {
  */
 export function QuizQuestion({ id, onComplete }: Props) {
   const q = useQuestion(id);
-  const dispatch = useMainModuleDispatch();
   const answer = useAnswer(id);
 
   const showQuestion = Boolean(!answer);
   const showSummary = Boolean(answer);
 
+  const saveAnswer = useSaveAnswer();
+
   const onQuestionConfirm = useCallback(
     (id: string, value: string) => {
-      dispatch({
-        type: MAIN_MODULE_ACTION.SAVE_ANSWER,
-        payload: {
-          id: id,
-          value: value,
-        },
-      });
+      saveAnswer(id, value);
     },
-    [dispatch]
+    [saveAnswer]
   );
 
   useEffect(() => {
@@ -56,7 +47,7 @@ export function QuizQuestion({ id, onComplete }: Props) {
       {showQuestion && (
         <QuizQuestionDummy question={q} onConfirm={onQuestionConfirm} />
       )}
-      {showSummary && <p>Odpwiedz ktora podales wczesniej to: {answer}</p>}
+      {showSummary && <QuizAnswerDummy question={q} userAnswerId={answer} />}
     </>
   );
 }
@@ -106,7 +97,7 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
                   // onClick={a.isCorrect ? afterCorrectanswer : afterIncorrectanswer}
                   {...register("an")}
                 />
-                <div className={a.isCorrect ? styles.ansCor : styles.ans}>
+                <div className={a.isCorrect ? styles.ans : styles.ans}>
                   <span>{a.id}</span>
                   {a.text}
                 </div>
@@ -125,8 +116,31 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
   );
 }
 
-export function showAfterAnswerPage(){
+export interface QuizAnswerDummyProps {
+  question: IQuizQuestion,
+  userAnswerId: string
+}
+
+export function QuizAnswerDummy({question, userAnswerId}: QuizAnswerDummyProps){
+
+  const correctQuizAnswer = question.answers.find(quizAnswer => quizAnswer.isCorrect)
+  const userQuizAnswer = question.answers.find(quizAnswer => quizAnswer.id === userAnswerId)
+
+  const userAnswerText: string = userQuizAnswer?.text || 'Błąd danych';
+  const isUserAnswerCorrect: boolean = (correctQuizAnswer?.id === userQuizAnswer?.id); //tutaj ma być sprawdzenie czy user wybral poprawną odpwiedz
+  const correctAnswerText: string = correctQuizAnswer?.text || 'Błąd danych'; 
+  const questionDescription: string = question.description;
+
+
+
   return <div>
-    
+    <p>Twoja odpowiedz to: {userAnswerText}</p>
+
+    {isUserAnswerCorrect && <p>SUPER!</p>}
+    {!isUserAnswerCorrect && <div>
+      <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
+      <p>Poniewaz: {questionDescription}</p>
+    </div>}
   </div>
 }
+

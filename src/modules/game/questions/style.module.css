@@ -26,11 +26,7 @@ input, label{
     background-color: blueviolet;
 }
 input:checked + .ans{
-    background: red;
-    transition: .5s;
-}
-input:checked + .ansCor{
-    background: forestgreen;
+    background: grey;
     transition: .5s;
 }
 .img_question{
