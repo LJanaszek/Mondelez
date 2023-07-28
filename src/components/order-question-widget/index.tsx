@@ -1,14 +1,15 @@
-import React, { useCallback, useMemo, useReducer } from "react";
+import React, { useCallback, useEffect, useMemo, useReducer } from "react";
 import Box from "../layout/box/box";
 import { Card } from "./card";
 import style from "./style.module.css"
 
 type Props = {
-    items: string[]
+    items: {text: string, correctPlace: number}[],
+    onComplete(): void
 }
 
 type Item = {
-    id: string,
+    correctPlace: number,
     text: string
 }
 
@@ -17,14 +18,14 @@ type GameState = {
 }
 
 
-export default function OrderQuestionLayout({items}: Props) {
+export default function OrderQuestionLayout({items, onComplete}: Props) {
 
     const initData: GameState = useMemo(() => {
         return {
             items: items.map((item, index) => {
                 return {
-                    id: `${index}`,
-                    text: item
+                    correctPlace: item.correctPlace,
+                    text: item.text
                 }
             })
         }
@@ -58,6 +59,24 @@ export default function OrderQuestionLayout({items}: Props) {
         }
         document.querySelectorAll('.item')[index+1]?.querySelectorAll('button')[1]?.focus();
     }, [moveCard, items]);
+
+    useEffect(() => {
+        console.log(state.items[1]);
+        // .... state.items[].correctPlace
+        // ....
+        // ....
+        // czary mary hokus pokus  
+        // ....
+        // ....
+        // ....
+
+        const isValid = false;
+
+        if (isValid) {
+            onComplete();
+        }
+
+    }, [state, onComplete])
 
     return <div>
             <Box>
