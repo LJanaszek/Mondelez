@@ -1,12 +1,8 @@
-import { element, string } from "prop-types"
-import { GAME_MODULE_ACTION, useGameModuleState } from "../../../../modules/game"
 import { useGameState } from "../../../../modules/game/hooks/use-game-state"
 import { QUESTIONS } from "../../../../modules/game/questions/quest-base"
-import { QuizAnswerDummy, QuizQuestion } from "../../../../modules/game/questions/quiz-questions"
-import { SCENARIO } from "../../../../modules/game/scenario"
 import { GAME_STEP_TYPE } from "../../../../modules/game/types"
-import { GEO_MODULE_ACTION } from "../../../../modules/geo/provider"
 import Box from "../../../layout/box/box"
+import useScenario from "../../../../modules/game/hooks/use-scenario"
 
 type Props = {
     onNext(): void
@@ -14,48 +10,61 @@ type Props = {
 
 export default function SummaryPage({onNext}: Props) {
 
+    const {geoPointsCount, completedGeoPointCount} = useGeoPointResult();
+    const {quizQuestionCount, correctQuizQuestionCount} = useQuizResult();
+
+    return <Box>
+        <p>podsumowanie</p>
+        <p>znalazłeś {completedGeoPointCount} punkty geo na {geoPointsCount}</p>
+        <p>opdowiedziałeś poprawnie na {correctQuizQuestionCount} odpowiedzi quizowych na {quizQuestionCount}</p>
+        <button onClick={onNext}>Dalej</button>
+    </Box>
+}
+
+function useGeoPointResult() {
+
     //szukanie zaliczonych punktów geo
+
     const {completedSteps} = useGameState()
     const GEO_STEP = GAME_STEP_TYPE.GEO_STEP;
-    const type = SCENARIO.steps
+    const scenario = useScenario();
+    const type = scenario.steps
     const GeoStepsList = type
         .filter(step=>step.type===GEO_STEP)
         .filter(step=>completedSteps.includes(step.id))
     const MaximumGeoSteps = type
         .filter(step=>step.type===GEO_STEP)
 
-    //szukanie ilości poprawnych odpowiedzi quizowych
+    return {
+        geoPointsCount: MaximumGeoSteps.length,
+        completedGeoPointCount: GeoStepsList.length
+    }
+}
+
+function useQuizResult() {
 
     //odpowiedzi usera
+
     const {answers} = useGameState()
-    const userAnswersId = 
-    [{
-        id: string,
-        value: string,
-}]
-    answers.forEach(element =>{
-        var userAnswersId = (element.id, element.value)
-    })
+    
     
     //poprawne odpowiedzi
-    const allQuestions = QUESTIONS
-    const correctQuizAnswers = allQuestions.map(x=>x.answers)
-    const correctQuizAnswersID: string[] = []
-    correctQuizAnswers.forEach(element => {
-        for(let i=0; i<element.length; i++){
-        // console.log(element[i].id);
-        if(element[i].isCorrect ){
-            correctQuizAnswersID.push(element[i].id)}
-    }
-    });
     
+    const allQuestions = QUESTIONS
 
-    console.log(userAnswersId, '==========================')
+    const questionsWithCorrectAnswers = allQuestions.map((q) => {
+        return {
+            questionId: q.id,
+            correctAnswer: q.answers.find(a => a.isCorrect)?.id
+        }
+    });
 
-
-    return <Box>
-        <p>podsumowanie</p>
-        <p>znalazłeś {GeoStepsList.length} punkty geo na {MaximumGeoSteps.length}</p>
-        <button onClick={onNext}>Dalej</button>
-    </Box>
+    let p = questionsWithCorrectAnswers.filter((question) => {
+        const userAswer = answers.find(a => a.id === question.questionId);
+        return userAswer?.value === question.correctAnswer;
+    }).length;
+    return {
+        quizQuestionCount: answers.length,
+        correctQuizQuestionCount: p
+    }
 }
