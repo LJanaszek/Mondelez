@@ -8,7 +8,6 @@ const meta = {
   component: FindDiff,
   tags: ['autodocs'],
   argTypes: {
-    onComplete: { action: 'onComplete' }
   }
 } satisfies Meta<typeof FindDiff>;
 

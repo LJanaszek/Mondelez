@@ -1,0 +1,6 @@
+.item{
+    display: inline-flex;
+}
+.itemgroup{
+    display: inline-grid;
+}

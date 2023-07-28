@@ -6,7 +6,7 @@ type Props = {
     onNext(): void
 }
 
-export default function Page8({onNext}: Props) {
+export default function Page22({onNext}: Props) {
     const [showNext, setShowNext] = useState(false);
     return <Box>
         <QuizQuestion id='3' onComplete={() => setShowNext(true)}></QuizQuestion>

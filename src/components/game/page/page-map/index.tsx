@@ -51,6 +51,78 @@ export default function Page_map({onNext}: Props) {
             },
             geoPointId: '4.1',
         },
+        {
+            id: '4',
+            position:{
+                x: 400,
+                y: 400,
+            },
+            geoPointId: '5.1',
+        },
+        {
+            id: '5',
+            position:{
+                x: 500,
+                y: 500,
+            },
+            geoPointId: '6.1',
+        },
+        {
+            id: '6',
+            position:{
+                x: 500,
+                y: 600,
+            },
+            geoPointId: '7.1',
+        },
+        {
+            id: '7',
+            position:{
+                x: 400,
+                y: 500,
+            },
+            geoPointId: '8.1',
+        },
+        {
+            id: '8',
+            position:{
+                x: 300,
+                y: 400,
+            },
+            geoPointId: '9.1',
+        },
+        {
+            id: '9',
+            position:{
+                x: 200,
+                y: 300,
+            },
+            geoPointId: '10.1',
+        },
+        {
+            id: '10',
+            position:{
+                x: 100,
+                y: 200,
+            },
+            geoPointId: '11.1',
+        },
+        {
+            id: '11',
+            position:{
+                x: 500,
+                y: 700,
+            },
+            geoPointId: '12.1',
+        },
+        {
+            id: '12',
+            position:{
+                x: 400,
+                y: 600,
+            },
+            geoPointId: '13.1',
+        },
     ];
     }, []);
 
@@ -86,7 +158,7 @@ export default function Page_map({onNext}: Props) {
             dispatch({
                 type: GAME_MODULE_ACTION.SET_GAME_STEP,
                 payload: {
-                    id: '13.3'
+                    id: '14.3'
                 }
             })
         } 

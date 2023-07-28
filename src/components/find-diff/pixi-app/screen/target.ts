@@ -5,13 +5,16 @@ export default class Target extends PIXI.Container {
     constructor(public id: string) {
         super();
 
+        // Tutaj definiujemy rozmiar obszaru klikalnego.
         const hitArea = new PIXI.Rectangle(-20, -20, 40, 40);
-        this.hitArea = hitArea
+        this.hitArea = hitArea;
 
+        // TO JEST DEBUG...
         const gfx = new PIXI.Graphics();
         gfx.lineStyle(2, 0xFEEB77, 1);
         gfx.drawShape(hitArea);
         this.addChild(gfx);
+        // ...TU SIE KONCZY DEBUG
 
         this.eventMode = 'static';
 

@@ -4,7 +4,6 @@ import styles from './find-diff.module.scss';
 import { ItemData } from "./pixi-app/types";
 
 type Props = {
-    onComplete(): void
     onGameStateChanged(data: FindDiffGameState): void
     targets: ItemData[],
     imgWidth: number,
@@ -25,7 +24,6 @@ export function FindDiff({
     img2src,
     imgWidth,
     imgHeight,
-    onComplete,
     onGameStateChanged
 }: Props) {
     // Ref do kontenera w którym umieścimy Widget PIXI
@@ -65,7 +63,7 @@ export function FindDiff({
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onComplete, setAppReady, targets, img1src, img2src, imgWidth, imgHeight,]);
+    }, [setAppReady, targets, img1src, img2src, imgWidth, imgHeight,]);
 
     return <div className={styles.findDiffComponent} ref={widgetContainerRef}></div>
 }

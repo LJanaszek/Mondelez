@@ -4,9 +4,9 @@ type Props = {
     onNext(): void
 }
 
-export default function Page7({onNext}: Props) {
+export default function Page25({onNext}: Props) {
     return <Box>
-        <p>zrób zdj</p>
+        <p>zrób zdjęcie se</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }
