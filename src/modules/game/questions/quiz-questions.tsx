@@ -79,7 +79,7 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
   // const {answers} = question
   return (
     <div className={styles.question}>
-      <h1>{question.text}</h1>
+      <h1>{question.text} {question.id}</h1>
       <img
         src={question.imgSrc}
         alt=""

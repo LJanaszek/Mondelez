@@ -37,7 +37,207 @@ export const QUESTIONS: IQuizQuestion[] = [
     },
     {
         id:'2',
-        text:'pytanie 2 tresc',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'3',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'4',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'5',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'6',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'7',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'8',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'9',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'10',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'11',
+        text:'pytanie quizowe',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
+    },
+    {
+        id:'12',
+        text:'pytanie quizowe',
         imgSrc: 'http://placekitten.com/400/300',
         description:"",
         answers:[{
@@ -55,6 +255,7 @@ export const QUESTIONS: IQuizQuestion[] = [
             isCorrect: true
         }]
     }
+
 ]
 export interface QuizAnswers{
     id: string,

@@ -278,23 +278,23 @@ export const SCENARIO: GameScenario = {
         {
             id: '13.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-24',
+            pageId: 'page-26',
             nextStep: '13.3'
         },
         {
             id: '13.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-25', //tekst
+            pageId: 'page-27', //tekst
             nextStep: '1.1'
         },
         {
-            id: '14.2',
+            id: 'timer-page-end',
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-time-end',
             nextStep: '15.1'
         },
         {
-            id: '14.3',
+            id: 'game-complete',
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'game-complete',
             nextStep: '15.1'

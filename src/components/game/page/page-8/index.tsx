@@ -10,6 +10,6 @@ export default function Page8({onNext}: Props) {
     const [showNext, setShowNext] = useState(false);
     return <Box>
         <QuizQuestion id='3' onComplete={() => setShowNext(true)}></QuizQuestion>
-        <button onClick={onNext}>Dalej</button>
+        {showNext && <button onClick={onNext}>Dalej</button>}
     </Box>
 }

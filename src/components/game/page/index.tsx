@@ -30,6 +30,8 @@ const Page22 = lazy(() => import('./page-22'));
 const Page23 = lazy(() => import('./page-23'));
 const Page24 = lazy(() => import('./page-24'));
 const Page25 = lazy(() => import('./page-25'));
+const Page26 = lazy(() => import('./page-26'));
+const Page27 = lazy(() => import('./page-27'));
 const SummaryPage = lazy(() => import('./summary-page'));
 const GameComplete = lazy(() => import('./game-complete'));
 const PageTimeEnd = lazy(() => import('./page-time-end'));
@@ -102,6 +104,10 @@ export default function PageView({ id }: Props) {
                 return <Page24 onNext={onNext} />
             case 'page-25':
                 return <Page25 onNext={onNext} />
+            case 'page-26':
+                return <Page26 onNext={onNext} />
+            case 'page-27':
+                return <Page27 onNext={onNext} />
             case 'summary-page':
                 return <SummaryPage onNext={onNext} />
             case 'game-complete':

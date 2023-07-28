@@ -11,7 +11,8 @@ export interface ForImg{
 export default function Page4({onNext}: Props, {images}:ForImg,) {
     return <Box>
         <p>zadanie 1</p>
-        <p>tekst z zadaniem</p>
+        <p>Zepsuło się koło - zrób foto poradnik pokazujący krok po kroku wyjęcie, sprawdzenie i odłożenie dojazdówki i sprzętów potrzebnych do wymiany koła - do pokazania z telefonu na finale
+</p>
 
 
         <button onClick={onNext}>Dalej</button>

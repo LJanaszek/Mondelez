@@ -6,7 +6,7 @@ type Props = {
 
 export default function Page9({onNext}: Props) {
     return <Box>
-        <p>sos</p>
+        <p>Przycisk SOS - wybierz wszystkie sytuacje, w których należy skorzystać z przycisku</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }

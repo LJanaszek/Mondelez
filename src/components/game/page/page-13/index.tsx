@@ -6,7 +6,9 @@ type Props = {
 
 export default function Page13({onNext}: Props) {
     return <Box>
-        <p>jak duże masz</p>
+        <p>Jak duże masz? - oszacuj i zapamiętaj  jak duże są obiekty bezpieczeństwa w twoim pojeździe: gaśnica, trójkąt i kamizelka. 
+po zadaniu: sprawdź datę ważności gaśnicy i włóż kamizelkę w drzwi kierowcy 
+</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }

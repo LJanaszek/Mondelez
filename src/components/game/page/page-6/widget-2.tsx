@@ -3,8 +3,8 @@ import { useReducer } from "react"
 import Select from 'react-select';
 import style from "./style.module.css";
 type Props = {
-    relations: string[],
-    interpretations: string[]
+    itemDescriptions: string[],
+    itemNames: string[]
 }
 
 type Item = {
@@ -24,7 +24,7 @@ type GameState = {
     slots: Slot[]
 }
 
-export default function Page92Widget2({ relations, interpretations }: Props) {
+export default function Page92Widget2({ itemDescriptions, itemNames }: Props) {
     const [state, moveItem] = useReducer((state: GameState, action: { itemId: string, slotId: string }) => {
         const item = state.items.find(i => i.id === action.itemId);
         const slot = state.slots.find(s => s.id === action.slotId);
@@ -57,20 +57,20 @@ export default function Page92Widget2({ relations, interpretations }: Props) {
                 id: 'blank',
                 text: '---'
             },
-            ...interpretations.map((r, index) => {
+            ...itemNames.map((r, index) => {
                 return {
                     id: `i${index}`,
                     text: r
                 }
             })],
-        slots: relations.map((r, index) => {
+        slots: itemDescriptions.map((r, index) => {
             return {
                 id: `s${index}`,
                 title: r,
                 item: null
             }
         }),
-        unselected: ['blank', ...interpretations.map((r, index) => `i${index}`)]
+        unselected: ['blank', ...itemNames.map((r, index) => `i${index}`)]
     });
 
     return <div className={style.container}>

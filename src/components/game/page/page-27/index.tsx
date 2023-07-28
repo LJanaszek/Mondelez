@@ -4,11 +4,10 @@ type Props = {
     onNext(): void
 }
 
-export default function Page25({onNext}: Props) {
+export default function Page27({onNext}: Props) {
     return <Box>
-        <p>Zadanie Zrób zdjęcie
-miejsca gdzie byłeś
-z rozłożonym hakiem
+        <p>Zadanie Znalezienie schowków, miejsc do mocowania bagaży, zamocowanie reklamówki lub
+przedmiotu
 </p>
         <button onClick={onNext}>Dalej</button>
     </Box>

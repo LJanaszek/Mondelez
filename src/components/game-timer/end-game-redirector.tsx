@@ -10,7 +10,7 @@ export function EndGameRedirector(){
             dispatch({
                 type: GAME_MODULE_ACTION.SET_GAME_STEP,
                 payload: {
-                    id: '13.2'
+                    id: 'timer-end-page'
                 }
             })
         } 
