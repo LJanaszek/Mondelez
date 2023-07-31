@@ -4,9 +4,9 @@ type Props = {
     onNext(): void
 }
 
-export default function Page1({onNext}: Props) {
+export default function Page7({onNext}: Props) {
     return <Box>
-        <p>brawo znalazłeś 3 punkty</p>
+        <p>zademonstruj na zdjęciu prawidłowo ustawioną pozycję kierowcy za kierownicą, ma to być zdjęcie instruktażowe dla osoby, która nie wie jak zająć prawidłową pozycję za kierownicą.</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }

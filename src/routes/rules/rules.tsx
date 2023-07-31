@@ -39,7 +39,7 @@ export default function RulesPage() {
             </ButtonsRow>
         </Box>
 
-        {showGPSInfo && <Popup onClick={goToGame}>
+        {showGPSInfo && <Popup onOKClick={goToGame}>
             <p>
                 Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry. Udziel dostępu, jeśli zostaniesz o to poproszony.
             </p>

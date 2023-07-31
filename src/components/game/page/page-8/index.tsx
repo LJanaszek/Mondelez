@@ -1,12 +1,15 @@
+import { useState } from "react";
+import { QuizQuestion } from "../../../../modules/game/questions/quiz-questions"
 import Box from "../../../layout/box/box"
 
 type Props = {
     onNext(): void
 }
 
-export default function Page1({onNext}: Props) {
+export default function Page8({onNext}: Props) {
+    const [showNext, setShowNext] = useState(false);
     return <Box>
-        <p>coś z tekstem 8 strony</p>
-        <button onClick={onNext}>Dalej</button>
+        <QuizQuestion id='3' onComplete={() => setShowNext(true)}></QuizQuestion>
+        {showNext && <button onClick={onNext}>Dalej</button>}
     </Box>
 }

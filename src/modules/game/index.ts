@@ -5,22 +5,36 @@ import { GameScenario } from "./types";
 
 const GAME_MODULE_LS_KEY = 'raszyn:game-v3'
 
+export type GameState = {
+    // name: string,
+    completedSteps: string[],
+    startGameTime: number | null,
+    answers: {
+        id: string,
+        value: any
+    }[]
+}
+
 export type GameModuleState = {
     scenario: GameScenario,
     activeGameStep?: string,
-    completedSteps: string[],
     gameStarted: boolean,
     gameComplete: boolean,
     ignoreAccuracy: boolean
+    gameState: GameState;
 }
 
 export const initGameModuleState: GameModuleState = {
     scenario: SCENARIO,
     activeGameStep: SCENARIO.startStep,
-    completedSteps: [],
     gameStarted: false,
     gameComplete: false,
     ignoreAccuracy: false,
+    gameState: {
+        startGameTime: null,
+        answers: [],
+        completedSteps: [],
+    }
 }
 
 
@@ -32,7 +46,8 @@ export enum GAME_MODULE_ACTION {
     SET_GAME_STEP,
     END_GAME,
     COMPLETE_STEP,
-    PLACE_DEBUG_POINTS
+    PLACE_DEBUG_POINTS,
+    SAVE_ANSWER
 }
 
 export type GameModuleAction = {

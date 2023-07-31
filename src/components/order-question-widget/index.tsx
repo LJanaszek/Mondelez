@@ -1,26 +1,15 @@
-import React, { useCallback, useMemo, useReducer } from "react";
-import Box from "../../../../layout/box/box";
-import NiceButton from "../../../../nice-button copy";
-import { Style } from "@material-ui/icons";
+import React, { useCallback, useEffect, useMemo, useReducer } from "react";
+import Box from "../layout/box/box";
 import { Card } from "./card";
 import style from "./style.module.css"
-//@ts-ignore
-import { useNavigate } from "react-router";
-import ColumnLayout from '../../../../column-layout';
-import { MAIN_MODULE_ACTION, useMainModuleDispatch } from "../../../../../modules/main";
 
 type Props = {
-    previous: string,
-    previousLabel?: string,
-    next: string,
-    nextLabel?: string,
-    questionId: string,
-    instruction: string,
-    items: string[]
+    items: {text: string, correctPlace: number}[],
+    onComplete(): void
 }
 
 type Item = {
-    id: string,
+    correctPlace: number,
     text: string
 }
 
@@ -29,14 +18,14 @@ type GameState = {
 }
 
 
-export default function OrderQuestionLayout({ previous, previousLabel, next, nextLabel, items, questionId, instruction }: Props) {
+export default function OrderQuestionLayout({items, onComplete}: Props) {
 
     const initData: GameState = useMemo(() => {
         return {
             items: items.map((item, index) => {
                 return {
-                    id: `${index}`,
-                    text: item
+                    correctPlace: item.correctPlace,
+                    text: item.text
                 }
             })
         }
@@ -55,22 +44,7 @@ export default function OrderQuestionLayout({ previous, previousLabel, next, nex
     const moveCard = useCallback((dragIndex: number, hoverIndex: number) => {
         itemMove({ dragIndex, hoverIndex })
     }, []);
-
-    const dispatch = useMainModuleDispatch();
-    const navigate = useNavigate();
-    const onNext = useCallback((e: React.MouseEvent) => {
-        e.preventDefault();
-        state.items.forEach((item, index) => {
-            dispatch({
-                type: MAIN_MODULE_ACTION.SAVE_ANSWER,
-                payload: {
-                    questionId: `${questionId}-${index}`,
-                    answer: item.id,
-                }
-            });
-        })
-        navigate(next);
-    }, [dispatch, state, navigate, next, questionId]);
+    
 
     const moveUp = useCallback((index: number) => {
         if (index > 0) {
@@ -86,13 +60,26 @@ export default function OrderQuestionLayout({ previous, previousLabel, next, nex
         document.querySelectorAll('.item')[index+1]?.querySelectorAll('button')[1]?.focus();
     }, [moveCard, items]);
 
-    return <ColumnLayout
-        // left={<NiceButton to={previous} label={previousLabel || 'Wróć'} />}
-        // right={<NiceButton to={next} label={nextLabel || 'Dalej'} onClick={onNext} />}
-    >
-        <div>
+    useEffect(() => {
+        console.log(state.items[1]);
+        // .... state.items[].correctPlace
+        // ....
+        // ....
+        // czary mary hokus pokus  
+        // ....
+        // ....
+        // ....
+
+        const isValid = false;
+
+        if (isValid) {
+            onComplete();
+        }
+
+    }, [state, onComplete])
+
+    return <div>
             <Box>
-                <p>{instruction}</p>
                 <div aria-live='assertive' className={style.itemgroup}>
                     {
                         state.items.map((item, index) => {
@@ -122,7 +109,6 @@ export default function OrderQuestionLayout({ previous, previousLabel, next, nex
                 </div>
             </Box>
         </div>
-    </ColumnLayout>
 }
 
 

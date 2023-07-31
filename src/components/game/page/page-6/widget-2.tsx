@@ -1,10 +1,19 @@
 import { Style } from "@material-ui/icons";
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import Select from 'react-select';
 import style from "./style.module.css";
+
 type Props = {
-    relations: string[],
-    interpretations: string[]
+    itemDescriptions: {
+        id: string,
+        text: string,
+        nameId: string
+    }[],
+    itemNames: {
+        id: string,
+        text: string
+    }[],
+    onComplete(): void
 }
 
 type Item = {
@@ -24,7 +33,7 @@ type GameState = {
     slots: Slot[]
 }
 
-export default function Page92Widget2({ relations, interpretations }: Props) {
+export default function Page92Widget2({ itemDescriptions, itemNames, onComplete }: Props) {
     const [state, moveItem] = useReducer((state: GameState, action: { itemId: string, slotId: string }) => {
         const item = state.items.find(i => i.id === action.itemId);
         const slot = state.slots.find(s => s.id === action.slotId);
@@ -52,26 +61,61 @@ export default function Page92Widget2({ relations, interpretations }: Props) {
 
         return state;
     }, {
+        // Lista wszystkich elementów do wyboru (imetName) + pusty element
         items: [
             {
                 id: 'blank',
                 text: '---'
             },
-            ...interpretations.map((r, index) => {
+            ...itemNames.map((itemName) => {
                 return {
-                    id: `i${index}`,
-                    text: r
+                    id: itemName.id,
+                    text: itemName.text
                 }
             })],
-        slots: relations.map((r, index) => {
+
+        // Lista wszystkich opisów - w polu `item` jest wybrana nazwa
+        slots: itemDescriptions.map((itemDescription) => {
             return {
-                id: `s${index}`,
-                title: r,
+                id: itemDescription.id,
+                title: itemDescription.text,
                 item: null
             }
         }),
-        unselected: ['blank', ...interpretations.map((r, index) => `i${index}`)]
+
+        // Lista wszystkich jescze nie przypisanych nazw
+        unselected: [
+            'blank', 
+            ...itemNames.map((itemName) => itemName.id)
+        ]
     });
+
+    useEffect(() => {
+
+        const answersInState: {
+            descriptionId: string,
+            nameId: string | undefined
+        }[] = state.slots.map((slot) => {
+            return {
+                descriptionId: slot.id,
+                nameId: slot.item?.id
+            };
+        });
+
+        console.log({answersInState, itemDescriptions});
+
+        const isValid = itemDescriptions.every((description) => {
+            const userAnswer = answersInState.find(a => a.descriptionId === description.id);
+
+            return userAnswer?.nameId === description.nameId;
+        });
+
+        console.log({isValid});
+
+        if (isValid) {
+            onComplete();
+        }
+    }, [state, onComplete, itemDescriptions]);
 
     return <div className={style.container}>
         <div className={style.grid}>

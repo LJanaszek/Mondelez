@@ -42,7 +42,7 @@ export default function useCompassView(steps: GeoStep[]) : CompassViewData {
 
     const activePointsWithData = useMemo(() => activePoints.map(point => {
         const distance = (() => {
-            if (!position || !point) return Infinity;
+            if (!position || !point?.position) return Infinity;
 
             return getDistance(position, point.position) * 1000;
         })();

@@ -10,6 +10,7 @@ import { GeoModuleProvider } from "../../../../modules/geo";
 import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
 import GameErrorPage from "../../../../routes/game/error";
 import MultiPointCompassViewContent from "./content";
+import { useGameState } from "../../../../modules/game/hooks/use-game-state";
 
 
 /**
@@ -31,7 +32,7 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
 }
 
 function useMultiGeoViewData(stepId: string) {
-    const {completedSteps} = useGameModuleState();
+    const {completedSteps} = useGameState();
     const step = useMultiGeoStep(stepId)
     const scenario = useScenario();
     const finishStep = useFinishGameStep();

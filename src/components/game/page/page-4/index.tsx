@@ -10,19 +10,9 @@ export interface ForImg{
 } 
 export default function Page4({onNext}: Props, {images}:ForImg,) {
     return <Box>
-        <p>zadanie 4</p>
-            {IMAGES.map(a => {
-                            return <div key={a.id} className={styles.task_4}>
-                                <div className={styles.choice}>
-                                {IMAGES.map(y =>{
-                                    return <button className={styles.btn}>{y.id}</button>
-                                })}
-                                </div>
-                                <div className={styles.images}>
-                                <img src={a.imgSrc} alt={a.text} />                              
-                                </div>
-                            </div>
-                        })}
+        <p>zadanie 1</p>
+        <p>Zepsuło się koło - zrób foto poradnik pokazujący krok po kroku wyjęcie, sprawdzenie i odłożenie dojazdówki i sprzętów potrzebnych do wymiany koła - do pokazania z telefonu na finale
+</p>
 
 
         <button onClick={onNext}>Dalej</button>

@@ -4,9 +4,9 @@ type Props = {
     onNext(): void
 }
 
-export default function Page1({onNext}: Props) {
+export default function Page9({onNext}: Props) {
     return <Box>
-        <p>coś z tekstem 9 strony</p>
+        <p>Przycisk SOS - wybierz wszystkie sytuacje, w których należy skorzystać z przycisku</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }

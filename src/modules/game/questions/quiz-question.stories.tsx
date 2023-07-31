@@ -19,6 +19,7 @@ export const Base: Story = {
     question: {
         id:'1',
         text: 'cos',
+        description:"",
         answers: [{
           id:'1',
             text:'o1'
@@ -46,6 +47,7 @@ export const WithImg: Story = {
           id:'1',
           text: 'cos',
           imgSrc: 'http://placekitten.com/800/600',
+          description:"",
           answers: [{
             id:'1',
               text:'o1'
@@ -72,6 +74,7 @@ export const WithImg: Story = {
             id:'1',
             text: 'cos',
             imgSrc: 'http://placekitten.com/800/600',
+            description:"",
             answers: []
         }
       },
