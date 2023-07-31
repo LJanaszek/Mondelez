@@ -61,19 +61,17 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
     }, [moveCard, items]);
 
     useEffect(() => {
-        // let i = 0;
-        let isValid = false;
-        let score = 0;
-        for (let i = 0; i< items.length; i++){
-            if(state.items[i].correctPlace===i){
-                // console.log('bueno ====================', state.items[i].correctPlace);
-                score = score+1
-            }
-        }    
+        console.log(state.items[1]);
+        // .... state.items[].correctPlace
+        // ....
+        // ....
+        // czary mary hokus pokus  
+        // ....
+        // ....
+        // ....
 
-        if (score==state.items.length){
-            isValid = true;
-        }
+        const isValid = false;
+
         if (isValid) {
             onComplete();
         }
