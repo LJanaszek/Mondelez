@@ -94,7 +94,6 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
                 <input
                   type="radio"
                   value={a.id}
-                  // onClick={a.isCorrect ? afterCorrectanswer : afterIncorrectanswer}
                   {...register("an")}
                 />
                 <div className={a.isCorrect ? styles.ans : styles.ans}>

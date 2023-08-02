@@ -66,7 +66,6 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
         let score = 0;
         for (let i = 0; i< items.length; i++){
             if(state.items[i].correctPlace===i){
-                // console.log('bueno ====================', state.items[i].correctPlace);
                 score = score+1
             }
         }    
