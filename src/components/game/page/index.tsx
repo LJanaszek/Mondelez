@@ -35,7 +35,7 @@ const Page27 = lazy(() => import('./page-27'));
 const SummaryPage = lazy(() => import('./summary-page'));
 const GameComplete = lazy(() => import('./game-complete'));
 const PageTimeEnd = lazy(() => import('./page-time-end'));
-const Page_map = lazy(() => import('./page-map'));
+const PageMap = lazy(() => import('./page-map'));
 
 type Props = {
     id: string
@@ -115,7 +115,7 @@ export default function PageView({ id }: Props) {
             case 'page-time-end':
                 return <PageTimeEnd onNext={onNext} />
             case 'page-map':
-                return <Page_map onNext={onNext} />
+                return <PageMap onNext={onNext} />
             default:
                 return <PagePlaceholder onNext={onNext} />
         }

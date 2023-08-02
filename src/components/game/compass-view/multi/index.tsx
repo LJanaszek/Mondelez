@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import CompassDebugTools from "../../../dev/compass-debug-tools/compass-debug-tools";
 import { useConfigModuleState } from "../../../../modules/config";
-import { useGameModuleState } from "../../../../modules/game";
 import useFinishGameStep from "../../../../modules/game/hooks/use-finish-game-step";
 import useMultiGeoStep from "../../../../modules/game/hooks/use-multi-geo-step";
 import useScenario from "../../../../modules/game/hooks/use-scenario";

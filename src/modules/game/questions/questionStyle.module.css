@@ -22,9 +22,6 @@ main{
 input{
     display: none;
 }
-input, label{
-    background-color: blueviolet;
-}
 input:checked + .ans{
     background: grey;
     transition: .5s;

@@ -237,6 +237,26 @@ export const QUESTIONS: IQuizQuestion[] = [
             text: 'odp4',
             isCorrect: true
         }]
+    },
+    {
+        id:'zadanieQuiz',
+        text:'zadanie matematyczne, oblicz o ile różni się spalanie auta Janusza z i bez włączonego systemu. założenia: miesięcznie przejeżdżane km - 2500 km,',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'odp1'
+        },{
+            id: '2',
+            text: 'odp2'
+        },{
+            id: '3',
+            text: 'odp3'
+        },{
+            id: '4',
+            text: 'odp4',
+            isCorrect: true
+        }]
     }
 
 ]

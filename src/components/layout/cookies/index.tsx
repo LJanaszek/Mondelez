@@ -1,11 +1,10 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { CookiesInfo } from "./cookies";
 
 const LS_KEY = 'cookiesInfo2'
 
 export function CookiesInfoComponent() {
-    const [showCookies, setShowCookies] = useState<boolean>(!Boolean(localStorage.getItem(LS_KEY)));
-    const okRef = useRef<HTMLButtonElement>(null);
+    const [showCookies, setShowCookies] = useState<boolean>(!Boolean(localStorage.getItem(LS_KEY)))
 
     const closeCookies = useCallback(() => {
         localStorage.setItem(LS_KEY, '1');

@@ -1,8 +1,7 @@
 import { useState } from "react"
-import { IMAGES, ImagesBase } from "../../../../modules/game/images/images-base"
+import {ImagesBase } from "../../../../modules/game/images/images-base"
 import { Popup } from "../../../../molecules/popup/popup"
 import Box from "../../../layout/box/box"
-import styles from "../style.module.css"
 
 type Props = {
     onNext(): void

@@ -1,7 +1,6 @@
 import { useState } from "react"
 import Box from "../../../../components/layout/box/box"
 import { QuizQuestion } from "../../../../modules/game/questions/quiz-questions"
-import styles from "../style.module.css"
 type Props = {
     onNext(): void
 }

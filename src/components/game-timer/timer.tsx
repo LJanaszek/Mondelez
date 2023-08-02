@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { useGameState } from "../../modules/game/hooks/use-game-state";
 import { useTimeToEnd } from "../../modules/game/hooks/use-time-to-end";
 
 

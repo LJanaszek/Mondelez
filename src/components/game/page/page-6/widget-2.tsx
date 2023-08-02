@@ -1,4 +1,3 @@
-import { Style } from "@material-ui/icons";
 import { useEffect, useReducer } from "react"
 import Select from 'react-select';
 import style from "./style.module.css";

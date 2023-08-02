@@ -1,3 +1,4 @@
+import { QuizQuestionTask } from "../../../../modules/game/questions/quiz-question-task"
 import Box from "../../../layout/box/box"
 
 type Props = {
@@ -6,7 +7,7 @@ type Props = {
 
 export default function Page15({onNext}: Props) {
     return <Box>
-        <p>START/STOP - zadanie matematyczne, oblicz o ile różni się spalanie auta Janusza z i bez włączonego systemu. założenia: miesięcznie przejeżdżane km - 2500 km,</p>
+        <QuizQuestionTask id="zadanieQuiz"></QuizQuestionTask>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }

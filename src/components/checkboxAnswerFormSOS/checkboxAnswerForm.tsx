@@ -37,7 +37,7 @@ export default function CheckboxAnswerForm({ items, onComplete }: Props, count: 
                     <p className={styles.questionText}>{a.text}</p>
                     <form className={styles.singleRowRadio}>
                         
-                        <label className={styles.singleInputLabel}>mam
+                        <label className={styles.singleInputLabel}>prawda
                             <input type="radio"
                                 id={a.id}
                                 value={a.id}
@@ -46,7 +46,7 @@ export default function CheckboxAnswerForm({ items, onComplete }: Props, count: 
                             /></label><br />
 
 
-                        <label>nie mam
+                        <label>fałsz
                             <input type="radio"
                                 id={a.id}
                                 value={a.id}

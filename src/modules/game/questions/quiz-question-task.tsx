@@ -16,7 +16,7 @@ export interface Props {
  * Jeżeli user nie odpowiedział jeszcze na to pytanie to pokazujemy <QuizQuestionDummy>
  * Jezeli user opdpiwedział na pytanie to pokazujemy podsumowanie pytania
  */
-export function QuizQuestion({ id, onComplete }: Props) {
+export function QuizQuestionTask({ id, onComplete }: Props) {
   const q = useQuestion(id);
   const answer = useAnswer(id);
 
@@ -129,17 +129,6 @@ export function QuizAnswerDummy({question, userAnswerId}: QuizAnswerDummyProps){
   const isUserAnswerCorrect: boolean = (correctQuizAnswer?.id === userQuizAnswer?.id); //tutaj ma być sprawdzenie czy user wybral poprawną odpwiedz
   const correctAnswerText: string = correctQuizAnswer?.text || 'Błąd danych'; 
   const questionDescription: string = question.description;
-
-
-
-  return <div>
-    <p>Twoja odpowiedz to: {userAnswerText}</p>
-
-    {isUserAnswerCorrect && <p>SUPER!</p>}
-    {!isUserAnswerCorrect && <div>
-      <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
-      <p>Poniewaz: {questionDescription}</p>
-    </div>}
-  </div>
+  return <></>
 }
 
