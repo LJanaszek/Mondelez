@@ -70,7 +70,7 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
             }
         }    
 
-        if (score==state.items.length){
+        if (score===state.items.length){
             isValid = true;
         }
         if (isValid) {

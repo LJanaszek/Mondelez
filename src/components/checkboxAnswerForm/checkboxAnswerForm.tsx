@@ -1,9 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useReducer } from "react";
-import Box from "../layout/box/box";
+import React, { useCallback, useMemo, useReducer } from "react";
 import styles from "./style.module.css"
-import { Card } from "../order-question-widget/card";
 import { useForm } from "react-hook-form";
-import { string } from "prop-types";
 
 type Props = {
     items: {
@@ -23,7 +20,7 @@ type GameState = {
 
 export default function CheckboxAnswerForm({ items, onComplete }: Props, count: number) {
     let isValid = false;
-    const { register, watch } = useForm();
+    const { register} = useForm();
     const initData: GameState = useMemo(() => {
         return {
             items: items.map((item) => {
