@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ComponentProps, PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import styles from './buttons-row.module.scss';
 import React from "react";
 

@@ -3,7 +3,7 @@ import { getPolicyRoute } from "../../../routes/routes";
 import styles from './cookies.module.scss';
 import { ButtonsRow } from "../../../atoms/buttons-row/buttons-row";
 
-const LS_KEY = 'cookiesInfo2'
+// const LS_KEY = 'cookiesInfo2'
 
 export interface Props {
     closeCookies?(): void;

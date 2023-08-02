@@ -77,7 +77,7 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
             onComplete();
         }
 
-    }, [state, onComplete])
+    }, [state, onComplete, items.length])
 
     return <div>
             <Box>

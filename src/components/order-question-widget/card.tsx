@@ -1,5 +1,3 @@
-import { useCallback, useRef } from "react"
-
 const style = {
     width: '100%'
 }
