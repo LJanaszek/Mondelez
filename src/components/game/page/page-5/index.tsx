@@ -1,5 +1,7 @@
+import { useCallback, useState } from "react";
 import Box from "../../../layout/box/box"
-import OrderQuestionLayout from "../../../order-question-widget"
+import OrderQuestionLayoutWIthImg from "../../../order-question-widget-for-img"
+import { Popup } from "../../../../molecules/popup/popup";
 
 type Props = {
     onNext(): void
@@ -7,20 +9,30 @@ type Props = {
 
 
 export default function Page5({onNext}: Props) {
+    const [showPopup, setShowPopup] = useState<boolean>(false);
+    const onClosePopupClicked = useCallback(() => {
+        setShowPopup(false);
+        setShowIncor(false)
+    }, [setShowPopup]);
+    const [showNext, setShowNext] = useState(false);
+    const [showOnIncor, setShowIncor] = useState(false);
     return <Box>
-        <OrderQuestionLayout
+        <OrderQuestionLayoutWIthImg
         items={[
-            {correctPlace: 6, text: "TO JEST STRONA 5 - Wysoki wynik egzaminu kończącego szkołę podstawową.",},
-            {correctPlace: 5, text: "TO JEST STRONA 5 - Rozwijanie pasji/hobby.",},
-            {correctPlace: 4, text: "TO JEST STRONA 5 - Komfort psychiczny.",},
-            {correctPlace: 3, text: "TO JEST STRONA 5 - Akceptacja i uznanie kolegów i koleżanek.",},
-            {correctPlace: 2, text: "TO JEST STRONA 5 - Wypoczynek.",},
-            {correctPlace: 1, text: "TO JEST STRONA 5 - Rozrywka.",},
-            {correctPlace: 0, text: "TO JEST STRONA 5 - Poczucie niezależności.",}
+            {correctPlace: 0, text: "http://placekitten.com/200/100",},
+            {correctPlace: 2, text: "http://placekitten.com/201/100",},
+            {correctPlace: 1, text: "http://placekitten.com/200/102",},
         ]}
-        onComplete={() => {console.log('X    SUPER!!!!')}}
+        onComplete={() => {setShowNext(true)}}
+        onInComplete={()=>{setShowIncor(true); setShowPopup(true)}}
     />
-        <button onClick={onNext}>Dalej</button>
+        {showNext&&<Popup>
+            <p>BRAWO</p>
+            <button onClick={onNext}>DALEJ</button>
+        </Popup>}
+        {showOnIncor && showPopup && <Popup><p>ŹLE</p>
+        <button onClick={onClosePopupClicked}>DALEJ</button>
+        </Popup>}
         </Box>
 
         
