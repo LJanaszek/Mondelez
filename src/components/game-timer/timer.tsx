@@ -1,7 +1,5 @@
 import { useTimeToEnd } from "../../modules/game/hooks/use-time-to-end";
 
-
-
 export function Timer (){
     const timeToShow = useTimeToEnd()
     if(!timeToShow){
@@ -17,6 +15,9 @@ export function Timer (){
     const secundsText: string = secundsToShow>=10 ? ''+secundsToShow : '0'+secundsToShow;
 
     // Math.floor
-    
-    return <p>Czas: {minutesText}:{secundsText}</p>
+    if(minutesToShow >=0 && secundsToShow>0){
+        return <p>Czas: {minutesText}:{secundsText}</p>}
+    else{
+        return <p>koniec czasu</p>
+    }
 }

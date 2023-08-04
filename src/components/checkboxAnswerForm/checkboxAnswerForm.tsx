@@ -37,22 +37,31 @@ export default function CheckboxAnswerForm({ items, onComplete }: Props, count: 
                     <p className={styles.questionText}>{a.text}</p>
                     <form className={styles.singleRowRadio}>
                         
-                        <label className={styles.singleInputLabel}>mam
+                        <label className={styles.singleInputLabel}>
+                        
                             <input type="radio"
                                 id={a.id}
                                 value={a.id}
                                 {...register(a.id)}
                                 onClick={checking}
-                            /></label><br />
+                            />
+                            <div className={styles.singleRadio}>
+                            mam
+                            </div>
+                            </label><br />
 
 
-                        <label>nie mam
+                        <label className={styles.singleInputLabel}>
+                        
                             <input type="radio"
                                 id={a.id}
                                 value={a.id}
                                 {...register(a.id)}
                                 onClick={checking}
-                            /></label><br />
+                            />
+                            <div className={styles.singleRadio}>
+                            nie mam
+                            </div></label><br />
                     </form>
                 </div>
             })}

@@ -1,0 +1,28 @@
+/* .radio{
+    display: flex;
+}
+.answerRadio{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3em;
+}
+.singleRadio{
+    margin: 0 1em ;
+    display: inline-flex;
+    /* position: absolute; 
+}*/
+.questionText{
+    width: 40%;
+} 
+.singleRowRadio{
+    display: flex;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+}
+.singleRowAll{
+    display: flex;
+}
+.singleInputLabel{
+    margin: 0 2em;;
+}

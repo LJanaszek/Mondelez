@@ -288,19 +288,13 @@ export const SCENARIO: GameScenario = {
             nextStep: '1.1'
         },
         {
-            id: 'timer-page-end',
-            type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-time-end',
-            nextStep: '15.1'
-        },
-        {
             id: 'game-complete',
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'game-complete',
             nextStep: '15.1'
         },
         {
-            id: '15.1',
+            id: 'summary-page',
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'summary-page',
             nextStep: null

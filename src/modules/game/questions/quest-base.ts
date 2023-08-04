@@ -42,13 +42,13 @@ export const QUESTIONS: IQuizQuestion[] = [
         description:"",
         answers:[{
             id:'1',
-            text:'odp1'
+            text:'115 g/km = 8695 km'
         },{
             id: '2',
-            text: 'odp2'
+            text: '162 g/km = 6172 km '
         },{
             id: '3',
-            text: 'odp3'
+            text: '148 g/km = 6756 km'
         },{
             id: '4',
             text: '133 g/km = 7518 km',
@@ -59,7 +59,7 @@ export const QUESTIONS: IQuizQuestion[] = [
         id:'3',
         text:'Czy kierując samochodem osobowym w tunelu o długości 600 m położonym w obszarze zabudowanym, masz obowiązek utrzymywać odstęp od poprzedzającego pojazdu nie mniejszy niż 50 metrów?',
         imgSrc: 'http://placekitten.com/400/300',
-        description:"",
+        description:"Obowiązek zachowania odstępu co najmniej 50 m, mamy w tunelach, których długość przekracza 500 i znajdują się poza obszarem zabudowanym.",
         answers:[{
             id:'1',
             text:'Tak, ale prowadząc samochód o masie całkowitej przekraczającej 2,5 tony.'
@@ -70,13 +70,16 @@ export const QUESTIONS: IQuizQuestion[] = [
         },{
             id: '3',
             text: 'Tak.'
+        },{
+            id: '4',
+            text: 'jakas odpowiedz'
         }]
     },
     {
         id:'4',
         text:'Jedziesz z prędkością 80 km/h. Jaka pozycja początkowa zapewni Ci optymalny tor jazdy po zakręcie?',
         imgSrc: 'http://placekitten.com/400/300',
-        description:"W przedstawionej sytuacji prawidłową będzie pozycja przy linii rozdzielającej pasy ruchu na prawej połowie jezdni. Uzasadnienie tej odpowiedzi znajdziemy analizując optymalny tor jazdy na zakręcie. Generalna zasada doboru optymalnego toru jazdy polega na wykonaniu tego manewru po możliwie łagodnym łuku. Pokonanie tego konkretnego zakrętu powinno się rozpocząć możliwie blisko podwójnej linii ciągłej. W połowie łuku należy się zbliżyć do prawej krawędzi jezdni (szczyt zakrętu), a wyjście z zakrętu powinno zakończyć się znowu przy osi jezdni. Prawidłowa pozycja początkowa daje kierowcy również szersze pole widzenia zakrętu co pozwoli możliwie szybko zareagować na zagrożenie, które może znajdować się za łukiem drogi. Dodatkowym elementem o którym należy wspomnieć w aspekcie pokonywania zakrętów - po możliwie łagodnym łuku - jest ograniczenie działania siły odśrodkowej. Siła odśrodkowa działająca na pojazd jest główną przyczyną poślizgów występujących na łukach drogi.",
+        description:"Generalna zasada doboru optymalnego toru jazdy polega na wykonaniu tego manewru po możliwie łagodnym łuku. Pokonanie tego konkretnego zakrętu powinno się rozpocząć możliwie blisko podwójnej linii ciągłej. W połowie łuku należy się zbliżyć do prawej krawędzi jezdni (szczyt zakrętu), a wyjście z zakrętu powinno zakończyć się znowu przy osi jezdni. Prawidłowa pozycja początkowa daje kierowcy również szersze pole widzenia zakrętu co pozwoli możliwie szybko zareagować na zagrożenie, które może znajdować się za łukiem drogi. Dodatkowym elementem o którym należy wspomnieć w aspekcie pokonywania zakrętów - po możliwie łagodnym łuku - jest ograniczenie działania siły odśrodkowej. Siła odśrodkowa działająca na pojazd jest główną przyczyną poślizgów występujących na łukach drogi.",
         answers:[{
             id:'1',
             text:'Na środku drogi, z częściowym przekroczeniem widocznej linii.'
@@ -87,6 +90,9 @@ export const QUESTIONS: IQuizQuestion[] = [
             id: '3',
             text: 'Przy linii rozdzielającej pasy ruchu - na prawej połowie jezdni.',
             isCorrect: true
+        },{
+            id: '4',
+            text: 'jakas odp.',
         }]
     },
     {
@@ -114,7 +120,7 @@ export const QUESTIONS: IQuizQuestion[] = [
         id:'6',
         text:'Czy w tej sytuacji masz prawo zatrzymać pojazd za znakiem w celu wysadzenia pasażera?',
         imgSrc: 'http://placekitten.com/400/300',
-        description:"",
+        description:"pod znakiem B-36 “zakaz zatrzymywania się” umieszczona jest tabliczka T-25C, która jest odwołaniem znaku zakazu. Tabliczki T-25 mówią nam T-25A – początek zakazu wyrażonego znakiem, T-25B – kontynuacja zakazu wyrażonego znakiem, no i wspomniana T-25C odwołująca zakaz",
         answers:[{
             id:'1',
             text:'TAK',
@@ -128,7 +134,7 @@ export const QUESTIONS: IQuizQuestion[] = [
         id:'7',
         text:'Czy ten znak poziomy zabrania zmiany pasa ruchu?',
         imgSrc: 'http://placekitten.com/400/300',
-        description:"",
+        description:"Tak, widoczna linia pojedyncza ciągła zabranie przejeżdżania przez nią. Linia pojedyncza ciągła oddziela pasy ruchu o tym samym kierunku i oznacza ponadto zakaz przejeżdżania przez tę linię i najeżdżania na nią.",
         answers:[{
             id:'1',
             text:'TAK',
@@ -142,7 +148,7 @@ export const QUESTIONS: IQuizQuestion[] = [
         id:'8',
         text:'Czy zmieniając nieznacznie tor jazdy pojazdu w obrębie dotychczas zajmowanego pasa ruchu, masz obowiązek sygnalizować to wcześniej kierunkowskazem?',
         imgSrc: 'http://placekitten.com/400/300',
-        description:"",
+        description:"Sygnalizować kierunkowskazem należy zamiar zmiany pasa ruchu i zamiar zmiany kierunku jazdy. Przepisy nie nakazują sygnalizowania nieznacznej zmiany toru jazdy, gdy na przykład delikatnie omijasz dziurę w nawierzchni jezdni.",
         answers:[{
             id:'1',
             text:'odp1'
@@ -160,125 +166,67 @@ export const QUESTIONS: IQuizQuestion[] = [
     },
     {
         id:'9',
-        text:'pytanie quizowe',
+        text:'Czy w tej sytuacji, podczas postoju uszkodzonego pojazdu poza obszarem zabudowanym, masz obowiązek umieścić ostrzegawczy trójkąt odblaskowy bezpośrednio za pojazdem lub na nim?',
         imgSrc: 'http://placekitten.com/400/300',
-        description:"",
+        description:"Kierujący pojazdem jest obowiązany sygnalizować postój pojazdu silnikowego lub przyczepy z powodu uszkodzenia lub wypadku poza obszarem zabudowanym, w razie postoju na jezdni w miejscu, w którym jest to zabronione, a na poboczu, jeżeli pojazd nie jest widoczny z dostatecznej odległości, W pozostałych sytuacjach należy sygnalizować.",
         answers:[{
             id:'1',
-            text:'odp1'
+            text:'TAK',
+            isCorrect: true
         },{
             id: '2',
-            text: 'odp2'
-        },{
-            id: '3',
-            text: 'odp3'
-        },{
-            id: '4',
-            text: 'odp4',
-            isCorrect: true
+            text: 'NIE'
         }]
     },
     {
         id:'10',
-        text:'pytanie quizowe',
+        text:'Czy na tej drodze zawsze masz obowiązek ustąpić pierwszeństwa pieszemu?',
         imgSrc: 'http://placekitten.com/400/300',
-        description:"",
+        description:"W strefie ruchu, występują drogi publiczne i przynajmniej jedna z dróg jest drogą wewnętrzną. Administrator sam ustala organizację ruchu na tym obszarze. Może więc uznać, że jedna droga jest drogą z pierwszeństwem, a inna podporządkowaną. Dlatego nie można stwierdzić, że zawsze muszę ustępować pierwszeństwa, gdyż mogę w tej strefie również korzystać z drogi z pierwszeństwem, lub wynikającego z zasady “prawej ręki:. W strefie ruchu pieszy będzie miał pierwszeństwo wyłącznie jeśli ruch będzie odbywał się na tych samych płaszczyznach, np. parkingi przed hipermarketami. W pytaniu pojawia się jednak zapytanie “czy zawsze?”. Oczywiście że nie zawsze.",
         answers:[{
             id:'1',
-            text:'odp1'
+            text:'TAK'
         },{
             id: '2',
-            text: 'odp2'
-        },{
-            id: '3',
-            text: 'odp3'
-        },{
-            id: '4',
-            text: 'odp4',
-            isCorrect: true
+            text: 'NIE',
+            isCorrect:true
         }]
     },
     {
         id:'11',
-        text:'pytanie quizowe',
+        text:'Czy masz obowiązek bezwarunkowo zatrzymać pojazd przed linią złożoną z trójkątów?',
         imgSrc: 'http://placekitten.com/400/300',
         description:"",
         answers:[{
             id:'1',
-            text:'odp1'
+            text:'TAK'
         },{
             id: '2',
-            text: 'odp2'
-        },{
-            id: '3',
-            text: 'odp3'
-        },{
-            id: '4',
-            text: 'odp4',
-            isCorrect: true
+            text: 'NIE',
+            isCorrect:true
         }]
     },
     {
         id:'12',
-        text:'pytanie quizowe',
+        text:'Jaką funkcję spełnia system przeciwblokujący (ABS)?',
         imgSrc: 'http://placekitten.com/400/300',
         description:"",
         answers:[{
             id:'1',
-            text:'odp1'
+            text:'Skraca drogę hamowania w każdych warunkach.'
         },{
             id: '2',
-            text: 'odp2'
+            text: 'Zapobiega zerwaniu przyczepności opon podczas przyspieszania.'
         },{
             id: '3',
-            text: 'odp3'
+            text: 'Ułatwia omijanie przeszkód w czasie hamowania.',
+            isCorrect:true
         },{
             id: '4',
-            text: 'odp4',
-            isCorrect: true
+            text: 'jakas odp',
         }]
     },
-    {
-        id:'zadanieQuiz',
-        text:'zadanie matematyczne, oblicz o ile różni się spalanie auta Janusza z i bez włączonego systemu. założenia: miesięcznie przejeżdżane km - 2500 km,',
-        imgSrc: 'http://placekitten.com/400/300',
-        description:"",
-        answers:[{
-            id:'1',
-            text:'odp1'
-        },{
-            id: '2',
-            text: 'odp2'
-        },{
-            id: '3',
-            text: 'odp3'
-        },{
-            id: '4',
-            text: 'odp4',
-            isCorrect: true
-        }]
-    }
 
-]
-export interface QuizAnswers{
-    id: string,
-    correct:{
-        id:string
-    }[]
-}
-export const ANSWERS: QuizAnswers[]=[
-    {
-        id:'1',
-        correct:[{
-            id:'1'
-        }]
-    },
-    {
-        id:'2',
-        correct:[{
-            id:'3'
-        }] 
-    }
 ]
 
 

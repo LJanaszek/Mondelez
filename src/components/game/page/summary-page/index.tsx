@@ -14,9 +14,9 @@ export default function SummaryPage({onNext}: Props) {
     const {quizQuestionCount, correctQuizQuestionCount} = useQuizResult();
 
     return <Box>
-        <p>podsumowanie</p>
+        <p>koniec gry</p>
         <p>znalazłeś {completedGeoPointCount} punkty geo na {geoPointsCount}</p>
-        <p>opdowiedziałeś poprawnie na {correctQuizQuestionCount} odpowiedzi quizowych na {quizQuestionCount}</p>
+        <p>opdowiedziałeś poprawnie na {correctQuizQuestionCount} odpowiedzi quizowych na {QUESTIONS.length}</p>
         <button onClick={onNext}>Dalej</button>
     </Box>
 }
