@@ -24,6 +24,7 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 precacheAndRoute(self.__WB_MANIFEST);
 
+// Tutaj należy dodać pliki z katalogu `public` które mają być dostępne w trybie offline
 precacheAndRoute([
   '/map.png',
   '/pinezka.png',
