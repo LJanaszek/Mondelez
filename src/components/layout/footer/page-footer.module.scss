@@ -1,4 +1,14 @@
 .footer {
-    background: var(--secondColor);
+    background: var(--backgroundColor);
     color: var(--textOnSecondColor);
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 85%;
+    margin-top: 2em;
+}
+img{
+    width: 35%;
+    // max-width: 100%;
 }

@@ -1,9 +1,11 @@
+import { Style } from "@material-ui/icons";
 import { useTimeToEnd } from "../../modules/game/hooks/use-time-to-end";
+import style from './timer.module.css'
 
 export function Timer (){
     const timeToShow = useTimeToEnd()
     if(!timeToShow){
-        return <p>gra jeszcze się nie zaczęła</p>
+        return <p className={style.timer}>gra jeszcze się nie zaczęła</p>
     }
 
     
@@ -16,8 +18,8 @@ export function Timer (){
 
     // Math.floor
     if(minutesToShow >=0 && secundsToShow>0){
-        return <p>Czas: {minutesText}:{secundsText}</p>}
+        return <p className={style.timer}>Czas: {minutesText}:{secundsText}</p>}
     else{
-        return <p>koniec czasu</p>
+        return <p className={style.timer}>koniec czasu</p>
     }
 }

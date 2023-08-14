@@ -1,14 +1,20 @@
 @import-normalize;
 @import 'vars';
 
+@font-face {
+    font-family: Ubuntu;
+    src: url('../public/Ubuntu-Bold.ttf');
+  }
+
 html, body, div, h1 {
     margin: 0;
     padding: 0;
 }
 
 html {
+    font-family: Ubuntu;
     font-size: 16pt;
-    font-family: Lato;
+    // font-family: Lato;
     color: var(--color3);
     line-height: 1.5em;
 }
@@ -33,7 +39,7 @@ h1 {
 }
 
 h2 {
-    font-family: Roboto Slab;
+    // font-family: Roboto Slab;
     color: var(--color1);
     font-size: 20pt;
     font-weight: normal;

@@ -1,12 +1,26 @@
 .pageHeader {
     min-height: 100px;
     background: var(--baseColor);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    height: 8em;
+    // display: flex;
+    // justify-content: center;
+    align-self: center;
+    border-radius: 1.5em;
+    text-align: center;
     h1 {
+        color: var(--textOnBaseColor);
+        align-items: center;
+        margin: 0 auto;
+        margin-top: .6em;
+        font-size: 4em;
+        letter-spacing: .07em;
+    }
+    p{
         color: var(--textOnBaseColor);
     }
 }
+.pageHeader :last-child{
+    align-items: flex-end;
+}
+
+

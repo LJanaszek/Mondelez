@@ -1,5 +1,7 @@
 .buttonLike {
     display: inline-block;
+    border: var(--buttonBorder);
+    border-radius: var(--buttonBorderRadius);
 }
 
 .buttonLike > * {
@@ -12,16 +14,19 @@
     padding: var(--buttonPadding);
     text-decoration: none;
 
-    border: var(--buttonBorder);
-    border-radius: var(--buttonBorderRadius);
+    border-radius: var(--buttonBorderInsideRadius);
+    margin: var(--buttonMargin);
 }
-
+.buttonLike:hover{
+    border:var(--buttonHoverBorder)
+}
 .buttonLike:hover > * {
     background: var(--buttonHoverBackground);
     color: var(--buttonHoverText);
+    
 
-    border: var(--buttonHoverBorder);
-    border-radius: var(--buttonHoverBorderRadius);
+    // border: var(--buttonHoverBorder);
+    // border-radius: var(--buttonHoverBorderRadius);
 }
 
 .buttonLike.inverted > *  {

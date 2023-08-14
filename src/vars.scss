@@ -1,12 +1,12 @@
 :root {
     // Base
-    --backgroundColor: #f6eadc;
+    --backgroundColor: #6ac5ef;
 
-    --baseColor: #cf6954;
+    --baseColor: #6ac5ef;
     --secondColor: #707070;
 
 
-    --textColor: #707070;
+    --textColor: #6237a0;
     --textOnBaseColor: #ffffff;
     --textOnSecondColor: #ffffff;
 
@@ -17,17 +17,20 @@
 
     // Buttons
     --buttonFont: var(--baseFont);
-    --buttonPadding: .3em .5em;
+    --buttonPadding: .5em .7em;
     //  - primary
     --buttonBackground: var(--baseColor);
     --buttonText: var(--textOnBaseColor);
     --buttonBorder: 3px solid var(--baseColor);
-    --buttonBorderRadius: 1em;
+    --buttonBorderRadius: 15px;
+    --buttonBorderInsideRadius:10px;
+    --buttonMargin:2px;
     //  - :hover
     --buttonHoverBackground: var(--secondColor);
     --buttonHoverText: var(--textOnBaseColor);
     --buttonHoverBorder: 3px solid var(--secondColor);
-    --buttonHoverBorderRadius: 1em;
+    --buttonBorderInsideRadius: 10px;
+    --buttonHoverBorderRadius: 15px;
 
 
     //  - inverted
@@ -39,7 +42,7 @@
     --buttonInvertedHoverBackground: var(--backgroundColor);
     --buttonInvertedHoverText: var(--secondColor);
     --buttonInvertedHoverBorder: 3px solid var(--secondColor);
-    --buttonInvertedHoverBorderRadius: 1em;
+    --buttonInvertedHoverBorderRadius: 15px;
 
     // <Label>
     --labelTextColor: #aaaaaa;
