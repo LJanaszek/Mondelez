@@ -38,7 +38,7 @@ export default function App() {
                         </Routes>
                     </Suspense>
                 </main>
-                {/* {showHeader && <PageFooter />} */}
+                {showHeader}
             </BrowserRouter>
         </>
     )
