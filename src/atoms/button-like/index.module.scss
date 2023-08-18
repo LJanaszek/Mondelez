@@ -1,12 +1,15 @@
 .buttonLike {
-    display: inline-block;
+    display: inline-flex;
+    margin: 0 auto;
     border: var(--buttonBorder);
     border-radius: var(--buttonBorderRadius);
+ 
 }
 
 .buttonLike > * {
+    font-size: .9em;
     display: inline-block;
-
+    border-color: var(--baseColor);
     font-family: var(--baseFont);
     background: var(--buttonBackground);
     color: var(--buttonText);
@@ -16,6 +19,7 @@
 
     border-radius: var(--buttonBorderInsideRadius);
     margin: var(--buttonMargin);
+    box-shadow: none;
 }
 .buttonLike:hover{
     border:var(--buttonHoverBorder)

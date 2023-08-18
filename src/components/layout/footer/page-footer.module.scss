@@ -6,9 +6,13 @@
     margin: 0 auto;
     display: block;
     width: 85%;
-    margin-top: 2em;
+    margin-top: 1.2em;
+    left: 0;
+    right: 0;
+    z-index: 0;
 }
 img{
+    margin-top: -2.2em;
     width: 35%;
     // max-width: 100%;
 }

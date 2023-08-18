@@ -115,7 +115,7 @@ export default function PageView({ id }: Props) {
             case 'page-time-end':
                 return <PageTimeEnd onNext={onNext} />
             case 'page-map':
-                return <PageMap onNext={onNext} />
+                return <PageMap onNext={onNext}/>
             default:
                 return <PagePlaceholder onNext={onNext} />
         }

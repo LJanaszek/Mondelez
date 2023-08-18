@@ -23,7 +23,6 @@ export default function App() {
         <>
             <BrowserRouter>
                 <CookiesInfoComponent />
-                {showHeader && <PageHeader />}
                 <main aria-live="polite">
                     <Suspense fallback={<Loader />}>
                         <Routes>
@@ -38,7 +37,6 @@ export default function App() {
                         </Routes>
                     </Suspense>
                 </main>
-                {showHeader}
             </BrowserRouter>
         </>
     )

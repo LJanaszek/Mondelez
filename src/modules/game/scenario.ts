@@ -1,15 +1,7 @@
 import { GameScenario, GAME_STEP_TYPE } from "./types";
-/*
-p1
-p2
-p3
-p4
 
-
-p7
-*/
 export const SCENARIO: GameScenario = {
-    startStep: '0.1',
+    startStep: '1.1',
     steps: [
         {
             id: '0.1',

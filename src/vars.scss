@@ -17,20 +17,19 @@
 
     // Buttons
     --buttonFont: var(--baseFont);
-    --buttonPadding: .5em .7em;
+    --buttonPadding: .2em .7em;
     //  - primary
     --buttonBackground: var(--baseColor);
     --buttonText: var(--textOnBaseColor);
     --buttonBorder: 3px solid var(--baseColor);
-    --buttonBorderRadius: 15px;
-    --buttonBorderInsideRadius:10px;
-    --buttonMargin:2px;
+    --buttonBorderRadius: 10px;
+    --buttonMargin: 2px ;
     //  - :hover
     --buttonHoverBackground: var(--secondColor);
     --buttonHoverText: var(--textOnBaseColor);
     --buttonHoverBorder: 3px solid var(--secondColor);
-    --buttonBorderInsideRadius: 10px;
-    --buttonHoverBorderRadius: 15px;
+    --buttonBorderInsideRadius: 5px;
+    --buttonHoverBorderRadius: 10px;
 
 
     //  - inverted

@@ -5,22 +5,31 @@ import style from "../style.module.css"
 import { PointData } from "../../../map/pixi-app/types"
 import { Popup } from "../../../../molecules/popup/popup"
 import { GAME_MODULE_ACTION, useGameModuleDispatch, useGameModuleState } from "../../../../modules/game"
+import { ButtonLike } from "../../../../atoms/button-like"
+import useScenario from "../../../../modules/game/hooks/use-scenario"
+import { SCENARIO } from "../../../../modules/game/scenario"
+import { GeoStep } from "../../../../modules/game/types"
 
 type Props = {
-    onNext(): void
+    
+    onNext():void
 }
 
+type Props2 ={
+    step: GeoStep,
+}
 export interface GameMapPoint extends PointData {
     geoPointId: string
 }
 
-export default function Page_map({onNext}: Props) {
+export default function Page_map({onNext}:Props, {step}:Props2) {
 
     const [selectedPoint, setSelectedPoint] = useState<string>();
     const [showPopup, setShowPopup] = useState<boolean>(false);
-
+    const scenario = useScenario();
     const onPointerClicked = useCallback((id: string) => {
         console.log(`KTOS KLIKNAL ${id} `);
+
         setSelectedPoint(id);
         setShowPopup(true);
     }, [setSelectedPoint, setShowPopup])
@@ -28,102 +37,102 @@ export default function Page_map({onNext}: Props) {
     const mapPointsData: GameMapPoint[] = useMemo(() => {
         return [
             {
-            id: '1',
-            position:{
-                x: 100,
-                y: 100,
+                id: '1',
+                position: {
+                    x: 100,
+                    y: 100,
+                },
+                geoPointId: '2.1',
             },
-            geoPointId: '2.1',
-        },
-        {
-            id: '2',
-            position:{
-                x: 200,
-                y: 200,
+            {
+                id: '2',
+                position: {
+                    x: 200,
+                    y: 200,
+                },
+                geoPointId: '3.1',
             },
-            geoPointId: '3.1',
-        },
-        {
-            id: '3',
-            position:{
-                x: 300,
-                y: 300,
+            {
+                id: '3',
+                position: {
+                    x: 300,
+                    y: 300,
+                },
+                geoPointId: '4.1',
             },
-            geoPointId: '4.1',
-        },
-        {
-            id: '4',
-            position:{
-                x: 400,
-                y: 400,
+            {
+                id: '4',
+                position: {
+                    x: 400,
+                    y: 400,
+                },
+                geoPointId: '5.1',
             },
-            geoPointId: '5.1',
-        },
-        {
-            id: '5',
-            position:{
-                x: 500,
-                y: 500,
+            {
+                id: '5',
+                position: {
+                    x: 500,
+                    y: 500,
+                },
+                geoPointId: '6.1',
             },
-            geoPointId: '6.1',
-        },
-        {
-            id: '6',
-            position:{
-                x: 500,
-                y: 600,
+            {
+                id: '6',
+                position: {
+                    x: 500,
+                    y: 600,
+                },
+                geoPointId: '7.1',
             },
-            geoPointId: '7.1',
-        },
-        {
-            id: '7',
-            position:{
-                x: 400,
-                y: 500,
+            {
+                id: '7',
+                position: {
+                    x: 400,
+                    y: 500,
+                },
+                geoPointId: '8.1',
             },
-            geoPointId: '8.1',
-        },
-        {
-            id: '8',
-            position:{
-                x: 300,
-                y: 400,
+            {
+                id: '8',
+                position: {
+                    x: 300,
+                    y: 400,
+                },
+                geoPointId: '9.1',
             },
-            geoPointId: '9.1',
-        },
-        {
-            id: '9',
-            position:{
-                x: 200,
-                y: 300,
+            {
+                id: '9',
+                position: {
+                    x: 200,
+                    y: 300,
+                },
+                geoPointId: '10.1',
             },
-            geoPointId: '10.1',
-        },
-        {
-            id: '10',
-            position:{
-                x: 100,
-                y: 200,
+            {
+                id: '10',
+                position: {
+                    x: 100,
+                    y: 200,
+                },
+                geoPointId: '11.1',
             },
-            geoPointId: '11.1',
-        },
-        {
-            id: '11',
-            position:{
-                x: 500,
-                y: 700,
+            {
+                id: '11',
+                position: {
+                    x: 500,
+                    y: 700,
+                },
+                geoPointId: '12.1',
             },
-            geoPointId: '12.1',
-        },
-        {
-            id: '12',
-            position:{
-                x: 400,
-                y: 600,
+            {
+                id: '12',
+                position: {
+                    x: 400,
+                    y: 600,
+                },
+                geoPointId: '13.1',
             },
-            geoPointId: '13.1',
-        },
-    ];
+        ];
     }, []);
 
     const gameState = useGameModuleState();
@@ -135,7 +144,7 @@ export default function Page_map({onNext}: Props) {
         // [].find, [].filter, [].includes, [].map
 
         const result = mapPointsData.filter(x => !completedPoints.includes(x.geoPointId));
-        
+
 
         return result.map((x) => {
             return x.id
@@ -161,7 +170,7 @@ export default function Page_map({onNext}: Props) {
                     id: 'summary-page'
                 }
             })
-        } 
+        }
     }, [activePointIds, dispatch])
 
     const onClosePopupClicked = useCallback(() => {
@@ -172,11 +181,11 @@ export default function Page_map({onNext}: Props) {
 
     const onGoToClicked = useCallback(() => {
 
-        
-        const result = mapPointsData.find(x=>x.id === selectedPoint)
-        if (result){
 
+        const result = mapPointsData.find(x => x.id === selectedPoint)
+        if (result) {
             const geoPointIdToGo = result.geoPointId;
+
             dispatch({
                 type: GAME_MODULE_ACTION.SET_GAME_STEP,
                 payload: {
@@ -187,22 +196,30 @@ export default function Page_map({onNext}: Props) {
 
     }, [dispatch, selectedPoint, mapPointsData]);
 
+    if (selectedPoint) {
+        const a = (mapPointsData[Number(selectedPoint)-1].geoPointId)
+        // console.log(a)
+        let b = SCENARIO.steps.filter(x=>x.id==='2.1')
+        // const scenario = useScenario()
+        console.log(step)
+    }
+
     return <Box>
         <div className={style.mapContainer}>
-        <MapComponent 
-            onPointerClicked={onPointerClicked} 
-            activePointIds={activePointIds} 
-            inactivePointIds={inactivePointIds} 
-            selectedPoint={selectedPoint} 
-            mapPointsData={mapPointsData} 
+            <MapComponent
+                onPointerClicked={onPointerClicked}
+                activePointIds={activePointIds}
+                inactivePointIds={inactivePointIds}
+                selectedPoint={selectedPoint}
+                mapPointsData={mapPointsData}
             />
         </div>
-        <button onClick={onNext}>Dalej</button>
         {showPopup && <Popup>
-            <p>COS {showPopup ? 'TRUE' : 'FALSE'}</p>
+            <p>COS {showPopup ? selectedPoint : 'FALSE'}</p>
             <button onClick={onGoToClicked}>JEDZIEMY TAM</button>
             <button onClick={onClosePopupClicked}>ZAMKNIJ</button>
         </Popup>
         }
-        </Box>
+    </Box>
 }
+
