@@ -15,7 +15,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id:'1',
         text:'Jakie, wg. producenta, jest średnie zużycie paliwa w Waszych VW Touran z silnikiem 2.0 TDI?',
-        imgSrc:'http://placekitten.com/400/300',
+        imgSrc:'http://placekitten.com/400/200',
         description:"bo ktoś tak chciał",
         answers:[
             {

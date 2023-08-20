@@ -12,16 +12,16 @@ type AppConfig = {
 }
 
 // Szerokość grafiki mapy
-export const MAP_WIDTH = 3000;
+export const MAP_WIDTH = 1323;
 
 // Wysokość grafiki mapy
-export const MAP_HEIGHT = 1504;
+export const MAP_HEIGHT = 665;
 
 export default class PixiApp extends PIXI.Application {
 
     constructor(private config: AppConfig) {
         super({
-            backgroundAlpha: 1,
+            backgroundAlpha: 0,
             backgroundColor: 0xDFD7CD,
             width: MAP_WIDTH,
             height: MAP_HEIGHT,

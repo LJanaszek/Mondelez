@@ -42,8 +42,8 @@ export default class GameScreen extends Container implements IScreen {
             .forEach((p) => {
                 const point = Sprite.from('pinezka');
                 point.anchor.set(.5, 1);
-                point.width = 120;
-                point.height = 180
+                point.width = 78;
+                point.height = 110
                 point.position.set(p.position.x, p.position.y);
 
                 this.addChild(point);
@@ -51,7 +51,7 @@ export default class GameScreen extends Container implements IScreen {
                 point.eventMode = 'static';
                 point.cursor = 'pointer';
 
-                const hisBoxSize = point.height * 1.2;
+                const hisBoxSize = point.height * 2;
 
                 const rect = new Rectangle(-hisBoxSize / 2, -hisBoxSize, hisBoxSize, hisBoxSize);
 

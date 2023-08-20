@@ -1,0 +1,46 @@
+input {
+  display: block;
+}
+.btn {
+  height: 4em;
+  width: 4em;
+}
+.task_4 {
+  justify-content: space-around;
+  display: flex;
+}
+/* .images{
+    justify-content: space-between;
+    display: flex;
+} */
+.mapPage {
+  h1 {
+    text-align: center;
+    padding-top: 1.3em;
+  }
+  p {
+    text-align: center;
+  }
+  button {
+    color: var(--baseColor);
+    background: none;
+    border: none;
+    display: grid;
+    font-family: UbuntuReg;
+    gap: 1em;
+    font-size: 1em;
+  }
+  .buttonRowNav{
+    display: flex;
+    gap: 5em;
+    
+  }
+  .popupP{
+    font-size: 2em;
+}
+  .mapContainer {
+    position: relative;
+    height: 70vh;
+    bottom: 1em;
+  }
+}

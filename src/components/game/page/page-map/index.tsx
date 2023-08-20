@@ -1,139 +1,149 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 import Box from "../../../layout/box/box"
 import { MapComponent } from "../../../map/map-component"
-import style from "../style.module.css"
+import style from "../style.module.scss"
 import { PointData } from "../../../map/pixi-app/types"
 import { Popup } from "../../../../molecules/popup/popup"
 import { GAME_MODULE_ACTION, useGameModuleDispatch, useGameModuleState } from "../../../../modules/game"
 import { ButtonLike } from "../../../../atoms/button-like"
 import useScenario from "../../../../modules/game/hooks/use-scenario"
 import { SCENARIO } from "../../../../modules/game/scenario"
-import { GeoStep } from "../../../../modules/game/types"
+import { GAME_STEP_TYPE, GeoStep } from "../../../../modules/game/types"
+import buttonRide from "../../../../assets/buttonRide.png"
+import buttonClose from "../../../../assets/buttonClose.png"
 
 type Props = {
-    
-    onNext():void
+
+    onNext(): void
 }
 
-type Props2 ={
-    step: GeoStep,
-}
 export interface GameMapPoint extends PointData {
     geoPointId: string
 }
 
-export default function Page_map({onNext}:Props, {step}:Props2) {
-
+export default function Page_map({ onNext }: Props) {
+    const scenario = useScenario();
+    const geoPoints = scenario.steps.filter(s => s.type === GAME_STEP_TYPE.GEO_STEP) as GeoStep[];
     const [selectedPoint, setSelectedPoint] = useState<string>();
     const [showPopup, setShowPopup] = useState<boolean>(false);
-    const scenario = useScenario();
-    const onPointerClicked = useCallback((id: string) => {
-        console.log(`KTOS KLIKNAL ${id} `);
+    const [positionGeoLat, setPositionGeoLat] = useState<string>();
+    const [positionGeoLng, setPositionGeoLng] = useState<string>();
 
-        setSelectedPoint(id);
-        setShowPopup(true);
-    }, [setSelectedPoint, setShowPopup])
+
 
     const mapPointsData: GameMapPoint[] = useMemo(() => {
         return [
             {
                 id: '1',
                 position: {
-                    x: 100,
-                    y: 100,
+                    x: 165,
+                    y: 180,
                 },
                 geoPointId: '2.1',
             },
             {
                 id: '2',
                 position: {
-                    x: 200,
-                    y: 200,
+                    x: 365,
+                    y: 260,
                 },
                 geoPointId: '3.1',
             },
             {
                 id: '3',
                 position: {
-                    x: 300,
-                    y: 300,
+                    x: 520,
+                    y: 220,
                 },
                 geoPointId: '4.1',
             },
             {
                 id: '4',
                 position: {
-                    x: 400,
-                    y: 400,
+                    x: 765,
+                    y: 190,
                 },
                 geoPointId: '5.1',
             },
             {
                 id: '5',
                 position: {
-                    x: 500,
-                    y: 500,
+                    x: 240,
+                    y: 525,
                 },
                 geoPointId: '6.1',
             },
             {
                 id: '6',
                 position: {
-                    x: 500,
-                    y: 600,
+                    x: 490,
+                    y: 380,
                 },
                 geoPointId: '7.1',
             },
             {
                 id: '7',
                 position: {
-                    x: 400,
-                    y: 500,
+                    x: 920,
+                    y: 300,
                 },
                 geoPointId: '8.1',
             },
             {
                 id: '8',
                 position: {
-                    x: 300,
-                    y: 400,
+                    x: 910,
+                    y: 495,
                 },
                 geoPointId: '9.1',
             },
             {
                 id: '9',
                 position: {
-                    x: 200,
-                    y: 300,
+                    x: 1190,
+                    y: 430,
                 },
                 geoPointId: '10.1',
             },
             {
                 id: '10',
                 position: {
-                    x: 100,
-                    y: 200,
+                    x: 1100,
+                    y: 560,
                 },
                 geoPointId: '11.1',
             },
             {
                 id: '11',
                 position: {
-                    x: 500,
-                    y: 700,
+                    x: 1217,
+                    y: 210,
                 },
                 geoPointId: '12.1',
             },
             {
                 id: '12',
                 position: {
-                    x: 400,
-                    y: 600,
+                    x: 570,
+                    y: 270,
                 },
                 geoPointId: '13.1',
             },
         ];
     }, []);
+
+
+    const onPointerClicked = useCallback((id: string) => {
+        console.log(`KTOS KLIKNAL ${id} `);
+        setSelectedPoint(id);
+        setShowPopup(true);
+
+        const a = (mapPointsData[Number(id) - 1].geoPointId)
+        const positionGeo = (geoPoints.find(x => x.id === a)?.position)
+        setPositionGeoLat(String(positionGeo?.lat))
+        setPositionGeoLng(String(positionGeo?.lng))
+    }, [setSelectedPoint, setShowPopup])
+
 
     const gameState = useGameModuleState();
     const completedPoints = gameState.gameState.completedSteps;
@@ -186,6 +196,7 @@ export default function Page_map({onNext}:Props, {step}:Props2) {
         if (result) {
             const geoPointIdToGo = result.geoPointId;
 
+
             dispatch({
                 type: GAME_MODULE_ACTION.SET_GAME_STEP,
                 payload: {
@@ -196,30 +207,29 @@ export default function Page_map({onNext}:Props, {step}:Props2) {
 
     }, [dispatch, selectedPoint, mapPointsData]);
 
-    if (selectedPoint) {
-        const a = (mapPointsData[Number(selectedPoint)-1].geoPointId)
-        // console.log(a)
-        let b = SCENARIO.steps.filter(x=>x.id==='2.1')
-        // const scenario = useScenario()
-        console.log(step)
-    }
 
     return <Box>
-        <div className={style.mapContainer}>
-            <MapComponent
-                onPointerClicked={onPointerClicked}
-                activePointIds={activePointIds}
-                inactivePointIds={inactivePointIds}
-                selectedPoint={selectedPoint}
-                mapPointsData={mapPointsData}
-            />
+        <div className={style.mapPage}>
+            <h1>Ogrodzieniec (poziom 511)</h1>
+            <p>wybierzcie na mapie punkt do którego chcecie sie udać</p>
+            <div className={style.mapContainer}>
+                <MapComponent
+                    onPointerClicked={onPointerClicked}
+                    activePointIds={activePointIds}
+                    inactivePointIds={inactivePointIds}
+                    selectedPoint={selectedPoint}
+                    mapPointsData={mapPointsData}
+                />
+            </div>
+            {showPopup && <Popup>
+                <p className={style.popupP}>{showPopup} {positionGeoLat}, {positionGeoLng}</p>
+                <div className={style.buttonRowNav}>
+                    <button onClick={onClosePopupClicked}><img src={buttonClose} alt="wróć do mapy" />wróć do mapy</button>
+                    <button onClick={onGoToClicked}><img src={buttonRide} alt="jedziemy" />jedziemy tam</button>
+                </div>
+            </Popup>
+            }
         </div>
-        {showPopup && <Popup>
-            <p>COS {showPopup ? selectedPoint : 'FALSE'}</p>
-            <button onClick={onGoToClicked}>JEDZIEMY TAM</button>
-            <button onClick={onClosePopupClicked}>ZAMKNIJ</button>
-        </Popup>
-        }
     </Box>
 }
 

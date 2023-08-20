@@ -1,6 +1,6 @@
 import { useQuestion } from "./use-question";
-import { IQuizQuestion,} from "./quest-base";
-import styles from "./questionStyle.module.css";
+import { IQuizQuestion, } from "./quest-base";
+import styles from "./questionStyle.module.scss";
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -78,34 +78,38 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
 
   // const {answers} = question
   return (
-    <div className={styles.question}>
-      <h1>{question.text} {question.id}</h1>
-      <img
-        src={question.imgSrc}
-        alt=""
-        className={styles.img_question}
-        ref={imgRef}
-      />
-      <form className={styles.answer_block}>
-        {question.answers.map((a) => {
-          return (
-            <div key={a.id}>
-              <label>
-                <input
-                  type="radio"
-                  value={a.id}
-                  {...register("an")}
-                />
-                <div className={a.isCorrect ? styles.ans : styles.ans}>
-                  <span>{a.id}</span>
-                  {a.text}
-                </div>
-              </label>
-            </div>
-          );
-        })}
-      </form>
-      <div className={styles.questionAnswer} id="questionAnswer"></div>
+    <div className={styles.answer}>
+      <div className={styles.questionText}>
+        <h1>QUIZ</h1>
+        <p>{question.text}</p>
+      </div>
+      <div className={styles.questionAnswer}>
+        <img
+          src={question.imgSrc}
+          alt=""
+          ref={imgRef}
+        />
+        <form className={styles.answer_block}>
+          {question.answers.map((a) => {
+            return (
+              <div key={a.id} className={styles.answersGrid}>
+                <label>
+                  <input
+                    type="radio"
+                    value={a.id}
+                    {...register("an")}
+                  />
+                  <div className={a.isCorrect ? styles.ans : styles.ans}>
+                    <span>{a.id}</span>
+                    {a.text}
+                  </div>
+                </label>
+              </div>
+            );
+          })}
+        </form>
+      </div>
+
       {showConfirm && (
         <button id="next" onClick={onConfirmClicked}>
           POTWIERDZ
@@ -120,14 +124,14 @@ export interface QuizAnswerDummyProps {
   userAnswerId: string
 }
 
-export function QuizAnswerDummy({question, userAnswerId}: QuizAnswerDummyProps){
+export function QuizAnswerDummy({ question, userAnswerId }: QuizAnswerDummyProps) {
 
   const correctQuizAnswer = question.answers.find(quizAnswer => quizAnswer.isCorrect)
   const userQuizAnswer = question.answers.find(quizAnswer => quizAnswer.id === userAnswerId)
 
   const userAnswerText: string = userQuizAnswer?.text || 'Błąd danych';
   const isUserAnswerCorrect: boolean = (correctQuizAnswer?.id === userQuizAnswer?.id); //tutaj ma być sprawdzenie czy user wybral poprawną odpwiedz
-  const correctAnswerText: string = correctQuizAnswer?.text || 'Błąd danych'; 
+  const correctAnswerText: string = correctQuizAnswer?.text || 'Błąd danych';
   const questionDescription: string = question.description;
 
 
