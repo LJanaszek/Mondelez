@@ -11,7 +11,7 @@ type Props = {
 }
 
 
-export default function Page5({onNext}: Props) {
+export default function Page5({ onNext }: Props) {
     const [showPopup, setShowPopup] = useState<boolean>(false);
     const onClosePopupClicked = useCallback(() => {
         setShowPopup(false);
@@ -25,23 +25,23 @@ export default function Page5({onNext}: Props) {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fugiat delectus nobis harum fuga ab dignissimos nulla placeat aliquam, quia quidem pariatur esse explicabo adipisci exercitationem saepe unde itaque voluptate.</p>
         </div>
         <OrderQuestionLayoutWIthImg
-        items={[
-            {correctPlace: 0, text: lights, description: "światła"},
-            {correctPlace: 2, text: police, description: "policjant"},
-            {correctPlace: 1, text: signs, description: "znaki drogowe"},
-        ]}
-        onComplete={() => {setShowNext(true)}}
-        onInComplete={()=>{setShowIncor(true); setShowPopup(true)}}
-    />
-        {showNext&&<Popup>
+            items={[
+                { correctPlace: 0, text: lights, description: "światła" },
+                { correctPlace: 2, text: police, description: "policjant" },
+                { correctPlace: 1, text: signs, description: "znaki drogowe" },
+            ]}
+            onComplete={() => { setShowNext(true) }}
+            onInComplete={() => { setShowIncor(true); setShowPopup(true) }}
+        />
+        {showNext && <Popup>
             <p>BRAWO</p>
             <button onClick={onNext}>DALEJ</button>
         </Popup>}
         {showOnIncor && showPopup && <Popup><p>ŹLE</p>
-        <button onClick={onClosePopupClicked}>DALEJ</button>
+            <button onClick={onClosePopupClicked}>DALEJ</button>
         </Popup>}
-        </BoxTask>
+    </BoxTask>
 
-        
+
 }
 

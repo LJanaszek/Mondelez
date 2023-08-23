@@ -90,14 +90,14 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
                                     <Card>
                                         <GameItem item={item} />
                                     </Card>
-                                    <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`}>
+                                    <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`}className={style.arrow}>
                                         <span className="material-icons">   
-                                            &#xe5d8;
+                                        &#xe5c7;
                                         </span>
                                     </button>
-                                    <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`}>
+                                    <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`} className={style.arrow}>
                                         <span className="material-icons">
-                                            &#xe5db;
+                                        &#xe5c5;
                                         </span>
                                     </button>
                                 </div>

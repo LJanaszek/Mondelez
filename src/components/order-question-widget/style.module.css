@@ -1,6 +1,30 @@
 .item{
-    display: inline-flex;
+    display: flex;
+    align-content: center;
+    border-bottom: 1px solid;
+    align-items: center;
+}
+.item:last-child{
+    border: none;
 }
 .itemgroup{
-    display: inline-grid;
+    font-family: UbuntuReg;
+    display: grid;
+    margin: 1em 2em;
+
+}
+span:only-child{
+    font-size: 4em;
+    padding: 0;
+    margin: 0;
+    
+}
+span{
+    width: 1em;
+    height: 1em;
+}
+.arrow{
+    color: white;
+    background-color: var(--spanBackground);
+    border: none;
 }
