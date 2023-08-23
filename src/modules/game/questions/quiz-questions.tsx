@@ -6,17 +6,23 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAnswer } from "../../main/hooks/use-answer";
 import { useSaveAnswer } from "../hooks/use-save-answer";
+import { ButtonLike } from "../../../atoms/button-like";
+import { Popup } from "../../../molecules/popup/popup";
 
-export interface Props {
+export interface Props2 {
   id: string;
-  onComplete?(): void
+  onComplete?(): void;
+  onNext():void
+}
+type Props = {
+  
 }
 
 /**
  * Jeżeli user nie odpowiedział jeszcze na to pytanie to pokazujemy <QuizQuestionDummy>
  * Jezeli user opdpiwedział na pytanie to pokazujemy podsumowanie pytania
  */
-export function QuizQuestion({ id, onComplete }: Props) {
+export function QuizQuestion({ id, onComplete, onNext}: Props2,  ) {
   const q = useQuestion(id);
   const answer = useAnswer(id);
 
@@ -44,10 +50,10 @@ export function QuizQuestion({ id, onComplete }: Props) {
 
   return (
     <>
-      {showQuestion && (
+      
         <QuizQuestionDummy question={q} onConfirm={onQuestionConfirm} />
-      )}
-      {showSummary && <QuizAnswerDummy question={q} userAnswerId={answer} />}
+    
+      {!showQuestion && <Popup><QuizAnswerDummy question={q} userAnswerId={answer} /><ButtonLike><button id={styles.buttonOnPopup} onClick={onNext}>dalej</button></ButtonLike></Popup>}
     </>
   );
 }
@@ -59,7 +65,7 @@ export interface ForQuizQuest {
 
 export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
   const imgRef = useRef<HTMLImageElement>(null);
-
+  const [showPopup, setShowPopup] = useState(false);
   // const afterCorrectanswer = useCallback(() => {}, [question]);
 
   const { register, watch } = useForm();
@@ -92,16 +98,17 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
         <form className={styles.answer_block}>
           {question.answers.map((a) => {
             return (
-              <div key={a.id} className={styles.answersGrid}>
+              <div className={styles.answersGrid} key={a.id} >
                 <label>
-                  <input
+                  
+                  <div className={a.isCorrect ? styles.ans : styles.ans}>
+                    
+                    <span><input
                     type="radio"
                     value={a.id}
                     {...register("an")}
-                  />
-                  <div className={a.isCorrect ? styles.ans : styles.ans}>
-                    <span>{a.id}</span>
-                    {a.text}
+                  />{a.id}</span>
+                    <p>{a.text}</p>
                   </div>
                 </label>
               </div>
@@ -111,10 +118,15 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
       </div>
 
       {showConfirm && (
-        <button id="next" onClick={onConfirmClicked}>
+        <section className={styles.buttonLike}>
+        <ButtonLike >
+        <button className={styles.buttonNext} onClick={onConfirmClicked}>
           POTWIERDZ
         </button>
+        </ButtonLike>
+        </section> 
       )}
+      {/* {showPopup && <Popup></Popup>} */}
     </div>
   );
 }
@@ -136,14 +148,15 @@ export function QuizAnswerDummy({ question, userAnswerId }: QuizAnswerDummyProps
 
 
 
-  return <div>
-    <p>Twoja odpowiedz to: {userAnswerText}</p>
+  return <div id="answerPopup">
+   <p>Twoja odpowiedz to: {userAnswerText}</p>
 
     {isUserAnswerCorrect && <p>SUPER!</p>}
     {!isUserAnswerCorrect && <div>
       <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
       <p>Poniewaz: {questionDescription}</p>
+      
     </div>}
-  </div>
+    </div>
 }
 

@@ -1,7 +1,11 @@
 import { useState } from "react"
 import {ImagesBase } from "../../../../modules/game/images/images-base"
 import { Popup } from "../../../../molecules/popup/popup"
-import Box from "../../../layout/box/box"
+import BoxTask from "../../../layout/boxTask/box"
+import styles from "../../../layout/boxTask/box.module.scss"
+import page4_car from "../../../../assets/page4_car.png"
+import { ButtonLike } from "../../../../atoms/button-like"
+import { ButtonsRow } from "../../../../atoms/buttons-row/buttons-row"
 
 type Props = {
     onNext(): void
@@ -9,20 +13,29 @@ type Props = {
 export interface ForImg {
     images: ImagesBase
 }
-export default function Page4({ onNext }: Props, { images }: ForImg) {
+export default function Page4({ onNext }: Props) {
     const [showPopup, setShowPopup] = useState<boolean>(false);
-    return <Box>
-        <p>zadanie 1</p>
-        <p>Zepsuło się koło - zrób foto poradnik pokazujący krok po kroku wyjęcie, sprawdzenie i odłożenie dojazdówki i sprzętów potrzebnych do wymiany koła - do pokazania z telefonu na finale
+    return <BoxTask>
+        <div className={styles.mainDiv}>
+        <h1>Zepsuło się koło</h1>
+        <p>zrób foto poradnik pokazujący krok po kroku wyjęcie, sprawdzenie i odłożenie dojazdówki i sprzętów potrzebnych do wymiany koła - do pokazania z telefonu na finale
         </p>
-
-        <button onClick={()=>{setShowPopup(true)}}>Dalej</button>
+        <img src={page4_car} alt="" />
+        <section className={styles.butttonLike}>
+        <ButtonLike>
+        <button onClick={()=>{setShowPopup(true)}}>Zakończ zadanie</button>
+        </ButtonLike>
+        </section>
+        </div>
         {showPopup && <Popup>
-            <p>idziemy dalej? {showPopup ? 'TRUE' : 'FALSE'}</p>
-            <button onClick={onNext}>Tak</button>
-            <button onClick={()=>{setShowPopup(false)}}>ZAMKNIJ</button>
+            <p className={styles.popupTheme}>Czy napewno chcesz zamknąć zadanie? </p>
+            <ButtonsRow className={styles.popupNav}>
+            
+            <ButtonLike><button onClick={()=>{setShowPopup(false)}}>Wróć do zadania</button>
+            </ButtonLike><ButtonLike><button onClick={onNext}>Zakończ</button></ButtonLike>
+            </ButtonsRow>
         </Popup>
         }
 
-    </Box>
+    </BoxTask>
 }

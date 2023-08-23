@@ -1,0 +1,49 @@
+.item{
+    display: inline-flex;
+}
+.itemgroup{
+    display: grid;
+    gap: 4px ;
+    margin: 1em 2em;
+    padding-bottom: 1em;
+}
+.item>p{
+    margin-right: 2em;
+}
+.item{
+    
+   align-items: center;
+}
+.item >*{
+    display: inline-flex;
+    align-items: center;
+    height: 3em;
+}
+.arrow, .arrow2{
+    margin: 0;
+    padding: 0;
+    background-color: var(--spanBackground);
+    border: none;
+    color: white;
+}
+
+span:only-child{
+    font-size: 5em;
+}
+button{
+    height: 100%;
+}
+/* i{
+    font-size: 2em;
+} */
+.definition{
+    width: 4em;
+
+}
+section{
+    padding-left: 1em;
+    font-family: UbuntuReg;
+    width: 100%;
+    height: 2em;
+    background-color: var(--quizButtonBackground);
+}

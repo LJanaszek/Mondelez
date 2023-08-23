@@ -1,0 +1,65 @@
+.questionText{
+    background-color: white;
+    display: grid;
+    align-content: space-evenly;
+} 
+.singleRowRadio{
+    display: flex;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+}
+.singleRowAll{
+    /* padding: 2em 0; */
+    width: 92%;
+    display: grid;
+    grid-template-columns: 3fr 1fr ;
+    margin: 0 auto;
+    border-bottom: 2px solid var(--textColor) ;
+}
+.singleRowAll:last-child{
+    border: none;
+}
+.singleInputLabel{
+    margin: 0 2em;
+}
+
+label{
+    margin: .3em;
+    text-align: center;
+    padding: .5em 0.2em;
+    display: flex;
+    background-color: var(--spanBackground);
+    border-radius: var(--buttonBorderRadius);
+}
+input {
+    transform: translatey(10%);
+    margin: 0 1em;
+  }
+input[type=radio]{
+    -webkit-appearance: none;
+    background: var(--quizButtonBackground);
+    width: 2em;
+    height: 2em;
+    
+  }
+  input:checked{
+    background: var(--textColor);
+    transition: .5s;
+  
+}
+section{
+    margin: 2.2em;
+    button{
+        padding: .3em 1em;
+    }
+    padding-bottom: 2.2em;
+
+
+text-align: end;
+
+}
+.Apteczka{
+    display: grid;
+}
+/* .singleRowRadio{} */

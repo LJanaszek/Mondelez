@@ -78,7 +78,12 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
         }
 
     }, [state, onComplete, items.length])
-
+    const definitions=[
+        "ASR",
+        "ABS",
+        "EBV",
+        "MSR"
+    ]
     return <div>
             
                 <div aria-live='assertive' className={style.itemgroup}>
@@ -87,19 +92,25 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
 
                             if (item) {
                                 return <div className={style.item} key={index}>
+                                    <div className={style.definition}>{definitions[index]}</div>
+                                    <div className={style.buttonGroup}>
+                                    <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`} className={style.arrow}>
+                                        <span className="material-icons">   
+                                        &#xe5c7;
+                                        </span>
+                                    </button>
+                                    <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`} className={style.arrow2}>
+                                        <span className="material-icons">
+                                            &#xe5c5;
+                                        
+                                        </span>
+                                    </button>
+                                    </div>
+                                    <section className={style.itemsName}>
                                     <Card>
                                         <GameItem item={item} />
                                     </Card>
-                                    <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`}>
-                                        <span className="material-icons">   
-                                            &#xe5d8;
-                                        </span>
-                                    </button>
-                                    <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`}>
-                                        <span className="material-icons">
-                                            &#xe5db;
-                                        </span>
-                                    </button>
+                                    </section>
                                 </div>
                             }
 

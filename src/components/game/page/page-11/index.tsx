@@ -1,6 +1,8 @@
 import {useState } from "react";
-import Box from "../../../layout/box/box"
+import BoxTask from "../../../layout/boxTask/box"
 import CheckboxAnswerForm from "../../../checkboxAnswerForm/checkboxAnswerForm";
+import styles from "../../../layout/boxTask/box.module.scss"
+import { ButtonLike } from "../../../../atoms/button-like";
 
 type Props = {
     
@@ -9,8 +11,10 @@ type Props = {
 export default function Page11({onNext}: Props) {
     // useContext()
     const [showNext, setShowNext] = useState(false);
-        return <Box>
-            <p>sprawdźcie czy macie wszystko z podanej listy w swojej apteczce w aucie</p>
+        return <BoxTask>
+            <div className={styles.mainDiv}>
+            <h1>Apteczka</h1>
+            <p>sprawdźcie czy macie wszystko z podanej listy w swojej apteczce w aucie</p></div>
     <CheckboxAnswerForm 
     items = {[
         {id: '1', text :'Rękawiczki jednorazowe (2-3 pary)'},
@@ -31,6 +35,8 @@ export default function Page11({onNext}: Props) {
         {id: '1', text:'Maska ochronna 3 warstwowa '}
     ]} 
     onComplete={()=>(setShowNext(true))}/>
-    {showNext && <button onClick={onNext}>Dalej</button>}
-    </Box>
+    {showNext && <section className={styles.section}><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike>
+    </section>}
+    
+    </BoxTask>
 }

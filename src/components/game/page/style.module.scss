@@ -13,6 +13,7 @@ input {
     justify-content: space-between;
     display: flex;
 } */
+
 .mapPage {
   h1 {
     text-align: center;
@@ -43,4 +44,11 @@ input {
     height: 70vh;
     bottom: 1em;
   }
+}
+.buttonNext{
+  z-index: 1;
+}
+.page4{
+  font-family: UbuntuReg;
+  
 }

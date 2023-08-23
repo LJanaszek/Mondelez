@@ -9,7 +9,7 @@ type Props = {
 export default function Page24({onNext}: Props) {
     const [showNext, setShowNext] = useState(false);
     return <Box>
-        <QuizQuestion id='11' onComplete={() => setShowNext(true)}></QuizQuestion>
-        {showNext && <button onClick={onNext}>Dalej</button>}
+        <QuizQuestion id='11' onComplete={() => setShowNext(true)} onNext={onNext}></QuizQuestion>
+
     </Box>
 }

@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
-import styles from "../checkboxAnswerForm/checkboxStyle.module.css"
+import styles from "./checkboxStyle.module.scss"
 import { useForm } from "react-hook-form";
+import { ButtonLike } from "../../atoms/button-like";
 
 type Props = {
     items: {
@@ -33,7 +34,7 @@ export default function CheckboxAnswerForm({ items, onComplete, onInComplete }: 
         <nav>
             {items.map((a) => {
                 return <div className={styles.singleRowAll}>
-                    <p className={styles.questionText}>{a.text}</p>
+                    <div className={styles.questionText}>{a.text}</div>
                     <form className={styles.singleRowRadio}>
 
                         <label className={styles.singleInputLabel}>
@@ -49,18 +50,19 @@ export default function CheckboxAnswerForm({ items, onComplete, onInComplete }: 
 
 
                         <label>
+                            <div className={styles.singleRadio}>FAŁSZ</div>
                             <input type="radio"
                                 id=""
                                 {...register(a.id)}
                                 onClick={checking}
                             />
-                            <div className={styles.singleRadio}>FAŁSZ</div></label><br />
+                            </label>
                     </form>
                 </div>
             })}
 
         </nav>
-        {showButton && <button onClick={() => {
+        {showButton && <section className={styles.buttonLike}><ButtonLike><button onClick={() => {
             const corrAns = items.filter(x => x.isCorrect)
             let trueA = 0
             let allChecked = 0
@@ -85,6 +87,6 @@ export default function CheckboxAnswerForm({ items, onComplete, onInComplete }: 
                 onInComplete()
             }
             // console.log(allInputs)
-        }}>sprawdź</button>}
+        }}>sprawdź</button> </ButtonLike></section>}
     </div>
 }

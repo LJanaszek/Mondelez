@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import styles from "./checkboxStyle.module.css"
+import styles from "./checkboxStyle.module.scss"
 import { useForm } from "react-hook-form";
 
 type Props = {
@@ -30,7 +30,8 @@ export default function CheckboxAnswerForm({ items, onComplete }: Props, count: 
             onComplete()
         }
     }, [ onComplete, items.length])
-    return <div>
+    return <div className={styles.Apteczka}>
+        <div className={styles.formHeader}><section className={styles.firstP}>TAK/NIE</section><section className={styles.secondP}>TAK/NIE</section></div>
         <nav>
             {items.map((a) => {
                 return <div className={styles.singleRowAll}>
@@ -46,9 +47,10 @@ export default function CheckboxAnswerForm({ items, onComplete }: Props, count: 
                                 onClick={checking}
                             />
                             <div className={styles.singleRadio}>
-                            mam
+                            
                             </div>
-                            </label><br />
+                            
+                            </label>/
 
 
                         <label className={styles.singleInputLabel}>
@@ -60,7 +62,7 @@ export default function CheckboxAnswerForm({ items, onComplete }: Props, count: 
                                 onClick={checking}
                             />
                             <div className={styles.singleRadio}>
-                            nie mam
+                            
                             </div></label><br />
                     </form>
                 </div>

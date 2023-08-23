@@ -1,6 +1,40 @@
 .item{
-    display: inline-flex;
+    display: block;
+    text-align: center;
 }
 .itemgroup{
-    display: inline-grid;
+    /* padding: 2em 4em; */
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    margin: 1em 2em;
+    padding: 1em 2em;
+    /* margin: 0 auto; */
+    background-color: var(--quizButtonBackground);
+    border-radius: var(--buttonBorderRadius);
+}
+img{
+    width: 60%;
+}
+.imgWithDesc{
+    margin-top: 1em;
+    border: 2px solid;
+    border-radius: var(--buttonBorderRadius);
+    padding: 1em 2em;
+    padding-bottom: 0;
+    margin-bottom: .5em;
+}
+.indexNumber{
+    background-color: white;
+    width: 2em;
+    margin: 0 auto;
+}
+span:only-child{
+    font-size: 2.5em;
+}
+.arrow{
+    color: white;
+    background-color: var(--spanBackground);
+    border: none;
 }

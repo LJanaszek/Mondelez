@@ -1,86 +1,95 @@
 import { useRef, useState } from "react";
 import { QuizQuestionTask } from "../../../../modules/game/questions/quiz-question-task"
-import Box from "../../../layout/box/box"
-import styles from "./quizTask.module.css"
+import BoxTask from "../../../layout/boxTask/box"
+import styles from "./quizTask.module.scss"
 import { IQuizQuestion } from "../../../../modules/game/questions/quest-base";
 import { element } from "prop-types";
+import { ButtonLike } from "../../../../atoms/button-like";
 type Props = {
-    onNext(): void
+  onNext(): void
 }
 export interface ForQuizQuest {
-    question: IQuizQuestion;
-    onConfirm(id: string, value: string): void;
-  }
-export default function Page15({onNext}: Props) {
-    const [showNext, setShowNext] = useState(false);
-    return ( <Box>
-        <div className={styles.question}>
-          <h1>pytanie</h1>
-          <img
-            src='http://placekitten.com/400/300'
-            alt=""
-            className={styles.img_question}
-          />
-          <form className={styles.answer_block}>
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      value=""
-                      name="ans"
-                    />
-                    <div className={styles.ans}>
-                      <span></span>
-                      odp1
-                    </div>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      value=""
-                      name="ans"
-                    />
-                    <div className={styles.ans}>
-                      <span></span>
-                      odp2
-                    </div>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      value=""
-                      name="ans"
-                    />
-                    <div className={styles.ans}>
-                      <span></span>
-                      odp3
-                    </div>
-                  </label>
-                </div>
-                <div>
-                  <label >
-                    <input
-                      type="radio"
-                      value=""
-                      name="ans"
-                      onClick={()=>{setShowNext(true); let a = document.querySelectorAll('input')
-                  a.forEach((element)=>{element.disabled=true})
-                }}
-                    />
-                    <div className={styles.ans} id={styles.correct}>
-                      <span></span>
-                      odp4
-                    </div>
-                  </label>
-                </div>
-          </form>
-          <div className={styles.questionAnswer} id="questionAnswer"></div>
-        </div>
-        {showNext && <button onClick={onNext}>Dalej</button>}
-         </Box>)
+  question: IQuizQuestion;
+  onConfirm(id: string, value: string): void;
+}
+export default function Page15({ onNext }: Props) {
+  const [showNext, setShowNext] = useState(false);
+  return (<BoxTask>
+    <div className={styles.answer}>
+      <div className={styles.questionText}>
+        <h1>zadanieQuizowe</h1>
+        <p>pytanie</p>
+      </div>
+      <div className={styles.questionAnswer}>
+        <img
+          src='http://placekitten.com/400/300'
+          alt=""
+        />
+        <form className={styles.answer_block}>
+          <div className={styles.answerGrid}>
+            <label>
+
+              <div className={styles.ans}>
+                <span><input
+                  type="radio"
+                  value=""
+                  name="ans"
+                /></span>
+                <p>odp1</p>
+              </div>
+            </label>
+          </div>
+          <div className={styles.answerGrid}>
+            <label>
+
+              <div className={styles.ans}>
+                <span><input
+                  type="radio"
+                  value=""
+                  name="ans"
+                /></span>
+                <p>odp1</p>
+              </div>
+            </label>
+          </div>
+          <div className={styles.answerGrid}>
+            <label>
+
+              <div className={styles.ans}>
+                <span><input
+                  type="radio"
+                  value=""
+                  name="ans"
+                /></span>
+                <p>odp1</p>
+              </div>
+            </label>
+          </div>
+          <div className={styles.answerGrid}>
+            <label>
+
+              <div className={styles.ans}>
+                <span>
+                  <input
+                    type="radio"
+                    value=""
+                    name="ans"
+                    onClick={() => {
+                      setShowNext(true); let a = document.querySelectorAll('input')
+                      a.forEach((element) => { element.disabled = true })
+                    }}
+                  />
+                </span>
+                <p>odp1</p>
+              </div>
+            </label>
+          </div>
+        </form>
+      </div>
+{showNext && <section className={styles.section}><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike>
+    </section>}
+    </div>
     
+  </BoxTask>)
+
 }

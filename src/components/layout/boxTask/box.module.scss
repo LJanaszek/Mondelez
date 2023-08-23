@@ -1,0 +1,92 @@
+.box {
+  background: white;
+  color: var(--textColor);
+  border-radius: 1em;
+  width: 97%;
+  margin: 0 auto;
+  .header {
+  }
+  .mainDiv {
+    div>.imgBlock{
+      width: 80%;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+    h1 {
+      padding: 1.5em 1.5em;
+      padding-bottom: 0.5em;
+      text-align: left;
+    }
+    p {
+      text-align: left;
+      background-color: var(--quizButtonBackground);
+      margin: 0;
+      padding: 1em 2em;
+      line-height: normal;
+    }
+    img {
+      display: block;
+      margin-top: 4em;
+      padding: 4em 0;
+      padding-bottom: 0;
+      text-align: center;
+      margin: 0 auto;
+      width: 35%;
+    }
+
+    section {
+      margin: 2.2em;
+      button {
+        padding: 0.3em 1em;
+      }
+      padding-bottom: 2.2em;
+
+      // margin: 1em;
+      text-align: end;
+    }
+    button {
+    margin: 2px;
+  }
+  .popupTheme {
+    background-color: white;
+    font-family: Ubuntu;
+    // margin-top: 4em;
+    margin-bottom: 1em;
+  }
+  }
+  button {
+    margin: 2px;
+  }
+  
+  .popupNav {
+    margin-bottom: 2em;
+  }
+
+  
+}
+.section {
+    margin: 1em;
+    button {
+      padding: 0.3em 1em;
+    }
+    padding-bottom: 2.2em;
+
+    // margin: 1em;
+    text-align: end;
+  }
+  button {
+  margin: 2px;
+}
+.section2{
+  text-align: end;
+  margin-right: 2em;
+  padding-bottom: 2em;
+}
+.contentOrder{
+  button{
+    height: 100%;
+    margin: 2px;
+    // gap: 4px;
+  }
+}

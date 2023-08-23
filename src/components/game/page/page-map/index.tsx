@@ -138,6 +138,9 @@ export default function Page_map({ onNext }: Props) {
         setSelectedPoint(id);
         setShowPopup(true);
 
+
+        //szukanie długości i szerokości geo 
+        
         const a = (mapPointsData[Number(id) - 1].geoPointId)
         const positionGeo = (geoPoints.find(x => x.id === a)?.position)
         setPositionGeoLat(String(positionGeo?.lat))
@@ -151,10 +154,7 @@ export default function Page_map({ onNext }: Props) {
     const activePointIds: string[] = useMemo(() => {
         // Zwróć listę ID puktów mapy dla których geoPointId nie ma w tablicy completedPoints
 
-        // [].find, [].filter, [].includes, [].map
-
         const result = mapPointsData.filter(x => !completedPoints.includes(x.geoPointId));
-
 
         return result.map((x) => {
             return x.id

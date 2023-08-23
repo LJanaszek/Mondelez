@@ -1,18 +1,17 @@
 import React, { useCallback, useEffect, useMemo, useReducer, useState } from "react";
-import Box from "../layout/box/box";
 import { Card } from "./card";
 import style from "./style.module.css"
-import { Popup } from "../../molecules/popup/popup";
-
+import { ButtonLike } from "../../atoms/button-like";
 type Props = {
-    items: {text: string, correctPlace: number}[],
+    items: {text: string, correctPlace: number, description: string}[],
     onComplete(): void,
     onInComplete(): void
 }
 
 type Item = {
     correctPlace: number,
-    text: string
+    text: string,
+    description:string
 }
 
 type GameState = {
@@ -27,7 +26,8 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
             items: items.map((item, index) => {
                 return {
                     correctPlace: item.correctPlace,
-                    text: item.text
+                    text: item.text,
+                    description: item.description
                 }
             })
         }
@@ -86,27 +86,31 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
     }, [state, onComplete, items.length, setConfirm, onInComplete])
 
     return <div>
-            <Box>
+            
                 <div aria-live='assertive' className={style.itemgroup}>
                     {
                         state.items.map((item, index) => {
 
                             if (item) {
                                 return <div className={style.item} key={index}>
+                                    
+                                    <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`}className={style.arrow}>
+                                        <span className="material-icons">   
+                                        &#xe5de;
+                                        </span>
+                                    </button>
+                                    <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`} className={style.arrow}>
+                                        <span className="material-icons">
+                                        &#xe5df;
+                                        </span>
+                                    </button>
+                                    <div className={style.imgWithDesc}>
                                     <Card>
                                         <GameItem item={item} />
+                                        
                                     </Card>
-                                    <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`}>
-                                        <span className="material-icons">   
-                                            &#xe5d8;
-                                        </span>
-                                    </button>
-                                    <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`}>
-                                        <span className="material-icons">
-                                            &#xe5db;
-                                        </span>
-                                    </button>
-                                    
+                                    </div>
+                                    <div className={style.indexNumber}>{index+1}</div>
                                 </div>
                             }
 
@@ -116,8 +120,8 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
                     }
                 </div>
                 
-            </Box>
-            <button onClick={()=>{setShowConfirm(true)}}>sprawdź</button>
+            
+                <div className={style.section2}><ButtonLike> <button onClick={()=>setShowConfirm(true)}>Zakończ zadanie</button></ButtonLike></div>
         </div>
 }
 
@@ -127,7 +131,7 @@ const GameItem: React.FC<{
 }> = ({ item }) => {
     return <div className={`pick-up`}>
         <img src={item.text} alt="nie ma obrazka" />
-        
+        <p>{item.description}</p>
     </div>
 }
 

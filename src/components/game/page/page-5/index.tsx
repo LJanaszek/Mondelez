@@ -1,8 +1,11 @@
 import { useCallback, useState } from "react";
-import Box from "../../../layout/box/box"
 import OrderQuestionLayoutWIthImg from "../../../order-question-widget-for-img"
 import { Popup } from "../../../../molecules/popup/popup";
-
+import styles from "../../../layout/boxTask/box.module.scss"
+import BoxTask from "../.././../layout/boxTask/box"
+import lights from "../../../../assets/lights.png"
+import police from "../../../../assets/police.png"
+import signs from "../../../../assets/signs.png"
 type Props = {
     onNext(): void
 }
@@ -16,12 +19,16 @@ export default function Page5({onNext}: Props) {
     }, [setShowPopup]);
     const [showNext, setShowNext] = useState(false);
     const [showOnIncor, setShowIncor] = useState(false);
-    return <Box>
+    return <BoxTask >
+        <div className={styles.mainDiv}>
+            <h1>ułóż w kolejności</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fugiat delectus nobis harum fuga ab dignissimos nulla placeat aliquam, quia quidem pariatur esse explicabo adipisci exercitationem saepe unde itaque voluptate.</p>
+        </div>
         <OrderQuestionLayoutWIthImg
         items={[
-            {correctPlace: 0, text: "http://placekitten.com/200/100",},
-            {correctPlace: 2, text: "http://placekitten.com/201/100",},
-            {correctPlace: 1, text: "http://placekitten.com/200/102",},
+            {correctPlace: 0, text: lights, description: "światła"},
+            {correctPlace: 2, text: police, description: "policjant"},
+            {correctPlace: 1, text: signs, description: "znaki drogowe"},
         ]}
         onComplete={() => {setShowNext(true)}}
         onInComplete={()=>{setShowIncor(true); setShowPopup(true)}}
@@ -33,7 +40,7 @@ export default function Page5({onNext}: Props) {
         {showOnIncor && showPopup && <Popup><p>ŹLE</p>
         <button onClick={onClosePopupClicked}>DALEJ</button>
         </Popup>}
-        </Box>
+        </BoxTask>
 
         
 }
