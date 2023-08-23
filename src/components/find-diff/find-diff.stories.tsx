@@ -95,7 +95,7 @@ export const Base: Story = {
     img2src: '/find-diff-demo-2.jpg',
   },
   render: (args) => {
-    return <div style={{ height: '600px' }}>
+    return <div>
       <FindDiff {...args} />
     </div>
   }

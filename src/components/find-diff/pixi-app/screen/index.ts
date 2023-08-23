@@ -23,8 +23,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         imgLeft.events.on('target-clicked', (id) => this.onTargetClicked(id));
         imgRight.events.on('target-clicked', (id) => this.onTargetClicked(id));
 
-        imgRight.position.set(imgWidth, 0);
-
+        imgRight.position.set(imgWidth+62, 0);
         this.addChild(imgLeft);
         this.addChild(imgRight);
     }

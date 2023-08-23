@@ -34,7 +34,7 @@ export function FindDiff({
 
     // Czy Widget PIXI jest gotowy do przyjmowania danych
     const [appReady, setAppReady] = useState(false);
-    console.log(appReady)
+    // console.log(appReady)
     // W tym useEffect tworzymy instancje mapy.
     useEffect(() => {
         if (appRef.current) return;

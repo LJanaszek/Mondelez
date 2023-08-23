@@ -21,8 +21,9 @@ export default class PixiApp extends PIXI.Application {
     constructor(private config: AppConfig) {
         super({
             backgroundAlpha: 1,
-            backgroundColor: 0xDFD7CD,
-            width: config.imgWidth * 2,
+            backgroundColor: 0xffffff,
+            width: config.imgWidth * 2.1,
+            
             height: config.imgHeight,
             antialias: true
         });

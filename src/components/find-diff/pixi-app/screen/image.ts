@@ -16,7 +16,6 @@ export class GameImage extends PIXI.Container {
         this.sortableChildren = true;
 
         const bg = PIXI.Sprite.from(imgKey);
-
         this.addChild(bg);
 
         targets.forEach((item) => {

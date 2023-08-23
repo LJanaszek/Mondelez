@@ -1,6 +1,10 @@
 import { useCallback, useState } from "react";
 import { FindDiff, FindDiffGameState } from "../../../find-diff/find-diff";
-import Box from "../../../layout/box/box";
+import BoxTask from "../../../layout/boxTask/box";
+import styles from "../../../layout/boxTask/box.module.scss"
+import img1 from "../../../../assets/1.png"
+import img2 from "../../../../assets/2.png"
+import { ButtonLike } from "../../../../atoms/button-like";
 
 type Props = {
     onNext(): void;
@@ -16,9 +20,12 @@ export default function Page21({ onNext }: Props) {
     }, [setShowNext])
 
     return (
-        <Box>
-            <div style={{position: 'relative', minHeight: '80vh'}}>
-                <p>znajdź różnicę</p>
+        <BoxTask>
+            <div className={styles.mainDiv}>
+                <h1>bla bla bla</h1>
+                <p>znajdź różnicę na obrazkach</p>
+            </div>
+            <div style={{position: 'relative', minHeight: '50vh', margin: '0 1em', background:'white'}}>
                 <FindDiff
                     onGameStateChanged={onGameStateChanged}
                     targets={[{
@@ -31,7 +38,7 @@ export default function Page21({ onNext }: Props) {
                     {
                         id: 'b02',
                         position: {
-                            x: 610,
+                            x: 510,
                             y: 76
                         }
                     },
@@ -60,44 +67,44 @@ export default function Page21({ onNext }: Props) {
                         id: 'b06',
                         position: {
                             x: 135,
-                            y: 390
+                            y: 290
                         }
                     },
                     {
                         id: 'b07',
                         position: {
                             x: 400,
-                            y: 400
+                            y: 300
                         }
                     },
                     {
                         id: 'b08',
                         position: {
                             x: 135,
-                            y: 495
+                            y: 195
                         }
                     },
                     {
                         id: 'b09',
                         position: {
                             x: 230,
-                            y: 565
+                            y: 265
                         }
                     },
                     {
                         id: 'b10',
                         position: {
                             x: 520,
-                            y: 545
+                            y: 245
                         }
                     }]}
-                    imgWidth={443}
-                    imgHeight={788}
-                    img1src={'/find-diff-demo-1.jpg'}
-                    img2src={'/find-diff-demo-2.jpg'}
+                    imgWidth={619}
+                    imgHeight={391}
+                    img1src={img1}
+                    img2src={img2}
                 />
             </div>
-            {showNext && <button onClick={onNext}>Dalej</button>}
-        </Box>
+            {showNext && <div className={styles.section2}><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike></div>}
+        </BoxTask>
     );
 }

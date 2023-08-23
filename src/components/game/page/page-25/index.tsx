@@ -1,24 +1,33 @@
 import { useState } from "react";
 import { Popup } from "../../../../molecules/popup/popup"
-import Box from "../../../layout/box/box"
+import BoxTask from "../../../layout/boxTask/box"
+import styles from "../../../layout/boxTask/box.module.scss"
+import { ButtonLike } from "../../../../atoms/button-like";
+import car from "../../../../assets/list.png"
+import { ButtonsRow } from "../../../../atoms/buttons-row/buttons-row";
 
 type Props = {
     onNext(): void
 }
 
-export default function Page25({onNext}: Props) {
+export default function Page25({ onNext }: Props) {
     const [showPopup, setShowPopup] = useState<boolean>(false);
-    return <Box>
-        <p>Zadanie Zrób zdjęcie
-miejsca gdzie byłeś
-z rozłożonym hakiem
-</p>
-<button onClick={()=>{setShowPopup(true)}}>Dalej</button>
+    return <BoxTask>
+        <div className={styles.mainDiv}>
+            <h1>pocztówka</h1>
+            <p>W trakcie trwania gry wykonajcie zdjęcie przedstawiające wasz samochód z rozłożonym hakiem w miejscu atrakcyjnym turystycznie lub przyrodniczo, zdjęcie zaprezentujcie osobie prowadzącej grę, na punkcie finałowym
+            </p>
+            <img src={car} alt="" />
+        <section className={styles.section2}><ButtonLike> <button onClick={()=>setShowPopup(true)}>Zakończ zadanie</button></ButtonLike></section>
+        </div>
         {showPopup && <Popup>
-            <p>idziemy dalej? {showPopup ? 'TRUE' : 'FALSE'}</p>
-            <button onClick={onNext}>Tak</button>
-            <button onClick={()=>{setShowPopup(false)}}>ZAMKNIJ</button>
+            <p className={styles.popupTheme}>Czy napewno chcesz zamknąć zadanie? </p>
+            <ButtonsRow className={styles.popupNav}>
+            
+            <ButtonLike><button onClick={()=>{setShowPopup(false)}}>Wróć do zadania</button>
+            </ButtonLike><ButtonLike><button onClick={onNext}>Zakończ</button></ButtonLike>
+            </ButtonsRow>
         </Popup>
         }
-    </Box>
+    </BoxTask>
 }

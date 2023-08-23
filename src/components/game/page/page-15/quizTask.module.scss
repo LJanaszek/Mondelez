@@ -76,6 +76,20 @@
       right: 3em;
       margin-bottom: 2em;
     }
+    .leftSide{
+      color: var(--baseColor);
+      border-left: .8em solid var(--quizTaskColor);
+      border-right: 1em solid var(--quizTaskColor);
+      
+      height: 40vh;
+      border-radius: var(--buttonBorderRadius);
+      li{
+        list-style-type: '-';
+      }
+      li::marker{
+        padding-right: 1em;
+      }
+    }
     
   }
   #buttonOnPopup{
