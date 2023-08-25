@@ -1,4 +1,16 @@
 .timer{
     position: absolute;
     right: 10%;
+    margin: 0 auto;
+    top: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+}
+.timer>img{
+    /* position: absolute;
+    top: -1em;
+    right: -.6em;
+    width: 4em; */
+    width: 2em;
 }
