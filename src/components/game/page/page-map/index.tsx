@@ -11,6 +11,8 @@ import { SCENARIO } from "../../../../modules/game/scenario"
 import { GAME_STEP_TYPE, GeoStep } from "../../../../modules/game/types"
 import buttonRide from "../../../../assets/buttonRide.png"
 import buttonClose from "../../../../assets/buttonClose.png"
+import { sleep } from "react-query/types/core/utils"
+import { Await } from "react-router"
 
 type Props = {
 
@@ -26,6 +28,7 @@ export default function Page_map({ onNext }: Props) {
     const geoPoints = scenario.steps.filter(s => s.type === GAME_STEP_TYPE.GEO_STEP) as GeoStep[];
     const [selectedPoint, setSelectedPoint] = useState<string>();
     const [showPopup, setShowPopup] = useState<boolean>(false);
+    const [showTime, setShowTime] = useState<boolean>(false);
     const [positionGeoLat, setPositionGeoLat] = useState<string>();
     const [positionGeoLng, setPositionGeoLng] = useState<string>();
 
@@ -132,12 +135,13 @@ export default function Page_map({ onNext }: Props) {
         ];
     }, []);
 
-
+    
     const onPointerClicked = useCallback((id: string) => {
+        
         console.log(`KTOS KLIKNAL ${id} `);
         setSelectedPoint(id);
         setShowPopup(true);
-
+        setTimeout(()=>{setShowTime(true)},300);
 
         //szukanie długości i szerokości geo 
         
@@ -145,7 +149,7 @@ export default function Page_map({ onNext }: Props) {
         const positionGeo = (geoPoints.find(x => x.id === a)?.position)
         setPositionGeoLat(String(positionGeo?.lat))
         setPositionGeoLng(String(positionGeo?.lng))
-    }, [setSelectedPoint, setShowPopup])
+    }, [setSelectedPoint, setShowPopup, setShowTime]);
 
 
     const gameState = useGameModuleState();
@@ -185,6 +189,7 @@ export default function Page_map({ onNext }: Props) {
 
     const onClosePopupClicked = useCallback(() => {
         setShowPopup(false);
+        setShowTime(false);
         setSelectedPoint('')
     }, [setShowPopup, setSelectedPoint]);
 
@@ -206,8 +211,7 @@ export default function Page_map({ onNext }: Props) {
         }
 
     }, [dispatch, selectedPoint, mapPointsData]);
-
-
+    
     return <Box>
         <div className={style.mapPage}>
             <h1>Ogrodzieniec (poziom 511)</h1>
@@ -221,7 +225,8 @@ export default function Page_map({ onNext }: Props) {
                     mapPointsData={mapPointsData}
                 />
             </div>
-            {showPopup && <Popup>
+            
+            {showPopup && showTime && <Popup>
                 <p className={style.popupP}>{showPopup} {positionGeoLat}, {positionGeoLng}</p>
                 <div className={style.buttonRowNav}>
                     <button onClick={onClosePopupClicked}><img src={buttonClose} alt="wróć do mapy" />wróć do mapy</button>

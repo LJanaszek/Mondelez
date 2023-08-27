@@ -226,6 +226,26 @@ export const QUESTIONS: IQuizQuestion[] = [
             text: 'jakas odp',
         }]
     },
+    {
+        id:'13',
+        text:'Jaką funkcję spełnia system przeciwblokujący (ABS)?',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"",
+        answers:[{
+            id:'1',
+            text:'Skraca drogę hamowania w każdych warunkach.'
+        },{
+            id: '2',
+            text: 'Zapobiega zerwaniu przyczepności opon podczas przyspieszania.'
+        },{
+            id: '3',
+            text: 'Ułatwia omijanie przeszkód w czasie hamowania.',
+            isCorrect:true
+        },{
+            id: '4',
+            text: 'jakas odp',
+        }]
+    },
 
 ]
 

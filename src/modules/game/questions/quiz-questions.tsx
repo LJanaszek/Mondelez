@@ -12,7 +12,7 @@ import { Popup } from "../../../molecules/popup/popup";
 export interface Props2 {
   id: string;
   onComplete?(): void;
-  onNext():void
+  onNext?():void
 }
 type Props = {
   

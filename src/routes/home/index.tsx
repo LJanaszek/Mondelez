@@ -27,9 +27,9 @@ export default function HomePage() {
         </div>
         
             <div className={styles.content}>
-            <h2>Witamy!</h2>
+            <h2>Witajcie!</h2>
             {/* <Timer></Timer> */}
-            <p className={styles.contentText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ducimus aliquid veniam facilis eum voluptate ex dolor in harum, veritatis vitae? Id dicta dolores rem eum? Quasi nobis autem a.</p>
+            <p className={styles.contentText}>Przed Wami szereg zadań. Rozwiążcie jak najwięcej z nich. Pamiętajcie by poruszać się bezpiecznie i ekonomicznie</p>
             </div>
             <nav>
                 {!gameStarted && <ButtonLike>

@@ -13,3 +13,16 @@ export function getGamePageRoute() {
 export function getPolicyRoute() {
     return '/polityka';
 }
+
+export function getTaskZero(){
+    return '/pretask'
+}
+
+export function getQuizOne(){
+    return '/pretask'
+}
+
+export function getQuizTwo(){
+    return '/pretask'
+}
+
