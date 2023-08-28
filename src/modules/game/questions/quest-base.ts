@@ -228,22 +228,37 @@ export const QUESTIONS: IQuizQuestion[] = [
     },
     {
         id:'13',
-        text:'Jaką funkcję spełnia system przeciwblokujący (ABS)?',
+        text:'Co jest celem gry pt. "Poruszanie się po polskich drogach"?',
         imgSrc: 'http://placekitten.com/400/300',
-        description:"",
+        description:"Zawsze podczas jazdy najważniejsze jest bezpieczeństwo i o tym musimy pamiętać",
         answers:[{
             id:'1',
-            text:'Skraca drogę hamowania w każdych warunkach.'
+            text:'Ustanowienie jak największej ilości martwych punktów,'
         },{
             id: '2',
-            text: 'Zapobiega zerwaniu przyczepności opon podczas przyspieszania.'
+            text: 'Zbieranie ujemych punktów karnych,'
         },{
             id: '3',
-            text: 'Ułatwia omijanie przeszkód w czasie hamowania.',
-            isCorrect:true
+            text: 'Poznanie przepisów drogowych.',
+            
         },{
             id: '4',
-            text: 'jakas odp',
+            text: 'Bezpieczny powrót do domu.',
+            isCorrect:true
+        }]
+    },
+    {
+        id:'14',
+        text:'Czy można w Polsce legalnie korzystać z antyradaru?',
+        imgSrc: 'http://placekitten.com/400/300',
+        description:"Antyradar RST to kodeks drogowy, który każdy kierowca pownien znać i stosując się do przepisów będziemy jeździć bezpiecznie.",
+        answers:[{
+            id:'1',
+            text:'nie - jest to zabronione,'
+        },{
+            id: '2',
+            text: 'tak, pod warunkiem, że jest to antyradar RST',
+            isCorrect: true
         }]
     },
 

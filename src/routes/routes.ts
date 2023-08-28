@@ -19,10 +19,13 @@ export function getTaskZero(){
 }
 
 export function getQuizOne(){
-    return '/pretask'
+    return '/pretask1'
 }
 
 export function getQuizTwo(){
-    return '/pretask'
+    return '/pretask2'
+}
+export function getRide(){
+    return '/zaczynamy'
 }
 

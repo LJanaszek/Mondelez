@@ -8,21 +8,26 @@ import { useAnswer } from "../../main/hooks/use-answer";
 import { useSaveAnswer } from "../hooks/use-save-answer";
 import { ButtonLike } from "../../../atoms/button-like";
 import { Popup } from "../../../molecules/popup/popup";
+import { Link, useNavigate } from "react-router-dom";
+import { getGamePageRoute, getQuizOne, getQuizTwo, getRide } from "../../../routes/routes";
 
 export interface Props2 {
   id: string;
   onComplete?(): void;
-  onNext?():void
+  onNext?(): void,
+  showPopup?: boolean
 }
 type Props = {
-  
+
 }
+
 
 /**
  * Jeżeli user nie odpowiedział jeszcze na to pytanie to pokazujemy <QuizQuestionDummy>
  * Jezeli user opdpiwedział na pytanie to pokazujemy podsumowanie pytania
  */
-export function QuizQuestion({ id, onComplete, onNext}: Props2,  ) {
+export function QuizQuestion({ id, onComplete, onNext, showPopup }: Props2) {
+  
   const q = useQuestion(id);
   const answer = useAnswer(id);
 
@@ -50,10 +55,25 @@ export function QuizQuestion({ id, onComplete, onNext}: Props2,  ) {
 
   return (
     <>
+
+      <QuizQuestionDummy question={q} onConfirm={onQuestionConfirm} />
       
-        <QuizQuestionDummy question={q} onConfirm={onQuestionConfirm} />
-    
-      {!showQuestion && <Popup><QuizAnswerDummy question={q} userAnswerId={answer} /><ButtonLike><button id={styles.buttonOnPopup} onClick={onNext}>dalej</button></ButtonLike></Popup>}
+      {!showQuestion && showPopup == false && id == '13' &&
+      <Popup>
+        <QuizAnswerDummy question={q} userAnswerId={answer} />
+        <ButtonLike>
+          <Link to={getQuizTwo()}>dalej</Link>
+        </ButtonLike></Popup>}
+
+      {!showQuestion && showPopup == false && id == '14' && 
+      <Popup>
+        <QuizAnswerDummy question={q} userAnswerId={answer} />
+        <ButtonLike>
+        <Link to={getRide()}>dalej</Link>
+        </ButtonLike></Popup>}
+
+
+      {!showQuestion && showPopup != false && <Popup><QuizAnswerDummy question={q} userAnswerId={answer} /><ButtonLike><button id={styles.buttonOnPopup} onClick={onNext}>dalej</button></ButtonLike></Popup>}
     </>
   );
 }
@@ -100,14 +120,14 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
             return (
               <div className={styles.answersGrid} key={a.id} >
                 <label>
-                  
+
                   <div className={a.isCorrect ? styles.ans : styles.ans}>
-                    
+
                     <span><input
-                    type="radio"
-                    value={a.id}
-                    {...register("an")}
-                  />{a.id}</span>
+                      type="radio"
+                      value={a.id}
+                      {...register("an")}
+                    />{a.id}</span>
                     <p>{a.text}</p>
                   </div>
                 </label>
@@ -119,12 +139,12 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
 
       {showConfirm && (
         <section className={styles.buttonLike}>
-        <ButtonLike >
-        <button className={styles.buttonNext} onClick={onConfirmClicked}>
-          POTWIERDZ
-        </button>
-        </ButtonLike>
-        </section> 
+          <ButtonLike >
+            <button className={styles.buttonNext} onClick={onConfirmClicked}>
+              POTWIERDZ
+            </button>
+          </ButtonLike>
+        </section>
       )}
       {/* {showPopup && <Popup></Popup>} */}
     </div>
@@ -149,14 +169,14 @@ export function QuizAnswerDummy({ question, userAnswerId }: QuizAnswerDummyProps
 
 
   return <div id="answerPopup">
-   <p>Twoja odpowiedz to: {userAnswerText}</p>
+    <p>Twoja odpowiedz to: {userAnswerText}</p>
 
     {isUserAnswerCorrect && <p>SUPER!</p>}
     {!isUserAnswerCorrect && <div>
       <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
       <p>Poniewaz: {questionDescription}</p>
-      
+
     </div>}
-    </div>
+  </div>
 }
 

@@ -12,13 +12,7 @@ import {getTaskZero} from "../routes";
 
 export default function RulesPage() {
 
-    const navigate = useNavigate()
-
-    const [showGPSInfo, setShowGPSInfo] = useState(false);
-
-    const goToGame = useCallback(() => {
-        navigate(getGamePageRoute())
-    }, [navigate]);
+    
 
     return <div className={styles.rulesPageView}><Box>
         <div className={styles.rules}>

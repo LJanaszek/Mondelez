@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
-import { getHomeRoute, getGamePageRoute, getRulesPageRoute, getPolicyRoute, getTaskZero, getQuizOne, getQuizTwo } from './routes/routes';
+import { getHomeRoute, getGamePageRoute, getRulesPageRoute, getPolicyRoute, getTaskZero, getQuizOne, getQuizTwo, getRide } from './routes/routes';
 import React, { Suspense } from 'react';
 import { Loader } from './molecules/loader/loader';
 import { PageHeader } from './components/layout/header/page-header';
@@ -15,7 +15,9 @@ const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
 const RulesPage = React.lazy(() => import('./routes/rules/rules'));
 const TaskZero = React.lazy(() => import('./routes/task-0/task'));
-const QuizZero = React.lazy(() => import('./routes/quiz-1/quiz'));
+const QuizOne = React.lazy(() => import('./routes/quiz-1/quiz'));
+const QuizTwo = React.lazy(() => import('./routes/quiz-2/quiz'));
+const Ride = React.lazy(() => import('./routes/ride/ride'));
 
 export default function App() {
 
@@ -32,7 +34,9 @@ export default function App() {
                             <Route path={getRulesPageRoute()} element={<RulesPage />} />
                             <Route path={getGamePageRoute()} element={<GamePage />} />
                             <Route path={getTaskZero()} element={<TaskZero />} />
-                            <Route path={getQuizOne()} element={<QuizZero />} />
+                            <Route path={getQuizOne()} element={<QuizOne />} />
+                            <Route path={getQuizTwo()} element={<QuizTwo />} />
+                            <Route path={getRide()} element={<Ride />} />
                             <Route path={getPolicyRoute()} element={<PolicyPage />} />
                             <Route path={'/debug-on'} element={<DebugOn />} />
                             <Route path={'/debug-off'} element={<DebugOff />} />

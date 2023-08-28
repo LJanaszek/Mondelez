@@ -6,7 +6,7 @@ import style from "./style.module.scss"
 export default function QuizOne(){
     return <Box>
         <div className={style.mainDiv}>
-        <QuizQuestion id="13" showPopup = {false}/>
+        <QuizQuestion id="14" showPopup ={false}/>
         </div>
     </Box>
 }
