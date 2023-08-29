@@ -14,7 +14,7 @@
     background-color: var(--quizButtonBackground);
     border-radius: var(--buttonBorderRadius);
 }
-img{
+.img{
     width: 60%;
 }
 .imgWithDesc{
@@ -30,6 +30,7 @@ img{
     width: 2em;
     margin: 0 auto;
 }
+.buttonGroup >
 span:only-child{
     font-size: 2.5em;
 }

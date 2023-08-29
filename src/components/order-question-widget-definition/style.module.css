@@ -17,7 +17,7 @@
 .item >*{
     display: inline-flex;
     align-items: center;
-    height: 3em;
+    height: 4em;
 }
 .arrow, .arrow2{
     margin: 0;
@@ -27,7 +27,7 @@
     color: white;
 }
 
-span:only-child{
+.buttonGroup> span:only-child{
     font-size: 5em;
 }
 button{
@@ -40,10 +40,16 @@ button{
     width: 4em;
 
 }
+.buttonGroup >
 section{
     padding-left: 1em;
     font-family: UbuntuReg;
     width: 100%;
     height: 2em;
     background-color: var(--quizButtonBackground);
+}
+.pickUp{
+    line-height: normal;
+    font-size: 12pt;
+    margin: 0 .5rem;
 }

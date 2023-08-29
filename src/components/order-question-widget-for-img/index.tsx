@@ -130,7 +130,7 @@ const GameItem: React.FC<{
     item: Item
 }> = ({ item }) => {
     return <div className={`pick-up`}>
-        <img src={item.text} alt="nie ma obrazka" />
+        <img src={item.text} alt="nie ma obrazka" className={style.img}/>
         <p>{item.description}</p>
     </div>
 }

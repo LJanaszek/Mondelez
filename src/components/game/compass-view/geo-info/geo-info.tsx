@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import styles from './geo-info.module.scss';
+import Box from "../../../layout/boxTask/box";
 
 type Props = {
     distance: number,
@@ -31,7 +32,8 @@ export function GeoInfo({ distance, name, bering }: Props) {
         }
     }, [bering]);
 
-    return <div className={styles.geoInfo}>
+    return <Box>
+    <div className={styles.mainDiv}>
         <div className={styles.inner}>
             Aby dojść do<br />
             <div className={styles.adress}>
@@ -41,4 +43,5 @@ export function GeoInfo({ distance, name, bering }: Props) {
             kieruj się <strong>{Math.round(distance)}m.</strong> na{'\u00A0'}<strong style={{whiteSpace: 'nowrap'}}>{direction}</strong><br />
         </div>
     </div>
+    </Box>
 }

@@ -17,8 +17,8 @@ export default function Page4({ onNext }: Props) {
     const [showPopup, setShowPopup] = useState<boolean>(false);
     return <BoxTask>
         <div className={styles.mainDiv}>
-        <h1>Zepsuło się koło</h1>
-        <p>zrób foto poradnik pokazujący krok po kroku wyjęcie, sprawdzenie i odłożenie dojazdówki i sprzętów potrzebnych do wymiany koła - do pokazania z telefonu na finale
+        <h1>Zepsute koło</h1>
+        <p>O nie! Złapaliście gumę! Stwórzcie fotoporadnik, który pozwoli nieświadomym kierowcom dowiedzieć się co i w jakiej kolejności muszą zrobić aby bezpiecznie wymienić koło. UWAGA! NIE WYMIENIACIE KOŁA tylko robicie zdjęcia wszystkim rzeczom i narzędziom potrzebnym do bezpiecznej wymiany. Gdzie są, gdzie powinny być, jak wyglądają itp. Krok po kroku i w odpowiedniej kolejności. Po sesji zdjęciowej umieście je w odpowiednich miejscach aby były gotowe do użycia w razie prawdziwej awarii. Wykonane zdjęcia przedstawcie osobie prowadzącej grę na punkcie finałowym.
         </p>
         <img src={page4_car} alt="" />
         <section className={styles.butttonLike}>

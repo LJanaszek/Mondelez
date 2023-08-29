@@ -14,7 +14,7 @@ export default function Page9({ onNext }: Props) {
     const [showPopupFalse, setShowPopupFalse] = useState(false)
     return <BoxTask>
         <div className={styles.mainDiv}>
-            <h1>Przycisk SOS</h1>
+            <h1>do wywalenia</h1>
             <p>wybierz wszystkie sytuacje, w których należy użyć przycisku.</p>
             <CheckboxAnswerForm
                 items={[

@@ -14,8 +14,8 @@ export default function Page7({onNext}: Props) {
     const [showPopup, setShowPopup] = useState<boolean>(false);
     return <BoxTask>
         <div className={styles.mainDiv}>
-            <h1> bla bla bla</h1>
-        <p>zademonstruj na zdjęciu prawidłowo ustawioną pozycję kierowcy za kierownicą, ma to być zdjęcie instruktażowe dla osoby, która nie wie jak zająć prawidłową pozycję za kierownicą.</p>
+            <h1>Bezpieczny kierowca</h1>
+        <p>Odpowiednia pozycja za kierownicą ma wpływ na bezpieczeństwo i komfort jazdy. Zróbcie zdjęcie instruktażowe przedstawiające kierowcę siedzącego prawidłowo za kierownicą. Bądźcie kreatywni! Niech to jedno zdjęcie wszystko wytłumaczy! Zdjęcie pokażcie na punkcie finałowym osobie prowadzącej grę.</p>
         <img src={carWheel} alt="" />
         <section className={styles.butttonLike}>
         <ButtonLike>

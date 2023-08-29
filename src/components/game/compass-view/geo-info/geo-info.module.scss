@@ -21,12 +21,14 @@
 }
 
 .inner {
-    padding: 4rem 4rem 1rem;
-    background: url(../../../../assets/icons/kierunek.svg) 50% 1rem no-repeat;
-    background-size: auto 2rem;
+    // padding-top: 2em;
+    padding: 14rem 6rem 9rem;
+    background: url(../../../../assets/buttonRide.png) 50% 4rem no-repeat;
+    background-size: auto 6rem;
 
     text-align: center;
     line-height: 2em;
+    font-size: 1.2em;
 }
 
 .adress {

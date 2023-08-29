@@ -86,7 +86,7 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
                         state.items.map((item, index) => {
 
                             if (item) {
-                                return <div className={style.item} key={index}>
+                                return <div className={style.item2} key={index}>
                                     <Card>
                                         <GameItem item={item} />
                                     </Card>

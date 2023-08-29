@@ -10,6 +10,8 @@ import { ButtonLike } from "../../../atoms/button-like";
 import { Popup } from "../../../molecules/popup/popup";
 import { Link, useNavigate } from "react-router-dom";
 import { getGamePageRoute, getQuizOne, getQuizTwo, getRide } from "../../../routes/routes";
+import incorrect from "../../../assets/incorrect.png"
+import correct from "../../../assets/correct.png"
 
 export interface Props2 {
   id: string;
@@ -168,11 +170,14 @@ export function QuizAnswerDummy({ question, userAnswerId }: QuizAnswerDummyProps
 
 
 
-  return <div id="answerPopup">
-    <p>Twoja odpowiedz to: {userAnswerText}</p>
+  return <div className={styles.answerPopup}>
+    
+    {/* <p>Twoja odpowiedz to: {userAnswerText}</p> */}
 
-    {isUserAnswerCorrect && <p>SUPER!</p>}
+    {isUserAnswerCorrect && <div><img src={correct} alt="" /><p>SUPER!</p><p>Twoja odpowiedz to: {userAnswerText}</p></div>}
+
     {!isUserAnswerCorrect && <div>
+      <img src={incorrect} alt="" />
       <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
       <p>Poniewaz: {questionDescription}</p>
 

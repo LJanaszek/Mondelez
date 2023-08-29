@@ -1,11 +1,16 @@
-.item{
+.item2{
     display: flex;
     align-content: center;
     border-bottom: 1px solid;
     align-items: center;
 }
-.item:last-child{
+.item2:last-child{
     border: none;
+}
+.item2 >*{
+    display: inline-flex;
+    align-items: center;
+    height: 3em;
 }
 .itemgroup{
     font-family: UbuntuReg;
@@ -13,12 +18,13 @@
     margin: 1em 2em;
 
 }
-span:only-child{
-    font-size: 4em;
+.arrow>span:only-child{
+    font-size: 2.5em;
     padding: 0;
     margin: 0;
     
 }
+.buttonGroup >
 span{
     width: 1em;
     height: 1em;
