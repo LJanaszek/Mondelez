@@ -186,6 +186,20 @@ Pliki:
 - `/public/manifest.json` - manifest PWA
 - `/public/favicon_*.png` - ikony PWA
 
+### Pliki statyczne w trybie offline
+
+Aby worker pobrał pliki z katalogu publik zanim będzie to wymagane przez strojnę należy dodać te pliki do listy w pliku `/src/service-worker.ts`
+
+```js
+// Tutaj należy dodać pliki z katalogu `public` które mają być dostępne w trybie offline
+precacheAndRoute([
+  '/map.png',
+  '/pinezka.png',
+  '/find-diff-demo-1.jpg',
+  '/find-diff-demo-2.jpg',
+]);
+```
+
 ---
 
 
