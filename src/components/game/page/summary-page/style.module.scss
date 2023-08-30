@@ -1,12 +1,4 @@
-.box {
-  background: white;
-  color: var(--textColor);
-  border-radius: 1em;
-  width: 97%;
-  margin: 0 auto;
-  .header {
-  }
-  .mainDiv {
+.mainDiv {
     div>.imgBlock{
       width: 70%;
     }
@@ -53,38 +45,3 @@
     margin-bottom: 1em;
   }
   }
-  button {
-    margin: 2px;
-  }
-  
-  .popupNav {
-    margin-bottom: 2em;
-  }
-
-  
-}
-.section {
-    margin: 1em;
-    button {
-      padding: 0.3em 1em;
-    }
-    padding-bottom: 2.2em;
-
-    // margin: 1em;
-    text-align: end;
-  }
-  button {
-  margin: 2px;
-}
-.section2{
-  text-align: end;
-  margin-right: 2em;
-  padding-bottom: 2em;
-}
-.contentOrder{
-  button{
-    height: 100%;
-    margin: 2px;
-    // gap: 4px;
-  }
-}

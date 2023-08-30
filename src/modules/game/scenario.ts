@@ -28,13 +28,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '2.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-2',
+            pageId: 'page-2', //quiz
             nextStep: '2.3'
         },
         {
             id: '2.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-4',
+            pageId: 'page-4', //zepsute koło
             nextStep: '1.1'
         },
         {
@@ -50,13 +50,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '3.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-3',
+            pageId: 'page-3', //quiz
             nextStep: '3.3'
         },
         {
             id: '3.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-7', //zdjecie
+            pageId: 'page-7', //zdjecie za kierownicą
             nextStep: '1.1'
         },
         {
@@ -72,13 +72,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '4.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-8',
+            pageId: 'page-8', //quiz
             nextStep: '4.3'
         },
         {
             id: '4.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-9', //sos
+            pageId: 'page-9', //UWAŻAJ
             nextStep: '1.1'
         },
         {
@@ -94,7 +94,7 @@ export const SCENARIO: GameScenario = {
         {
             id: '5.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-10',
+            pageId: 'page-10',//quiz
             nextStep: '5.3'
         },
         {
@@ -116,13 +116,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '6.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-12',
+            pageId: 'page-12', //quiz
             nextStep: '6.3'
         },
         {
             id: '6.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-13', //jak duże masz
+            pageId: 'page-13', //agenci specjalni
             nextStep: '1.1'
         },
         {
@@ -138,13 +138,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '7.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-14',
+            pageId: 'page-14', //quiz
             nextStep: '7.3'
         },
         {
             id: '7.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-15', //quiz 
+            pageId: 'page-15', //OSZCZĘDZANIE
             nextStep: '1.1'
         },
         {
@@ -160,13 +160,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '8.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-16',
+            pageId: 'page-16', //quiz
             nextStep: '8.3'
         },
         {
             id: '8.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-6', //dopasuj opis do nazwy
+            pageId: 'page-6', //STABILNY TOR
             nextStep: '1.1'
         },
         {
@@ -182,13 +182,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '9.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-18',
+            pageId: 'page-18', //quiz
             nextStep: '9.3'
         },
         {
             id: '9.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-5', //ulóż w kolejności
+            pageId: 'page-5', //kto ważniejszy
             nextStep: '1.1'
         },
         {
@@ -204,13 +204,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '10.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-20',
+            pageId: 'page-20', //quiz
             nextStep: '10.3'
         },
         {
             id: '10.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-21', //znajdź różnicę
+            pageId: 'page-21', //trening spostrzegawczości
             nextStep: '1.1'
         },
         {
@@ -226,13 +226,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '11.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-22',
+            pageId: 'page-22', //quiz
             nextStep: '11.3'
         },
         {
             id: '11.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-23', //ułóż w kolejności
+            pageId: 'page-23', //zarządzanie kryzysowe
             nextStep: '1.1'
         },
         {
@@ -248,13 +248,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '12.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-24',
+            pageId: 'page-24', //quiz
             nextStep: '12.3'
         },
         {
             id: '12.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-25', //zrób zdjęcie
+            pageId: 'page-25', //zadanie quiz RST
             nextStep: '1.1'
         },
         {
@@ -270,13 +270,13 @@ export const SCENARIO: GameScenario = {
         {
             id: '13.2',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-26',
+            pageId: 'page-26', //quiz
             nextStep: '13.3'
         },
         {
             id: '13.3',
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-27', //tekst
+            pageId: 'page-27', //Wybieranie głosowe
             nextStep: '1.1'
         },
         {

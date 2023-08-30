@@ -1,9 +1,10 @@
 import { useGameState } from "../../../../modules/game/hooks/use-game-state"
 import { QUESTIONS } from "../../../../modules/game/questions/quest-base"
 import { GAME_STEP_TYPE } from "../../../../modules/game/types"
-import Box from "../../../layout/box/box"
+import Box from "../../../layout/boxFinal/box"
 import useScenario from "../../../../modules/game/hooks/use-scenario"
-
+import styles from "../../../layout/boxFinal/box.module.scss"
+import timer from "../../../../assets/endPage.png"
 type Props = {
     onNext(): void
 }
@@ -14,11 +15,18 @@ export default function SummaryPage({onNext}: Props) {
     const {quizQuestionCount, correctQuizQuestionCount} = useQuizResult();
 
     return <Box>
-        <p>koniec gry</p>
-        <p>znalazłeś {completedGeoPointCount} punkty geo na {geoPointsCount}</p>
-        <p>opdowiedziałeś poprawnie na {correctQuizQuestionCount} odpowiedzi quizowych na {QUESTIONS.length}</p>
-        <button onClick={onNext}>Dalej</button>
-    </Box>
+    <div className={styles.mainDiv}>
+        <h1>Gratulacje!</h1>
+        <div className={styles.timerTop}>
+        <span className={styles.timer}>0:00</span>
+        <img src={timer} alt="" />
+        </div>
+        <p>zaliczyliście <span>{completedGeoPointCount} z {geoPointsCount} </span>zadań<br />
+        opdowiedziałeś poprawnie na <span>{correctQuizQuestionCount} z {quizQuestionCount} </span> pytań</p>
+        
+        </div>
+        <p className={styles.adress}>kierujcie się do bazy: adres</p>
+        </Box>
 }
 
 function useGeoPointResult() {

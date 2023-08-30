@@ -1,0 +1,61 @@
+.box {
+  background: var(--quizButtonBackground);
+  color: var(--textColor);
+  border-radius: 1em;
+  width: 97%;
+  margin: 0 auto;
+  text-align: center;
+  .adress{
+    color: var(--baseColor);
+    padding: 4em 0;
+  }
+  .header {
+  }
+  .mainDiv {
+
+    div>.imgBlock{
+      width: 70%;
+    }
+    h1 {
+      padding: 1em 1.5em;
+      padding-bottom: 0.5em;
+      text-align: center;
+      font-size: 5em;
+    }
+    p {
+      text-align: center;
+      background-color: white;
+      width: 60%;
+      margin: 0 auto;
+      padding: 1em 2em;
+      line-height: 2em;
+      border-radius: var(--buttonBorderRadius);
+    }
+    img {
+      display: block;
+      // margin-top: 4em;
+      padding: 1em 0;
+      // padding-bottom: 0;
+      text-align: center;
+      margin: 0 auto;
+      width: 10%;
+    }
+
+   span{
+    color: var(--baseColor);
+   }
+    button {
+    margin: 2px;
+  }  
+  .timer{
+    color: var(--textColor);
+    align-self: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 1.5em;
+  }
+  .timerTop{
+    display: flex;
+  }
+  }}

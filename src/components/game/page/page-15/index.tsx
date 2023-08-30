@@ -18,16 +18,15 @@ export default function Page15({ onNext }: Props) {
   return (<BoxTask>
     <div className={styles.answer}>
       <div className={style.mainDiv}>
-        <h1>zadanieQuizowe</h1>
-        <p>pytanie</p>
+        <h1>Oszczędzanie</h1>
+        <p> W trakcie jazdy po mieście włączony system start-stop ogranicza zużycie paliwa od 5% do nawet 15%. Obliczcie ile złotych w skali roku może zaoszczędzić osoba, która:</p>
       </div>
       <div className={styles.questionAnswer}>
         <div className={styles.leftSide}>
-          <p>przejeżdża 2500km miesięcznie</p>
           <ul>
-            <li>jeździ po mieście</li>
-            <li>jej samochód spala średnio 6l na 100km</li>
-            <li>przyjmijcie średnią benzyny - 6,50 zł za litr</li>
+            <li>przejeżdża 2500 km miesięcznie po mieście.</li>
+            <li>Przyjmijcie średnią cenę benzyny - 6,50 zł za litr</li>
+            <li>spalanie (bez systemu start-stop) na poziomie 8 litrów/100 km.</li>
           </ul>
         </div>
         <form className={styles.answer_block}>
@@ -40,7 +39,8 @@ export default function Page15({ onNext }: Props) {
                   value=""
                   name="ans"
                 /></span>
-                <p>odp1</p>
+                <p>między 1323 zł a 2015 zł
+</p>
               </div>
             </label>
           </div>
@@ -53,7 +53,8 @@ export default function Page15({ onNext }: Props) {
                   value=""
                   name="ans"
                 /></span>
-                <p>odp1</p>
+                <p>między 215 zł a 630 zł
+</p>
               </div>
             </label>
           </div>
@@ -66,7 +67,7 @@ export default function Page15({ onNext }: Props) {
                   value=""
                   name="ans"
                 /></span>
-                <p>odp1</p>
+                <p>między 585 zł a 1755 zł</p>
               </div>
             </label>
           </div>
@@ -85,16 +86,16 @@ export default function Page15({ onNext }: Props) {
                     }}
                   />
                 </span>
-                <p>odp1</p>
+                <p>między 780 zł a 2340 zł</p>
               </div>
             </label>
           </div>
         </form>
       </div>
-{showNext && <section className={styles.section}><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike>
-    </section>}
+      {showNext && <section className={styles.section}><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike>
+      </section>}
     </div>
-    
+
   </BoxTask>)
 
 }

@@ -11,7 +11,7 @@
     margin-right: 2em;
 }
 .item{
-    
+    width: 100%;
    align-items: center;
 }
 .item >*{
@@ -27,17 +27,21 @@
     color: white;
 }
 
-.buttonGroup> span:only-child{
+
+#span{
     font-size: 5em;
+    /* width: 4em; */
 }
 button{
     height: 100%;
+    /* width: 4em; */
 }
 /* i{
     font-size: 2em;
 } */
 .definition{
-    width: 4em;
+    max-width: 3em;
+    width: inherit;
 
 }
 .buttonGroup >
@@ -52,4 +56,5 @@ section{
     line-height: normal;
     font-size: 12pt;
     margin: 0 .5rem;
+    width: 100%;
 }

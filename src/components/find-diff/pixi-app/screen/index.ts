@@ -3,6 +3,7 @@ import { FindDiffGameState } from '../../find-diff';
 import { IScreen } from "../app";
 import { GameImage } from './image';
 import { ItemData } from '../types';
+import { LineStyle } from '@material-ui/icons';
 
 export default class GameScreen extends PIXI.Container implements IScreen {
 
@@ -30,7 +31,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
     private onTargetClicked(id: string) {
         console.log('onTargetClicked', id);
-
+        // LineStyle(2, 0xFEEB77, 1);
         this.findedTargets.add(id);
         this.sendInfo();
     }

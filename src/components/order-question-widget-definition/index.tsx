@@ -95,12 +95,12 @@ export default function OrderQuestionLayout({ items, onComplete }: Props) {
                             <div className={style.definition}>{definitions[index]}</div>
                             <div className={style.buttonGroup}>
                                 <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index + 1}: ${item.text} Przenieś wyżej`} className={style.arrow}>
-                                    <span className="material-icons">
+                                    <span className="material-icons" id={style.span}>
                                         &#xe5c7;
                                     </span>
                                 </button>
                                 <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index + 1}: ${item.text} Przenieś niżej`} className={style.arrow2}>
-                                    <span className="material-icons">
+                                    <span className="material-icons" id={style.span}>
                                         &#xe5c5;
 
                                     </span>

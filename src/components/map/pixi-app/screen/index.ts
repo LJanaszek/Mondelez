@@ -59,6 +59,7 @@ export default class GameScreen extends Container implements IScreen {
 
                 point.on('pointerdown', () => {
                     this.events.emit('pointer-clicked', p.id);
+                    
                 });
 
                 if (p.id === this.selectedPointId) {

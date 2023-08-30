@@ -13,8 +13,8 @@ export default function Page11({onNext}: Props) {
     const [showNext, setShowNext] = useState(false);
         return <BoxTask>
             <div className={styles.mainDiv}>
-            <h1>Apteczka</h1>
-            <p>sprawdźcie czy macie wszystko z podanej listy w swojej apteczce w aucie</p></div>
+            <h1>Gotowi na wszystko</h1>
+            <p>Upewnijcie się, że jesteście odpowiednio przygotowani na każdą ewentualność. Znajdźcie Waszą samochodową apteczkę i przeprowadźcie jej inwentaryzację. Na poniższej liście zaznaczcie co w niej jest, a czego brakuje. Zróbcie sobie zdjęcie z apteczką i przedstawcie ja na punkcie finałowym osobie prowadzącej grę.</p></div>
     <CheckboxAnswerForm 
     items = {[
         {id: '1', text :'Rękawiczki jednorazowe (2-3 pary)'},

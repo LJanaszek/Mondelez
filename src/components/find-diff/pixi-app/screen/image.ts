@@ -1,10 +1,10 @@
 import * as PIXI from 'pixi.js';
 import { ItemData } from '../types';
 import Target from './target';
+import { LineStyle } from '@material-ui/icons';
 
 export class GameImage extends PIXI.Container {
     events = new PIXI.utils.EventEmitter();
-
     constructor(
         private imgKey: string,
         targets: ItemData[],
@@ -25,12 +25,14 @@ export class GameImage extends PIXI.Container {
                 item.position.x % imgWidth,
                 item.position.y % imgHeight
             );
+            
 
             target.events.on('target-clicked', () => {
                 this.events.emit('target-clicked', target.id);
+                target.visible = true;
             });
-
             this.addChild(target);
+
         })
     }
 }

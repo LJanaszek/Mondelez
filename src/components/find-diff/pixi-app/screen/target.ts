@@ -11,15 +11,19 @@ export default class Target extends PIXI.Container {
 
         // TO JEST DEBUG...
         const gfx = new PIXI.Graphics();
+        gfx.visible  = false;
         gfx.lineStyle(2, 0xFEEB77, 1);
-        gfx.drawShape(hitArea);
-        this.addChild(gfx);
+            gfx.drawShape(hitArea);
+            this.addChild(gfx);
+        // this.addChild(gfx);
         // ...TU SIE KONCZY DEBUG
 
         this.eventMode = 'static';
 
         this.on('pointerdown', () => {
             this.events.emit('target-clicked');
+            gfx.visible = true
+            
         })
     }
 

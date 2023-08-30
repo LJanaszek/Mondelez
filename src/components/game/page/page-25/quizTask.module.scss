@@ -8,7 +8,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-gap: 10%;
+      grid-gap: 8%;
     }
     .questionText{
       padding: 1em 2em;
@@ -17,8 +17,8 @@
     .questionAnswer{
       height: 100%;
       display: grid;
-      gap:1em;
-      grid-template-columns: 1fr 1fr;
+      gap:5em;
+      grid-template-columns: 2fr 3fr;
       padding: 2em 2.2em ;
   
     }
@@ -80,8 +80,6 @@
       color: var(--baseColor);
       border-left: .8em solid var(--quizTaskColor);
       border-right: 1em solid var(--quizTaskColor);
-      display: grid;
-      align-content: center;
       
       height: 40vh;
       border-radius: var(--buttonBorderRadius);
@@ -90,6 +88,15 @@
       }
       li::marker{
         padding-right: 1em;
+      }
+    }
+    .rightSide{
+      justify-content: center;
+          align-self: center;
+    margin: 0 auto;
+      img{
+        width: 80%;
+        height: 80%;
       }
     }
     

@@ -27,7 +27,7 @@ export default function Page5({ onNext }: Props) {
         </div>
         <OrderQuestionLayoutWIthImg
             items={[
-                { correctPlace: 1, text: lights, description: "światła" },
+                { correctPlace: 1, text: lights, description: "sygnalizacja świetlna" },
                 { correctPlace: 2, text: signs, description: "znaki drogowe" },
                 { correctPlace: 0, text: police, description: "policjant" },
             ]}
