@@ -1,3 +1,4 @@
+import { ButtonLike } from '../../atoms/button-like';
 import styles from './popus.module.scss';
 
 type Props = React.PropsWithChildren<{
@@ -10,7 +11,7 @@ export function Popup({ children, onOKClick }: Props) {
 
         <div className={styles.inner}>
             {children}
-            {onOKClick && <button className="button" onClick={onOKClick}>OK</button>}
+            {onOKClick && <ButtonLike><button className="button" onClick={onOKClick}>OK</button></ButtonLike>}
         </div>
     </div>
 }
