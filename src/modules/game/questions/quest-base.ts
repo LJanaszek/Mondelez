@@ -1,3 +1,13 @@
+import img3 from "../../../assets/3.jpg"
+import img4 from "../../../assets/4.jpg"
+import img5 from "../../../assets/5.jpg"
+import img6 from "../../../assets/6.jpg"
+import img7 from "../../../assets/7.jpg"
+import img8 from "../../../assets/8.jpg"
+import img9 from "../../../assets/9.jpg"
+import img10 from "../../../assets/10.jpg"
+import img11 from "../../../assets/11.jpg"
+import img12 from "../../../assets/abs.png"
 export interface IQuizQuestion {
     id: string,
     text: string,
@@ -58,7 +68,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '3',
         text: 'Czy kierując samochodem osobowym w tunelu o długości 600 m położonym w obszarze zabudowanym, masz obowiązek utrzymywać odstęp od poprzedzającego pojazdu nie mniejszy niż 50 metrów?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img3,
         description: "Obowiązek zachowania odstępu co najmniej 50 m, mamy w tunelach, których długość przekracza 500 i znajdują się poza obszarem zabudowanym.",
         answers: [{
             id: '1',
@@ -75,7 +85,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '4',
         text: 'Jedziesz z prędkością 80 km/h. Jaka pozycja początkowa zapewni Ci optymalny tor jazdy po zakręcie?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img4,
         description: "Generalna zasada doboru optymalnego toru jazdy polega na wykonaniu tego manewru po możliwie łagodnym łuku. Pokonanie tego konkretnego zakrętu powinno się rozpocząć możliwie blisko podwójnej linii ciągłej. W połowie łuku należy się zbliżyć do prawej krawędzi jezdni (szczyt zakrętu), a wyjście z zakrętu powinno zakończyć się znowu przy osi jezdni. Dodatkowym elementem o którym należy wspomnieć w aspekcie pokonywania zakrętów jest ograniczenie działania siły odśrodkowej.",
         answers: [{
             id: '1',
@@ -92,7 +102,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '5',
         text: 'Z jaką dopuszczalną prędkością wolno Ci kierować samochodem osobowym na drodze za widocznym znakiem?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img5,
         description: "Dopuszczalna prędkość na drodze dwujezdniowej dwukierunkowej, o dwóch pasach ruchu wynosi - 100 km/h. Na widocznym powyżej obrazku mamy do czynienia z taką właśnie dwujezdniową drogą dwukierunkową, znajdującą się poza terenem zabudowanym. Między jezdniami znajduje się pas zieleni i na tej podstawie możemy wnioskować, że mamy do czynienia z tą właśnie drogą. ",
         answers: [{
             id: '1',
@@ -109,7 +119,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '6',
         text: 'Czy w tej sytuacji masz prawo zatrzymać pojazd za znakiem w celu wysadzenia pasażera?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img6,
         description: "pod znakiem B-36 “zakaz zatrzymywania się” umieszczona jest tabliczka T-25C, która jest odwołaniem znaku zakazu. Tabliczki T-25 mówią nam T-25A – początek zakazu wyrażonego znakiem, T-25B – kontynuacja zakazu wyrażonego znakiem, no i wspomniana T-25C odwołująca zakaz",
         answers: [{
             id: '1',
@@ -123,7 +133,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '7',
         text: 'Czy ten znak poziomy zabrania zmiany pasa ruchu?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img7,
         description: "Tak, widoczna linia pojedyncza ciągła zabranie przejeżdżania przez nią. Linia pojedyncza ciągła oddziela pasy ruchu o tym samym kierunku i oznacza ponadto zakaz przejeżdżania przez tę linię i najeżdżania na nią.",
         answers: [{
             id: '1',
@@ -137,7 +147,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '8',
         text: 'Czy zmieniając nieznacznie tor jazdy pojazdu w obrębie dotychczas zajmowanego pasa ruchu, masz obowiązek sygnalizować to wcześniej kierunkowskazem?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img8,
         description: "Sygnalizować kierunkowskazem należy zamiar zmiany pasa ruchu i zamiar zmiany kierunku jazdy. Przepisy nie nakazują sygnalizowania nieznacznej zmiany toru jazdy, gdy na przykład delikatnie omijasz dziurę w nawierzchni jezdni.",
         answers: [{
             id: '1',
@@ -151,7 +161,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '9',
         text: 'Czy w tej sytuacji, podczas postoju uszkodzonego pojazdu poza obszarem zabudowanym, masz obowiązek umieścić ostrzegawczy trójkąt odblaskowy bezpośrednio za pojazdem lub na nim?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img9,
         description: "Kierujący pojazdem jest obowiązany sygnalizować postój pojazdu silnikowego lub przyczepy z powodu uszkodzenia lub wypadku poza obszarem zabudowanym, w razie postoju na jezdni w miejscu, w którym jest to zabronione, a na poboczu, jeżeli pojazd nie jest widoczny z dostatecznej odległości, W pozostałych sytuacjach należy sygnalizować.",
         answers: [{
             id: '1',
@@ -166,7 +176,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '10',
         text: 'Czy na tej drodze zawsze masz obowiązek ustąpić pierwszeństwa pieszemu?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img10,
         description: "W strefie ruchu, występują drogi publiczne i przynajmniej jedna z dróg jest drogą wewnętrzną. Administrator sam ustala organizację ruchu na tym obszarze. Może więc uznać, że jedna droga jest drogą z pierwszeństwem, a inna podporządkowaną. Dlatego nie można stwierdzić, że zawsze muszę ustępować pierwszeństwa, gdyż mogę w tej strefie również korzystać z drogi z pierwszeństwem, lub wynikającego z zasady “prawej ręki:. W strefie ruchu pieszy będzie miał pierwszeństwo wyłącznie jeśli ruch będzie odbywał się na tych samych płaszczyznach, np. parkingi przed hipermarketami. W pytaniu pojawia się jednak zapytanie “czy zawsze?”. Oczywiście że nie zawsze.",
         answers: [{
             id: '1',
@@ -180,7 +190,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '11',
         text: 'Czy masz obowiązek bezwarunkowo zatrzymać pojazd przed linią złożoną z trójkątów?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img11,
         description: "Nie, ponieważ nie jest to linia bezwzględnego zatrzymania. Jest to oznakowanie nakazujące ustąpienia pierwszeństwa. Jeżeli nikt nie będzie jechał drogą z pierwszeństwem to nie musimy się tu zatrzymywać.",
         answers: [{
             id: '1',
@@ -194,7 +204,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '12',
         text: 'Jaką funkcję spełnia system przeciwblokujący (ABS)?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img12,
         description: "",
         answers: [{
             id: '1',

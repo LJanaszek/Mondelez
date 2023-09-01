@@ -20,7 +20,7 @@ const QuizTwo = React.lazy(() => import('./routes/quiz-2/quiz'));
 const Ride = React.lazy(() => import('./routes/ride/ride'));
 
 export default function App() {
-
+    // window.location.reload()
     const { showHeader } = useMainModuleState();
 
     return (

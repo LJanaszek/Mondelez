@@ -42,7 +42,9 @@ type Props = {
 }
 
 export default function PageView({ id }: Props) {
-
+    // window. = function() {
+        // window.location.replace(window.location.href)
+    // }
     const finishStep = useFinishGameStep();
 
     const onNext = useCallback(() => {

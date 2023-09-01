@@ -21,7 +21,7 @@ export default function SummaryPage({onNext}: Props) {
         <span className={styles.timer}>0:00</span>
         <img src={timer} alt="" />
         </div>
-        <p>zaliczyliście <span>{completedGeoPointCount} z {geoPointsCount} </span>zadań<br />
+        <p>znaleźliście <span>{completedGeoPointCount} z {geoPointsCount} </span>zadań<br />
         opdowiedziałeś poprawnie na <span>{correctQuizQuestionCount} z {quizQuestionCount} </span> pytań</p>
         
         </div>
