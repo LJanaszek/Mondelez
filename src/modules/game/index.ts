@@ -3,7 +3,7 @@ import reducer from "./reducer";
 import { SCENARIO } from "./scenario";
 import { GameScenario } from "./types";
 
-const GAME_MODULE_LS_KEY = 'milkav4'
+const GAME_MODULE_LS_KEY = 'milkav5'
 
 export type GameState = {
     // name: string,

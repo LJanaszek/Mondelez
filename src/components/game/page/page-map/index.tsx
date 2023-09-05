@@ -123,8 +123,8 @@ export default function Page_map({ onNext }: Props) {
             {
                 id: '12',
                 position: {
-                    x: 570,
-                    y: 270,
+                    x: 670,
+                    y: 440,
                 },
                 geoPointId: '13.1',
             },
