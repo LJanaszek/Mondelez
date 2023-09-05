@@ -1,11 +1,10 @@
-import { useRef, useState } from "react";
-import { QuizQuestionTask } from "../../../../modules/game/questions/quiz-question-task"
+import {useState } from "react";
 import BoxTask from "../../../layout/boxTask/box"
 import styles from "./quizTask.module.scss"
 import style from "../../../layout/boxTask/box.module.scss"
 import { IQuizQuestion } from "../../../../modules/game/questions/quest-base";
-import { element } from "prop-types";
 import { ButtonLike } from "../../../../atoms/button-like";
+import { Popup } from "../../../../molecules/popup/popup";
 type Props = {
   onNext(): void
 }
@@ -15,18 +14,19 @@ export interface ForQuizQuest {
 }
 export default function Page15({ onNext }: Props) {
   const [showNext, setShowNext] = useState(false);
+  const [checkAns, setCheckAns] = useState(false);
   return (<BoxTask>
     <div className={styles.answer}>
       <div className={style.mainDiv}>
         <h1>Oszczędzanie</h1>
-        <p> W trakcie jazdy po mieście włączony system start-stop ogranicza zużycie paliwa od 5% do nawet 15%. Obliczcie ile złotych w skali roku może zaoszczędzić osoba, która:</p>
+        <p>W trakcie jazdy po mieście włączony system start-stop ogranicza zużycie paliwa od 5% do nawet 15%. Obliczcie ile złotych w skali roku można zaoszczędzić jeśli:</p>
       </div>
       <div className={styles.questionAnswer}>
         <div className={styles.leftSide}>
           <ul>
-            <li>przejeżdża 2500 km miesięcznie po mieście.</li>
-            <li>Przyjmijcie średnią cenę benzyny - 6,50 zł za litr</li>
-            <li>spalanie (bez systemu start-stop) na poziomie 8 litrów/100 km.</li>
+            <li>przejeżdża się 2500 km miesięcznie po mieście,</li>
+            <li>średnia cena benzyny wynosi 6,50 zł za litr,</li>
+            <li>spalanie samochodu (bez systemu start-stop) jest na poziomie 8 litrów/100 km.</li>
           </ul>
         </div>
         <form className={styles.answer_block}>
@@ -40,7 +40,7 @@ export default function Page15({ onNext }: Props) {
                   name="ans"
                 /></span>
                 <p>między 1323 zł a 2015 zł
-</p>
+                </p>
               </div>
             </label>
           </div>
@@ -54,7 +54,7 @@ export default function Page15({ onNext }: Props) {
                   name="ans"
                 /></span>
                 <p>między 215 zł a 630 zł
-</p>
+                </p>
               </div>
             </label>
           </div>
@@ -80,22 +80,25 @@ export default function Page15({ onNext }: Props) {
                     type="radio"
                     value=""
                     name="ans"
-                    onClick={() => {
-                      setShowNext(true); let a = document.querySelectorAll('input')
-                      a.forEach((element) => { element.disabled = true })
-                    }}
+                    onClick={() => { setShowNext(true) }}
                   />
                 </span>
                 <p>między 780 zł a 2340 zł</p>
               </div>
             </label>
           </div>
-        </form>
-      </div>
-      {showNext && <section className={styles.section}><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike>
-      </section>}
-    </div>
 
+        </form>
+
+      </div>
+      <section className={styles.section}>
+        <ButtonLike><button onClick={() => { setCheckAns(true); }}>SPRAWDŹ</button></ButtonLike>
+      </section>
+    </div>
+    {showNext && checkAns && <Popup><p>BRAWO</p><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button> </ButtonLike>
+    </Popup>}
+    {checkAns && !showNext && <Popup><p>Spróbuj jeszcze raz</p><ButtonLike><button onClick={() => { setCheckAns(false) }}>Wróć</button> </ButtonLike>
+    </Popup>}
   </BoxTask>)
 
 }

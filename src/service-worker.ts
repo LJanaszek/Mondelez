@@ -30,7 +30,6 @@ precacheAndRoute([
   '/pinezka.png',
   '/find-diff-demo-1.jpg',
   '/find-diff-demo-2.jpg',
-  ''
 ]);
 
 // Set up App Shell-style routing, so that all navigation requests

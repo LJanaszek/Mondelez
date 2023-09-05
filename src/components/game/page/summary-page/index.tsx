@@ -4,7 +4,6 @@ import { GAME_STEP_TYPE } from "../../../../modules/game/types"
 import Box from "../../../layout/boxFinal/box"
 import useScenario from "../../../../modules/game/hooks/use-scenario"
 import styles from "../../../layout/boxFinal/box.module.scss"
-import timer from "../../../../assets/endPage.png"
 type Props = {
     onNext(): void
 }
@@ -12,17 +11,14 @@ type Props = {
 export default function SummaryPage({onNext}: Props) {
 
     const {geoPointsCount, completedGeoPointCount} = useGeoPointResult();
-    const {quizQuestionCount, correctQuizQuestionCount} = useQuizResult();
+    const {correctQuizQuestionCount} = useQuizResult();
 
     return <Box>
     <div className={styles.mainDiv}>
         <h1>Gratulacje!</h1>
-        <div className={styles.timerTop}>
-        <span className={styles.timer}>0:00</span>
-        <img src={timer} alt="" />
-        </div>
+        
         <p>znaleźliście <span>{completedGeoPointCount} z {geoPointsCount} </span>zadań<br />
-        opdowiedziałeś poprawnie na <span>{correctQuizQuestionCount} z {quizQuestionCount} </span> pytań</p>
+        opdowiedziałeś poprawnie na <span>{correctQuizQuestionCount} z 14 </span> pytań quizowych</p>
         
         </div>
         <p className={styles.adress}>kierujcie się do bazy: adres</p>

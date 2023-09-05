@@ -37,11 +37,13 @@ export default function Page5({ onNext }: Props) {
         {showNext && <Popup>
             <p>BRAWO</p>
             <ButtonLike>
-            <button onClick={onNext}>DALEJ</button>
+                <button onClick={onNext}>DALEJ</button>
             </ButtonLike>
         </Popup>}
-        {showOnIncor && showPopup && <Popup><p>ŹLE</p>
-            <button onClick={onClosePopupClicked}>DALEJ</button>
+        {showOnIncor && showPopup && <Popup><p>Spróbuj jeszcze raz</p>
+            <ButtonLike>
+                <button onClick={onClosePopupClicked}>Spróbuj jeszcze raz</button>
+            </ButtonLike>
         </Popup>}
     </BoxTask>
 

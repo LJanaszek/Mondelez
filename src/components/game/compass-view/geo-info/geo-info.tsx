@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 import styles from './geo-info.module.scss';
 import Box from "../../../layout/boxTask/box";
+import useScenario from "../../../../modules/game/hooks/use-scenario";
+import { GAME_STEP_TYPE, GeoStep } from "../../../../modules/game/types";
 
 type Props = {
     distance: number,
@@ -9,7 +11,8 @@ type Props = {
 }
 
 export function GeoInfo({ distance, name, bering }: Props) {
-
+    const scenario = useScenario();
+    const geoPoints = scenario.steps.filter(s => s.type === GAME_STEP_TYPE.GEO_STEP) as GeoStep[];
     const direction = useMemo(() => {
         if (bering < 22.5) {
             return 'północ';
@@ -32,15 +35,18 @@ export function GeoInfo({ distance, name, bering }: Props) {
         }
     }, [bering]);
 
+    const coordinates = ( geoPoints.find(x=>x.name === name)?.position);
     return <Box>
     <div className={styles.mainDiv}>
         <div className={styles.inner}>
-            Aby dojść do<br />
+            Aby dotrzeć do puktu<br />
             <div className={styles.adress}>
-                {name[0] && <span dangerouslySetInnerHTML={{__html: name[0]}}></span>}
+                {/* {name[0] && <span dangerouslySetInnerHTML={{__html: name[0]}}></span>} */}
                 {name[1] && <span dangerouslySetInnerHTML={{__html: name[1]}}></span>}
+                
             </div>
             kieruj się <strong>{Math.round(distance)}m.</strong> na{'\u00A0'}<strong style={{whiteSpace: 'nowrap'}}>{direction}</strong><br />
+            współrzędne geograficzne: {coordinates?.lat+ ', ' + coordinates?.lng}
         </div>
     </div>
     </Box>

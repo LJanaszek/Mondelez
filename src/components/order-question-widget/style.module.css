@@ -31,6 +31,6 @@ span{
 }
 .arrow{
     color: white;
-    background-color: var(--spanBackground);
+    background-color: var(--textColor);
     border: none;
 }

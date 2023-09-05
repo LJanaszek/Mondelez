@@ -4,6 +4,8 @@ import { Popup } from "../../../../molecules/popup/popup";
 import styles from "../../../layout/boxTask/box.module.scss"
 import { ButtonLike } from "../../../../atoms/button-like";
 import { ButtonsRow } from "../../../../atoms/buttons-row/buttons-row";
+import voiceChoice from "../../../../assets/voiceChoice.png"
+
 type Props = {
     onNext(): void
 }
@@ -13,7 +15,8 @@ export default function Page27({ onNext }: Props) {
     return <BoxTask>
         <div className={styles.mainDiv}>
             <h1>Wybieranie głosowe</h1>
-            <p>Nagrajcie filmik jak podcas jazdy dodajecie, wykorzystująć wybieranie głosowe, do trasy przystenek na stacji benzynowej. Przedstawcie go osobie prowadzącej grę na punkcie finałowym.</p>
+            <p>Nagrajcie filmik jak podczas jazdy dodajecie, wykorzystując wybieranie głosowe, do trasy przystanek na stacji benzynowej. Przedstawcie go osobie prowadzącej grę na punkcie finałowym.</p>
+            <img src={voiceChoice} alt="" />
             <section>
                 <ButtonLike><button onClick={() => { setShowPopup(true) }}>Dalej</button></ButtonLike></section>
         </div>

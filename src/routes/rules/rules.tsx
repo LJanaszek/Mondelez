@@ -19,18 +19,18 @@ export default function RulesPage() {
             <h2 >Zasady</h2>
         </div>
         <ol>
-            <li>Macie 2 godziny</li>
-            <li>Przed Wami do zrobienia XX zadań</li>
-            <li>Każde zadanie poprzedza pytanie</li>
+            <li>Przed wami 13 zadań</li>
+            <li>Każde zadanie poprzedza pytanie quizowe</li>
             <li>Zdobywacie punkty za: 
                 <ul>
-                    <li>poprawne odpowiedzi</li>
-                    <li>poprawne zrobienie zadań</li>
-                    <li>ekonomiczną i bezpieczną jazdę - będziemy zczytywać Wasze dane z XXX</li>
+                    <li>poprawne odpowiedzi na pytania quizowe,</li>
+                    <li>poprawne zrobienie zadań,</li>
+                    <li>ekonomiczną i bezpieczną jazdę - będziemy zczytywać Wasze dane z aplikacji Flotman.</li>
                 </ul>
             </li>
-            <li>Sami wyznaczacie sobie trasę.</li>
-            <li>Zadania odpalają się dopiero po dojechaniu w odpowiednie miejsca</li>
+            <li>Na przejście gry macie 2 godziny - po upływie tego czasu kierujcie się od razu do punktu startowego, nawet jeśli nie udało Wam się ukończyć wszystkich zadań.</li>
+            <li>Gra opiera się na geolokalizacji - aby wyświetlić zadanie musicie znaleźć się w jego pobliżu.</li>
+            <li>Sami decydujecie w jakiej kolejności chcecie wykonywać zadania - nie ma z góry wyznaczonej trasy.</li>
         </ol>
 
         <ButtonsRow as="nav" align="center" className={styles.buttons} >

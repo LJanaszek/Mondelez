@@ -8,8 +8,8 @@ import { useAnswer } from "../../main/hooks/use-answer";
 import { useSaveAnswer } from "../hooks/use-save-answer";
 import { ButtonLike } from "../../../atoms/button-like";
 import { Popup } from "../../../molecules/popup/popup";
-import { Link, useNavigate } from "react-router-dom";
-import { getGamePageRoute, getQuizOne, getQuizTwo, getRide } from "../../../routes/routes";
+import { Link } from "react-router-dom";
+import { getQuizTwo, getRide } from "../../../routes/routes";
 import incorrect from "../../../assets/incorrect.png"
 import correct from "../../../assets/correct.png"
 
@@ -19,10 +19,6 @@ export interface Props2 {
   onNext?(): void,
   showPopup?: boolean
 }
-type Props = {
-
-}
-
 
 /**
  * Jeżeli user nie odpowiedział jeszcze na to pytanie to pokazujemy <QuizQuestionDummy>
@@ -34,7 +30,6 @@ export function QuizQuestion({ id, onComplete, onNext, showPopup }: Props2) {
   const answer = useAnswer(id);
 
   const showQuestion = Boolean(!answer);
-  const showSummary = Boolean(answer);
 
   const saveAnswer = useSaveAnswer();
 
@@ -60,14 +55,14 @@ export function QuizQuestion({ id, onComplete, onNext, showPopup }: Props2) {
 
       <QuizQuestionDummy question={q} onConfirm={onQuestionConfirm} />
       
-      {!showQuestion && showPopup == false && id == '13' &&
+      {!showQuestion && showPopup === false && id === '13' &&
       <Popup>
         <QuizAnswerDummy question={q} userAnswerId={answer} />
         <ButtonLike>
           <Link to={getQuizTwo()}>dalej</Link>
         </ButtonLike></Popup>}
 
-      {!showQuestion && showPopup == false && id == '14' && 
+      {!showQuestion && showPopup === false && id === '14' && 
       <Popup>
         <QuizAnswerDummy question={q} userAnswerId={answer} />
         <ButtonLike>
@@ -75,7 +70,7 @@ export function QuizQuestion({ id, onComplete, onNext, showPopup }: Props2) {
         </ButtonLike></Popup>}
 
 
-      {!showQuestion && showPopup != false && <Popup><QuizAnswerDummy question={q} userAnswerId={answer} /><ButtonLike><button id={styles.buttonOnPopup} onClick={onNext}>dalej</button></ButtonLike></Popup>}
+      {!showQuestion && showPopup !== false && <Popup><QuizAnswerDummy question={q} userAnswerId={answer} /><ButtonLike><button id={styles.buttonOnPopup} onClick={onNext}>dalej</button></ButtonLike></Popup>}
     </>
   );
 }
@@ -87,8 +82,6 @@ export interface ForQuizQuest {
 
 export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
   const imgRef = useRef<HTMLImageElement>(null);
-  const [showPopup, setShowPopup] = useState(false);
-  // const afterCorrectanswer = useCallback(() => {}, [question]);
 
   const { register, watch } = useForm();
 
@@ -143,7 +136,7 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
         <section className={styles.buttonLike}>
           <ButtonLike >
             <button className={styles.buttonNext} onClick={onConfirmClicked}>
-              POTWIERDZ
+              POTWIERDŹ
             </button>
           </ButtonLike>
         </section>
@@ -159,6 +152,7 @@ export interface QuizAnswerDummyProps {
 }
 
 export function QuizAnswerDummy({ question, userAnswerId }: QuizAnswerDummyProps) {
+  let showDesc = false
 
   const correctQuizAnswer = question.answers.find(quizAnswer => quizAnswer.isCorrect)
   const userQuizAnswer = question.answers.find(quizAnswer => quizAnswer.id === userAnswerId)
@@ -166,21 +160,27 @@ export function QuizAnswerDummy({ question, userAnswerId }: QuizAnswerDummyProps
   const userAnswerText: string = userQuizAnswer?.text || 'Błąd danych';
   const isUserAnswerCorrect: boolean = (correctQuizAnswer?.id === userQuizAnswer?.id); //tutaj ma być sprawdzenie czy user wybral poprawną odpwiedz
   const correctAnswerText: string = correctQuizAnswer?.text || 'Błąd danych';
-  const questionDescription: string = question.description;
+  const questionDescription: string = question.description || "";
 
+  if(questionDescription){
+    showDesc = true
+  }
 
 
   return <div className={styles.answerPopup}>
     
     {/* <p>Twoja odpowiedz to: {userAnswerText}</p> */}
 
-    {isUserAnswerCorrect && <div><img src={correct} alt="" /><p>SUPER!</p><p>Twoja odpowiedz to: {userAnswerText}</p></div>}
+    {isUserAnswerCorrect && <div><img src={correct} alt="" /><p>SUPER!</p><p>Twoja odpowiedź to: {userAnswerText}</p></div>}
 
-    {!isUserAnswerCorrect && <div>
+    {!isUserAnswerCorrect && showDesc && <div>
       <img src={incorrect} alt="" />
       <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
-      <p>Poniewaz: {questionDescription}</p>
-
+      <p>Ponieważ: {questionDescription}</p>
+    </div>}
+    {!isUserAnswerCorrect && !showDesc && <div>
+      <img src={incorrect} alt="" />
+      <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
     </div>}
   </div>
 }

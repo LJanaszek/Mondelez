@@ -1,3 +1,5 @@
+import img1 from "../../../assets/fuel.png"
+import img2 from "../../../assets/co2.png"
 import img3 from "../../../assets/3.jpg"
 import img4 from "../../../assets/4.jpg"
 import img5 from "../../../assets/5.jpg"
@@ -8,11 +10,13 @@ import img9 from "../../../assets/9.jpg"
 import img10 from "../../../assets/10.jpg"
 import img11 from "../../../assets/11.jpg"
 import img12 from "../../../assets/abs.png"
+import img13 from "../../../assets/auta.png"
+import img14 from "../../../assets/antyradar.png"
 export interface IQuizQuestion {
     id: string,
     text: string,
     imgSrc?: string,
-    description: string,
+    description?: string,
     answers: {
         id: string,
         text: string,
@@ -25,21 +29,21 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '1',
         text: 'Jakie, wg. producenta, jest średnie zużycie paliwa w Waszych VW Touran z silnikiem 2.0 TDI?',
-        imgSrc: 'http://placekitten.com/400/200',
-        description: "bo ktoś tak chciał",
+        imgSrc: img1,
+        description: "",
         answers: [
             {
-                id: 'a1',
+                id: '1',
                 text: '6.3 l/100 km',
             }, {
-                id: 'a2',
+                id: '2',
                 text: '5.1 l/100 km',
                 isCorrect: true
             }, {
-                id: 'a3',
+                id: '3',
                 text: '3.1 l/100 km'
             }, {
-                id: 'a4',
+                id: '4',
                 text: '7.2 l/100 km'
             }
         ]
@@ -47,9 +51,9 @@ export const QUESTIONS: IQuizQuestion[] = [
     },
     {
         id: '2',
-        text: 'Ile km musisz przejechać vw touranem żeby do środowiska trafiła 1 tona CO2?',
-        imgSrc: 'http://placekitten.com/400/300',
-        description: "",
+        text: 'Ile kilometrów musisz przejechać volkswagenem touranem żeby do środowiska trafiła 1 tona CO2?',
+        imgSrc: img2,
+        description: "Volkswagen touran emituje 133 gramy CO2 na każdy przejechany kilometr.",
         answers: [{
             id: '1',
             text: '115 g/km = 8695 km'
@@ -153,7 +157,7 @@ export const QUESTIONS: IQuizQuestion[] = [
             id: '1',
             text: 'TAK'
         }, {
-            id: '4',
+            id: '2',
             text: 'NIE',
             isCorrect: true
         }]
@@ -221,7 +225,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '13',
         text: 'Co jest celem gry pt. "Poruszanie się po polskich drogach"?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img13,
         description: "Zawsze podczas jazdy najważniejsze jest bezpieczeństwo i o tym musimy pamiętać",
         answers: [{
             id: '1',
@@ -242,7 +246,7 @@ export const QUESTIONS: IQuizQuestion[] = [
     {
         id: '14',
         text: 'Czy można w Polsce legalnie korzystać z antyradaru?',
-        imgSrc: 'http://placekitten.com/400/300',
+        imgSrc: img14,
         description: "Antyradar RST to kodeks drogowy, który każdy kierowca pownien znać i stosując się do przepisów będziemy jeździć bezpiecznie.",
         answers: [{
             id: '1',

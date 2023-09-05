@@ -2,7 +2,6 @@ import { useState } from "react"
 import BoxTask from "../../../layout/boxTask/box"
 import OrderQuestionWidget from "../../../order-question-widget-definition"
 import styles from "../../../layout/boxTask/box.module.scss"
-// import styles from "../../../order-question-widget-definition/style.module.css"
 import { ButtonLike } from "../../../../atoms/button-like"
 
 

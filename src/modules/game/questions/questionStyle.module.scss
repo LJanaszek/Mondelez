@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-gap: 10%;
+    grid-gap:7%;
   }
   .questionText{
     padding: 1em 2em;
@@ -44,7 +44,8 @@
     border-radius: var(--buttonBorderRadius);
     text-align: center;
     background-color: var(--spanBackground);
-    padding: .5em;
+    padding: .7em;
+    height: max-content;
   }
   input {
     transform: translatey(20%);

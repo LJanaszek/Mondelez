@@ -4,9 +4,6 @@ import BoxTask from "../../../layout/boxTask/box"
 import style from "../../../layout/boxTask/box.module.scss"
 import styles from "./quizTask.module.scss"
 import { ButtonLike } from "../../../../atoms/button-like";
-import car from "../../../../assets/list.png"
-import { ButtonsRow } from "../../../../atoms/buttons-row/buttons-row";
-import { QuizQuestion } from "../../../../modules/game/questions/quiz-questions";
 import book from "../../../../assets/book.png"
 
 type Props = {
@@ -15,6 +12,7 @@ type Props = {
 
 export default function Page25({ onNext }: Props) {
     const [showNext, setShowNext] = useState(false);
+    const [checkAns, setCheckAns] = useState(false);
     // const [showPopup, setShowPopup] = useState<boolean>(false);
     return <BoxTask>
         <div className={styles.answer}>
@@ -48,9 +46,7 @@ export default function Page25({ onNext }: Props) {
                                         value=""
                                         name="ans"
                                         onClick={() => {
-                                            setShowNext(true); let a = document.querySelectorAll('input')
-                                            a.forEach((element) => { element.disabled = true })
-                                        }}
+                                            setShowNext(true)}}
                                     />
                                 </span>
                                 <p> II, 3, 7, 26, 1</p>
@@ -89,9 +85,12 @@ export default function Page25({ onNext }: Props) {
                 <div>
                     <img src={book} alt="" />
                 </div>
+                <ButtonLike><button onClick={()=>{setCheckAns(true)}}>SPRAWDŹ</button></ButtonLike>
             </div>
-            {showNext && <section className={styles.section}><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike>
-            </section>}
+            {showNext && checkAns && <Popup><p>BRAWO</p><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike>
+            </Popup>}
+            {!showNext && checkAns && <Popup><p>Spróbuj jeszcze raz</p><ButtonLike> <button onClick={()=>{setCheckAns(false)}}>Wróć</button></ButtonLike>
+            </Popup>}
         </div>
 
     </BoxTask>

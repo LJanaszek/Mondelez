@@ -1,5 +1,4 @@
 import { useState } from "react";
-import CheckboxAnswerForm from "../../../checkboxAnswerFormSOS/checkboxAnswerForm";
 import BoxTask from "../../../layout/boxTask/box"
 import { Popup } from "../../../../molecules/popup/popup";
 import styles from "../../../layout/boxTask/box.module.scss"
@@ -13,7 +12,6 @@ type Props = {
 
 export default function Page9({ onNext }: Props) {
     const [showPopup, setShowPopup] = useState(false)
-    const [showPopupFalse, setShowPopupFalse] = useState(false)
     return <BoxTask>
         <div className={styles.mainDiv}>
             <h1>Uważaj!</h1>

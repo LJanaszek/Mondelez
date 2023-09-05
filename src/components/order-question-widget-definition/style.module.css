@@ -22,7 +22,7 @@
 .arrow, .arrow2{
     margin: 0;
     padding: 0;
-    background-color: var(--spanBackground);
+    background-color: var(--textColor);
     border: none;
     color: white;
 }

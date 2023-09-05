@@ -15,13 +15,13 @@
     border-radius: var(--buttonBorderRadius);
 }
 .img{
-    width: 60%;
+    width: 50%;
 }
 .imgWithDesc{
     margin-top: 1em;
     border: 2px solid;
     border-radius: var(--buttonBorderRadius);
-    padding: 1em 2em;
+    padding:  1em 0;
     padding-bottom: 0;
     margin-bottom: .5em;
 }
@@ -36,8 +36,9 @@ span:only-child{
 }
 .arrow{
     color: white;
-    background-color: var(--spanBackground);
+    background-color: var(--textColor);
     border: none;
+    height: 4em;
 }
 .section2{
     text-align: end;

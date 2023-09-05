@@ -5,14 +5,10 @@ import style from "../style.module.scss"
 import { PointData } from "../../../map/pixi-app/types"
 import { Popup } from "../../../../molecules/popup/popup"
 import { GAME_MODULE_ACTION, useGameModuleDispatch, useGameModuleState } from "../../../../modules/game"
-import { ButtonLike } from "../../../../atoms/button-like"
 import useScenario from "../../../../modules/game/hooks/use-scenario"
-import { SCENARIO } from "../../../../modules/game/scenario"
 import { GAME_STEP_TYPE, GeoStep } from "../../../../modules/game/types"
 import buttonRide from "../../../../assets/buttonRide.png"
 import buttonClose from "../../../../assets/buttonClose.png"
-import { sleep } from "react-query/types/core/utils"
-import { Await } from "react-router"
 
 type Props = {
 
@@ -215,7 +211,7 @@ export default function Page_map({ onNext }: Props) {
     return <Box>
         <div className={style.mapPage}>
             <h1>Ogrodzieniec (poziom 511)</h1>
-            <p>wybierzcie na mapie punkt do którego chcecie sie udać</p>
+            <p>wybierzcie na mapie punkt do którego chcecie się udać</p>
             <div className={style.mapContainer}>
                 <MapComponent
                     onPointerClicked={onPointerClicked}
