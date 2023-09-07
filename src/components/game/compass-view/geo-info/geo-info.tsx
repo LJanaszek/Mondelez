@@ -45,7 +45,7 @@ export function GeoInfo({ distance, name, bering }: Props) {
                 {name[1] && <span dangerouslySetInnerHTML={{__html: name[1]}}></span>}
                 
             </div>
-            kieruj się <strong>{Math.round(distance)}m.</strong> na{'\u00A0'}<strong style={{whiteSpace: 'nowrap'}}>{direction}</strong><br />
+            kieruj się <strong>{Math.round(distance)}m</strong> na{'\u00A0'}<strong style={{whiteSpace: 'nowrap'}}>{direction}</strong><br />
             współrzędne geograficzne: {coordinates?.lat+ ', ' + coordinates?.lng}
         </div>
     </div>

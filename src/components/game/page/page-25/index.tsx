@@ -85,14 +85,17 @@ export default function Page25({ onNext }: Props) {
                 <div>
                     <img src={book} alt="" />
                 </div>
-                <ButtonLike><button onClick={()=>{setCheckAns(true)}}>SPRAWDŹ</button></ButtonLike>
+                
             </div>
+            <section className={styles.section}>
+                <ButtonLike><button onClick={()=>{setCheckAns(true)}}>SPRAWDŹ</button></ButtonLike>
+            </section>
+            
+        </div>
             {showNext && checkAns && <Popup><p>BRAWO</p><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike>
             </Popup>}
             {!showNext && checkAns && <Popup><p>Spróbuj jeszcze raz</p><ButtonLike> <button onClick={()=>{setCheckAns(false)}}>Wróć</button></ButtonLike>
             </Popup>}
-        </div>
-
     </BoxTask>
 
 }

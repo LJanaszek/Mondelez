@@ -19,18 +19,20 @@
 
 }
 .arrow>span:only-child{
-    font-size: 2.5em;
+    font-size: 4em;
     padding: 0;
-    margin: 0;
+    /* margin: -.2em; */
     
 }
 .buttonGroup >
 span{
-    width: 1.2em;
+    width: 1em;
     height: 1em;
 }
 .arrow{
     color: white;
     background-color: var(--textColor);
     border: none;
+    height: 4em;
+    /* width: 5em; */
 }

@@ -29,7 +29,7 @@ export default function HomePage() {
             <div className={styles.content}>
             <h2>Witajcie!</h2>
             {/* <Timer></Timer> */}
-            <p className={styles.contentText}>Przed Wami szereg zadań. Rozwiążcie jak najwięcej z nich. Pamiętajcie by poruszać się bezpiecznie i ekonomicznie</p>
+            <p className={styles.contentText}>Przed Wami szereg zadań. Rozwiążcie jak najwięcej z nich. Pamiętajcie by poruszać się bezpiecznie i ekonomicznie.</p>
             </div>
             <nav>
                 {!gameStarted && <ButtonLike>

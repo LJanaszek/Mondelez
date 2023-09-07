@@ -34,17 +34,17 @@ export const QUESTIONS: IQuizQuestion[] = [
         answers: [
             {
                 id: '1',
-                text: '6.3 l/100 km',
+                text: '6.3 l/100 km,',
             }, {
                 id: '2',
-                text: '5.1 l/100 km',
+                text: '5.1 l/100 km,',
                 isCorrect: true
             }, {
                 id: '3',
-                text: '3.1 l/100 km'
+                text: '3.1 l/100 km,'
             }, {
                 id: '4',
-                text: '7.2 l/100 km'
+                text: '7.2 l/100 km,'
             }
         ]
 
@@ -56,16 +56,16 @@ export const QUESTIONS: IQuizQuestion[] = [
         description: "Volkswagen touran emituje 133 gramy CO2 na każdy przejechany kilometr.",
         answers: [{
             id: '1',
-            text: '115 g/km = 8695 km'
+            text: '115 g/km = 8695 km,'
         }, {
             id: '2',
-            text: '162 g/km = 6172 km '
+            text: '162 g/km = 6172 km,'
         }, {
             id: '3',
-            text: '148 g/km = 6756 km'
+            text: '148 g/km = 6756 km,'
         }, {
             id: '4',
-            text: '133 g/km = 7518 km',
+            text: '133 g/km = 7518 km,',
             isCorrect: true
         }]
     },
@@ -76,14 +76,14 @@ export const QUESTIONS: IQuizQuestion[] = [
         description: "Obowiązek zachowania odstępu co najmniej 50 m, mamy w tunelach, których długość przekracza 500 i znajdują się poza obszarem zabudowanym.",
         answers: [{
             id: '1',
-            text: 'Tak, ale prowadząc samochód o masie całkowitej przekraczającej 2,5 tony.'
+            text: 'Tak, ale prowadząc samochód o masie całkowitej przekraczającej 2,5 tony,'
         }, {
             id: '2',
-            text: 'Nie.',
+            text: 'Nie,',
             isCorrect: true,
         }, {
             id: '3',
-            text: 'Tak.'
+            text: 'Tak,'
         }]
     },
     {
@@ -93,13 +93,13 @@ export const QUESTIONS: IQuizQuestion[] = [
         description: "Generalna zasada doboru optymalnego toru jazdy polega na wykonaniu tego manewru po możliwie łagodnym łuku. Pokonanie tego konkretnego zakrętu powinno się rozpocząć możliwie blisko podwójnej linii ciągłej. W połowie łuku należy się zbliżyć do prawej krawędzi jezdni (szczyt zakrętu), a wyjście z zakrętu powinno zakończyć się znowu przy osi jezdni. Dodatkowym elementem o którym należy wspomnieć w aspekcie pokonywania zakrętów jest ograniczenie działania siły odśrodkowej.",
         answers: [{
             id: '1',
-            text: 'Na środku drogi, z częściowym przekroczeniem widocznej linii.'
+            text: 'Na środku drogi, z częściowym przekroczeniem widocznej linii,'
         }, {
             id: '2',
-            text: 'Przy prawej krawędzi jezdni'
+            text: 'Przy prawej krawędzi jezdni,'
         }, {
             id: '3',
-            text: 'Przy linii rozdzielającej pasy ruchu - na prawej połowie jezdni.',
+            text: 'Przy linii rozdzielającej pasy ruchu - na prawej połowie jezdni,',
             isCorrect: true
         }]
     },
@@ -212,13 +212,13 @@ export const QUESTIONS: IQuizQuestion[] = [
         description: "",
         answers: [{
             id: '1',
-            text: 'Skraca drogę hamowania w każdych warunkach.'
+            text: 'Skraca drogę hamowania w każdych warunkach,'
         }, {
             id: '2',
-            text: 'Zapobiega zerwaniu przyczepności opon podczas przyspieszania.'
+            text: 'Zapobiega zerwaniu przyczepności opon podczas przyspieszania,'
         }, {
             id: '3',
-            text: 'Ułatwia omijanie przeszkód w czasie hamowania.',
+            text: 'Ułatwia omijanie przeszkód w czasie hamowania,',
             isCorrect: true
         }]
     },
@@ -235,11 +235,11 @@ export const QUESTIONS: IQuizQuestion[] = [
             text: 'Zbieranie ujemych punktów karnych,'
         }, {
             id: '3',
-            text: 'Poznanie przepisów drogowych.',
+            text: 'Poznanie przepisów drogowych,',
 
         }, {
             id: '4',
-            text: 'Bezpieczny powrót do domu.',
+            text: 'Bezpieczny powrót do domu,',
             isCorrect: true
         }]
     },
@@ -247,13 +247,13 @@ export const QUESTIONS: IQuizQuestion[] = [
         id: '14',
         text: 'Czy można w Polsce legalnie korzystać z antyradaru?',
         imgSrc: img14,
-        description: "Antyradar RST to kodeks drogowy, który każdy kierowca pownien znać i stosując się do przepisów będziemy jeździć bezpiecznie.",
+        description: "Antyradar RST to kodeks drogowy, który każdy kierowca powinien znać aby, stosując się do przepisów, jeździć bezpiecznie.",
         answers: [{
             id: '1',
             text: 'nie - jest to zabronione,'
         }, {
             id: '2',
-            text: 'tak, pod warunkiem, że jest to antyradar RST',
+            text: 'tak, pod warunkiem, że jest to antyradar RST,',
             isCorrect: true
         }]
     },

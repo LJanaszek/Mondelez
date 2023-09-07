@@ -19,9 +19,9 @@ export default function Page6({ onNext }: Props) {
         <div className={styles.contentOrder}>
             <OrderQuestionWidget
                 items={[
+                    { correctPlace: 3, text: " system optymalizacji przyczepności podczas hamowania silnikiem. System ogranicza moment obrotowy silnika podczas redukcji biegów i zapobiega utracie przyczepności kół.", },
                     { correctPlace: 1, text: "system zapobiegający blokowaniu kół podczas hamowania. Dodatkowo utrzymuje sterowność i stabilność pojazdu w przypadku gwałtownego hamowania. ", },
                     { correctPlace: 0, text: " system zapobiegający ślizganiu się napędzanych kół z powodu śliskiej nawierzchni lub dużej mocy silnika. ", },
-                    { correctPlace: 3, text: " system optymalizacji przyczepności podczas hamowania silnikiem. System ogranicza moment obrotowy silnika podczas redukcji biegów i zapobiega utracie przyczepności kół.", },
                     { correctPlace: 2, text: " elektroniczny rozdzielacz siły hamowania pomiędzy osią przednią a tylnią.  System ten rejestruje obciążenie osi samochodu i dostosowuje siłę hamowania poszczególnych kół w taki sposób, aby auto nie straciło przyczepności.", },
                 ]}
                 onComplete={() => setShowNext(true)}
