@@ -15,7 +15,7 @@ export default function Page9({ onNext }: Props) {
     return <BoxTask>
         <div className={styles.mainDiv}>
             <h1>Uważaj!</h1>
-            <p>W trakcie gry zróbcie zdjęcie w czasie jazdy na którym widać miejsce/sytuację potencjalnie niebezpieczną. Przedstawcie je na punkcie finałowym i uzasadnijcie na czym polega potencjalne niebezpieczeństwo.</p>
+            <p>W trakcie gry zróbcie zdjęcie w czasie jazdy na którym widać miejsce/sytuację potencjalnie niebezpieczną. Nie prowokujcie sami niebezpiecznych sytuacji. Przedstawcie je na punkcie finałowym i uzasadnijcie na czym polega potencjalne niebezpieczeństwo.</p>
             <img src={aparat} alt=""/>
             <section className={styles.butttonLike}>
                 <ButtonLike>

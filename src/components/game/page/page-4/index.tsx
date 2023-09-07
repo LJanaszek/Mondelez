@@ -18,10 +18,8 @@ export default function Page4({ onNext }: Props) {
     return <BoxTask>
         <div className={styles.mainDiv}>
             <h1>Zepsute koło</h1>
-            <p> O nie! Złapaliście gumę! Stwórzcie fotoporadnik, który pozwoli nieświadomym kierowcom dowiedzieć się co i w jakiej kolejności muszą zrobić aby bezpiecznie wymienić koło.
-            </p>
-            <p>UWAGA! NIE WYMIENIAJCIE KOŁA, zróbcie tylko zdjęcia wszystkim rzeczom i narzędziom potrzebnym do bezpiecznej wymiany. Po sesji zdjęciowej umieśćcie je w odpowiednich miejscach, aby były gotowe do użycia w razie prawdziwej awarii. Wykonane zdjęcia przedstawcie osobie prowadzącej grę na punkcie finałowym.
-            </p>
+            <p> O nie! Złapaliście gumę! Stwórzcie fotoporadnik, który pozwoli nieświadomym kierowcom dowiedzieć się co i w jakiej kolejności muszą zrobić aby bezpiecznie wymienić koło.</p>
+            <p>UWAGA! NIE WYMIENIAJCIE KOŁA, zróbcie tylko zdjęcia wszystkim rzeczom i narzędziom potrzebnym do bezpiecznej wymiany. Po sesji zdjęciowej umieśćcie je w odpowiednich miejscach, aby były gotowe do użycia w razie prawdziwej awarii. Wykonane zdjęcia przedstawcie osobie prowadzącej grę na punkcie finałowym.</p>
             <img src={page4_car} alt="" />
             <section className={styles.butttonLike}>
                 <ButtonLike>

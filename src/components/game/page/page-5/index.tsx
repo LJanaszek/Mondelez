@@ -27,9 +27,9 @@ export default function Page5({ onNext }: Props) {
         </div>
         <OrderQuestionLayoutWIthImg
             items={[
-                { correctPlace: 1, text: lights, description: "sygnalizacja świetlna" },
-                { correctPlace: 2, text: signs, description: "znaki drogowe" },
-                { correctPlace: 0, text: police, description: "policjant" },
+                { correctPlace: 1, text: lights, description: "Sygnalizacja świetlna" },
+                { correctPlace: 2, text: signs, description: "Znaki drogowe" },
+                { correctPlace: 0, text: police, description: "Osoba kierująca ruchem" },
             ]}
             onComplete={() => { setShowNext(true) }}
             onInComplete={() => { setShowIncor(true); setShowPopup(true) }}

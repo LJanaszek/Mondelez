@@ -6,18 +6,21 @@ import { getQuizOne } from "../routes";
 import styles from "../../components/layout/box/box.module.scss"
 import style from "./style.module.scss"
 
-export default function TaskZero(){
+export default function TaskZero() {
     return <BoxTask>
-   <div className={styles.mainDiv}>
-    <h1>Antyradar RST</h1>
-    
-    <p>Bardzo zależy nam na Waszym bezpieczeństwie. Nie chcemy też żeby kierowca Waszego zespołu dostał mandat i punkty karne. Dlatego każdy samochód, biorący w udział w zawodach Safety Master, wyposażyliśmy w ANTYRADAR RST. Otrzymaliście go przed chwilą na spotkaniu. Rozpakujcie go teraz i przeczytajcie na głos jego instrukcję obsługi, którą znajdziecie na stronie 7. Powodzenia!</p>
+        <div className={styles.mainDiv}>
+            <h1>Antyradar RST</h1>
 
-    <section className={styles.butttonLike}>
-    <ButtonLike>
-        <Link className={style.button} to={getQuizOne()}>Dalej</Link>
-    </ButtonLike>
-    </section>
-    </div>
+            <p>Bardzo zależy nam na Waszym bezpieczeństwie. Nie chcemy też żeby kierowca Waszego zespołu dostał mandat i punkty karne. Dlatego każdy samochód, biorący w udział w zawodach Safety Master, wyposażyliśmy w ANTYRADAR RST. Otrzymaliście go przed chwilą na spotkaniu. Rozpakujcie go teraz i przeczytajcie na głos instrukcję obsługi, którą znajdziecie na stronie 7.
+                <br />
+                Powodzenia!
+            </p>
+
+            <section className={styles.butttonLike}>
+                <ButtonLike>
+                    <Link className={style.button} to={getQuizOne()}>Dalej</Link>
+                </ButtonLike>
+            </section>
+        </div>
     </BoxTask>
 }

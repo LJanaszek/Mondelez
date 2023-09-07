@@ -17,8 +17,8 @@ export default function Page25({ onNext }: Props) {
     return <BoxTask>
         <div className={styles.answer}>
             <div className={style.mainDiv}>
-                <h1>Zadanie z antyradarem</h1>
-                <p>Skorzystajcie ponownie z antyradaru  RST. Odnajdźcie, który dział, rozdział, oddział, artykuł, punkt, określa zasady zachowania się kierującego pojazdem wobec pieszego wchodzącego na przejście dla pieszych?</p>
+                <h1>Antyradar</h1>
+                <p>Skorzystajcie ponownie z antyradaru  RST. Odnajdźcie, który dział, rozdział, oddział, artykuł i punkt, określa zasady zachowania się kierującego pojazdem wobec pieszego wchodzącego na przejście dla pieszych?</p>
             </div>
             <div className={styles.questionAnswer}>
                 <form className={styles.answer_block}>
@@ -76,7 +76,7 @@ export default function Page25({ onNext }: Props) {
                                     value=""
                                     name="ans"
                                 /></span>
-                                <p>I, 6, 7, 23,1</p>
+                                <p>I, 6, 7, 23, 1</p>
                             </div>
                         </label>
                     </div>

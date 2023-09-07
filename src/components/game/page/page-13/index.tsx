@@ -18,11 +18,10 @@ export default function Page13({ onNext }: Props) {
             <p>Zróbcie zdjęcia przedstawiające:
             <ul>
                 <li>kierowcę w kamizelce odblaskowej,</li>
-                <li>rozłożony i złożony trójkąt ostrzegawczy, </li>
+                <li>rozłożony i złożony trójkąt ostrzegawczy,</li>
                 <li>datę ważności gaśnicy</li>
             </ul>
-            oraz zdjęcie w stylistyce Jamesa Bonda na którym widoczne będą wszystkie trzy elementy. Zdjęcia przedstawcie osobie prowadzącej grę na punkcie finałowym, a wszystkie rekwizyty schowajcie w odpowiednich miejscach w samochodzie.
-
+            oraz <b>zdjęcie w stylistyce Jamesa Bonda </b> na którym widoczne będą wszystkie trzy elementy. Zdjęcia przedstawcie osobie prowadzącej grę na punkcie finałowym, a wszystkie rekwizyty schowajcie w odpowiednich miejscach w samochodzie.
             </p>
             <div className={style.images}>
                 <img src={howBig} alt="" id={style.imgBlock} />

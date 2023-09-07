@@ -20,16 +20,25 @@
 }
 .arrow>span:only-child{
     font-size: 4em;
+    display: inline;
+    align-self: baseline;
     padding: 0;
     /* margin: -.2em; */
     
 }
 .buttonGroup >
 span{
+    display: block;
     width: 1em;
     height: 1em;
 }
+span>img{
+    display: block;
+    width: .6em;
+    /* vertical-align: baseline; */
+}
 .arrow{
+    display: block;
     color: white;
     background-color: var(--textColor);
     border: none;

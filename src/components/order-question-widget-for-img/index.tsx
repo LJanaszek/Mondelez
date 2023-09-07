@@ -2,6 +2,9 @@ import React, { useCallback, useEffect, useMemo, useReducer, useState } from "re
 import { Card } from "./card";
 import style from "./style.module.css"
 import { ButtonLike } from "../../atoms/button-like";
+import up from "../../assets/left.svg"
+import down from "../../assets/right.svg"
+
 type Props = {
     items: {text: string, correctPlace: number, description: string}[],
     onComplete(): void,
@@ -95,13 +98,13 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
                                 return <div className={style.item} key={index}>
                                     
                                     <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`}className={style.arrow}>
-                                        <span className="material-icons">   
-                                        &#xe5de;
+                                    <span className="material-icons">   
+                                        <img src={up} alt="" />
                                         </span>
                                     </button>
                                     <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`} className={style.arrow}>
-                                        <span className="material-icons">
-                                        &#xe5df;
+                                    <span className="material-icons">
+                                        <img src={down} alt="" />
                                         </span>
                                     </button>
                                     <div className={style.imgWithDesc}>

@@ -27,7 +27,12 @@
     color: white;
 }
 
-
+span>img{
+    display: block;
+    width: 1.5em;
+    margin: 0 .5em;
+    /* vertical-align: baseline; */
+}
 #span{
     font-size: 5em;
     /* width: 4em; */

@@ -45,3 +45,9 @@ span:only-child{
     margin-right: 2em;
     padding-bottom: 1em;
 }
+span>img{
+    display: block;
+    width: .7em;
+    margin: 0 auto;
+    /* vertical-align: baseline; */
+}

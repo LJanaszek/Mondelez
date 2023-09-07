@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useMemo, useReducer } from "react";
 import Box from "../layout/box/box";
 import { Card } from "./card";
 import style from "./style.module.css"
+import up from "../../assets/up.svg"
+import down from "../../assets/down.svg"
 
 type Props = {
     items: {text: string, correctPlace: number}[],
@@ -92,12 +94,12 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
                                     </Card>
                                     <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`}className={style.arrow}>
                                         <span className="material-icons">   
-                                        &#xe5c7;
+                                        <img src={up} alt="" />
                                         </span>
                                     </button>
                                     <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`} className={style.arrow}>
                                         <span className="material-icons">
-                                        &#xe5c5;
+                                        <img src={down} alt="" />
                                         </span>
                                     </button>
                                 </div>

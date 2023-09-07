@@ -16,16 +16,16 @@ export default function RulesPage() {
 
     return <div className={styles.rulesPageView}><Box>
         <div className={styles.rules}>
-            <h2 >Zasady</h2>
+            <h2 >Zasady Gry</h2>
         </div>
         <ol>
-            <li>Przed wami 13 zadań</li>
+            <li>Przed Wami 12 zadań</li>
             <li>Każde zadanie poprzedza pytanie quizowe</li>
             <li>Zdobywacie punkty za: 
                 <ul>
-                    <li>poprawne odpowiedzi na pytania quizowe,</li>
-                    <li>poprawne zrobienie zadań,</li>
-                    <li>ekonomiczną i bezpieczną jazdę - będziemy zczytywać Wasze dane z aplikacji Flotman.</li>
+                    <li>poprawne odpowiedzi na pytania quizowe</li>
+                    <li>poprawne wykonanie zadań</li>
+                    <li>ekonomiczną i bezpieczną jazdę - będziemy sczytywać Wasze dane z aplikacji Ecologic.</li>
                 </ul>
             </li>
             <li>Na przejście gry macie 2 godziny - po upływie tego czasu kierujcie się od razu do punktu startowego, nawet jeśli nie udało Wam się ukończyć wszystkich zadań.</li>

@@ -25,28 +25,30 @@ export default function HomePage() {
             <h1 className={styles.headerTitle}>Safety Master</h1>
             <p>Terenowe Mistrzostwa Świadomych Kierowców.</p>
         </div>
-        
-            <div className={styles.content}>
+
+        <div className={styles.content}>
             <h2>Witajcie!</h2>
             {/* <Timer></Timer> */}
-            <p className={styles.contentText}>Przed Wami szereg zadań. Rozwiążcie jak najwięcej z nich. Pamiętajcie by poruszać się bezpiecznie i ekonomicznie.</p>
-            </div>
-            <nav>
-                {!gameStarted && <ButtonLike>
-                    <Link  to={getRulesPageRoute()}>Gra mobilna</Link>
-                </ButtonLike>
-                }
-                {gameStarted && <ButtonLike>
-                    <Link className="button" to={getGamePageRoute()}>Kontynuuj grę</Link>
-                </ButtonLike>
-                }
-            
+            <p className={styles.contentText}>Przed Wami szereg zadań. Rozwiążcie jak najwięcej z nich.
+                Pamiętajcie by poruszać się bezpiecznie i ekonomicznie.
+            </p>
+        </div>
+        <nav>
+            {!gameStarted && <ButtonLike>
+                <Link to={getRulesPageRoute()}>Gra mobilna</Link>
+            </ButtonLike>
+            }
+            {gameStarted && <ButtonLike>
+                <Link className="button" to={getGamePageRoute()}>Kontynuuj grę</Link>
+            </ButtonLike>
+            }
+
             {gameStarted &&
                 <ButtonLike>
                     <Link className="button" to={getRulesPageRoute()} onClick={onGameRestart}>Zrestartuj grę</Link>
                 </ButtonLike>
             }
-            </nav>
+        </nav>
         <PageFooter />
     </div>
 }
