@@ -24,8 +24,7 @@ export default function RidePage() {
             <p>Jedźcie bezpiecznie, stosujcie się do przepisów ruchu drogowego. Na całość gry macie 2h.
                 <br />
                 Wasz sprzęt nie pozwala na połączenie aplikacji z nawigacją. Kopiujcie współrzędne do map googla - one wskażą Wam dokładne miejsce na mapie.
-                <br />
-                Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry. Udzielcie dostępu, jeśli zostaniecie o to poproszeni.
+                
 
             </p>
 
@@ -39,7 +38,7 @@ export default function RidePage() {
         </div>
         {showGPSInfo && <Popup onOKClick={goToGame}>
             <p>
-                Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry. Udziel dostępu, jeśli zostaniesz o to poproszony.
+            Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry. Udzielcie dostępu, jeśli zostaniecie o to poproszeni.
             </p>
         </Popup>}
     </Box>

@@ -26,7 +26,7 @@ export default function Page15({ onNext }: Props) {
           <ul>
             <li>przejeżdża się 2500 km miesięcznie po mieście,</li>
             <li>średnia cena paliwa wynosi 6,50 zł za litr,</li>
-            <li>Spalanie samochodu (bez systemu start-stop) jest na poziomie 8 litrów/100 km.</li>
+            <li>spalanie samochodu (bez systemu start-stop) jest na poziomie 8 litrów/100 km.</li>
           </ul>
         </div>
         <form className={styles.answer_block}>
