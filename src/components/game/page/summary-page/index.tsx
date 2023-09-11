@@ -21,7 +21,7 @@ export default function SummaryPage({onNext}: Props) {
         opdowiedziałeś poprawnie na <span>{correctQuizQuestionCount} z 14 </span> pytań quizowych</p>
         
         </div>
-        <p className={styles.adress}>kierujcie się do bazy: adres</p>
+        <p className={styles.adress}>kierujcie się do bazy: Poziom 511 Jura Wellness Hotel & Spa <br /> Bonerów 33, 42-440 Podzamcze</p>
         </Box>
 }
 
