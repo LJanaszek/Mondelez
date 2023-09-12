@@ -235,7 +235,7 @@ export const QUESTIONS: IQuizQuestion[] = [
             text: 'Zbieranie ujemnych punktów karnych.'
         }, {
             id: '3',
-            text: 'Poznanie przepisów drogowych.',
+            text: 'Poznanie funkcji systemu detekcji martwego pola.',
 
         }, {
             id: '4',
@@ -245,15 +245,15 @@ export const QUESTIONS: IQuizQuestion[] = [
     },
     {
         id: '14',
-        text: 'Czy można w Polsce legalnie korzystać z antyradaru?',
+        text: 'Czy można w Polsce legalnie korzystać z antyradarów?',
         imgSrc: img14,
         description: "Antyradar RST to kodeks drogowy, który każdy kierowca powinien znać aby, stosując się do przepisów, jeździć bezpiecznie.",
         answers: [{
             id: '1',
-            text: 'Nie - jest to zabronione.'
+            text: 'Nie - korzystanie z każdego antyradaru jest zabronione.'
         }, {
             id: '2',
-            text: 'Tak, pod warunkiem, że jest to antyradar RST.',
+            text: 'Tak - korzystanie z Antyradaru RST jest dozwolone.',
             isCorrect: true
         }]
     },
