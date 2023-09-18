@@ -35,98 +35,98 @@ export default function Page_map({ onNext }: Props) {
             {
                 id: '1',
                 position: {
-                    x: 165,
+                    x: 340,
                     y: 180,
                 },
-                geoPointId: '2.1',
+                geoPointId: '9.1',
             },
             {
                 id: '2',
                 position: {
-                    x: 365,
-                    y: 260,
+                    x: 500,
+                    y: 120,
                 },
                 geoPointId: '3.1',
             },
             {
                 id: '3',
                 position: {
-                    x: 520,
-                    y: 220,
+                    x: 600,
+                    y: 140,
                 },
-                geoPointId: '4.1',
+                geoPointId: '2.1',
             },
             {
                 id: '4',
                 position: {
-                    x: 765,
-                    y: 190,
-                },
-                geoPointId: '5.1',
-            },
-            {
-                id: '5',
-                position: {
-                    x: 240,
-                    y: 525,
-                },
-                geoPointId: '6.1',
-            },
-            {
-                id: '6',
-                position: {
-                    x: 490,
-                    y: 380,
-                },
-                geoPointId: '7.1',
-            },
-            {
-                id: '7',
-                position: {
-                    x: 920,
-                    y: 300,
-                },
-                geoPointId: '8.1',
-            },
-            {
-                id: '8',
-                position: {
-                    x: 910,
-                    y: 495,
-                },
-                geoPointId: '9.1',
-            },
-            {
-                id: '9',
-                position: {
-                    x: 1190,
-                    y: 430,
+                    x: 790,
+                    y: 180,
                 },
                 geoPointId: '10.1',
             },
             {
-                id: '10',
+                id: '5',
                 position: {
-                    x: 1100,
-                    y: 560,
+                    x: 910,
+                    y: 150,
                 },
                 geoPointId: '11.1',
             },
             {
-                id: '11',
+                id: '6',
                 position: {
-                    x: 1217,
-                    y: 210,
+                    x: 860,
+                    y: 240,
+                },
+                geoPointId: '6.1',
+            },
+            {
+                id: '7',
+                position: {
+                    x: 820,
+                    y: 370,
+                },
+                geoPointId: '7.1',
+            },
+            {
+                id: '8',
+                position: {
+                    x: 680,
+                    y: 330,
+                },
+                geoPointId: '5.1',
+            },
+            {
+                id: '9',
+                position: {
+                    x: 605,
+                    y: 390,
+                },
+                geoPointId: '13.1',
+            },
+            {
+                id: '10',
+                position: {
+                    x: 420,
+                    y: 410,
                 },
                 geoPointId: '12.1',
             },
             {
+                id: '11',
+                position: {
+                    x: 550,
+                    y: 520,
+                },
+                geoPointId: '4.1',
+            },
+            {
                 id: '12',
                 position: {
-                    x: 670,
-                    y: 440,
+                    x: 600,
+                    y: 650,
                 },
-                geoPointId: '13.1',
+                geoPointId: '8.1',
             },
         ];
     }, []);
@@ -210,7 +210,7 @@ export default function Page_map({ onNext }: Props) {
     
     return <Box>
         <div className={style.mapPage}>
-            <h1>Ogrodzieniec (poziom 511)</h1>
+            <h1>Wrocław</h1>
             <p>wybierzcie na mapie punkt do którego chcecie się udać</p>
             <div className={style.mapContainer}>
                 <MapComponent

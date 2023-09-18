@@ -31,6 +31,7 @@ export default function RulesPage() {
             <li>Na przejście gry macie 2 godziny - po upływie tego czasu kierujcie się od razu do punktu startowego, nawet jeśli nie udało Wam się ukończyć wszystkich zadań.</li>
             <li>Gra opiera się na geolokalizacji - aby wyświetlić zadanie musicie znaleźć się w jego pobliżu.</li>
             <li>Sami decydujecie w jakiej kolejności chcecie wykonywać zadania - nie ma z góry wyznaczonej trasy.</li>
+            <li>Zadań nie musicie realizować w dokładnej lokalizacji punktu. Po otworzeniu zadania znajdźcie miejsce, w którym możecie bezpiecznie się zatrzymać.</li>
         </ol>
 
         <ButtonsRow as="nav" align="center" className={styles.buttons} >

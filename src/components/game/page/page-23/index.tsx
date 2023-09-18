@@ -13,7 +13,7 @@ export default function Page23({onNext}: Props) {
     return <BoxTask>
         <div className={styles.mainDiv}>
             <h1>Zarządzanie kryzysowe</h1>
-            <p>Sprawdźcie czy wiecie jak zachować się w razie bycia świadkami wypadku drogowego. Za pomocą strzałek uporządkujcie czynności od tej którą należy wykonać jako pierwszą do tej, którą wykonujemy jako ostatnią.</p>
+            <p>Sprawdźcie czy wiecie jak zachować się w razie bycia świadkami wypadku drogowego. Za pomocą strzałek uporządkujcie czynności od tej którą należy wykonać jako pierwszą do tej, którą wykonujemy jako ostatnią.<br /> Będziecie mogli kontynuować grę, dopiero jak ułożycie prawidłową kolejność</p>
         </div>
         <OrderQuestionLayout
         items={[

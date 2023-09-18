@@ -3,7 +3,7 @@ import reducer from "./reducer";
 import { SCENARIO } from "./scenario";
 import { GameScenario } from "./types";
 
-const GAME_MODULE_LS_KEY = 'ogrodzieniec'
+const GAME_MODULE_LS_KEY = 'wroclawv1.0.0'
 
 export type GameState = {
     // name: string,
