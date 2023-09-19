@@ -35,98 +35,98 @@ export default function Page_map({ onNext }: Props) {
             {
                 id: '1',
                 position: {
-                    x: 340,
-                    y: 180,
+                    x: 360,
+                    y: 370,
                 },
-                geoPointId: '9.1',
+                geoPointId: '6.1',
             },
             {
                 id: '2',
                 position: {
-                    x: 500,
-                    y: 120,
+                    x: 410,
+                    y: 280,
                 },
                 geoPointId: '3.1',
             },
             {
                 id: '3',
                 position: {
-                    x: 600,
-                    y: 140,
+                    x: 460,
+                    y: 400,
                 },
-                geoPointId: '2.1',
+                geoPointId: '5.1',
             },
             {
                 id: '4',
                 position: {
-                    x: 790,
-                    y: 180,
+                    x: 530,
+                    y: 440,
                 },
-                geoPointId: '10.1',
+                geoPointId: '9.1',
             },
             {
                 id: '5',
                 position: {
-                    x: 910,
-                    y: 150,
+                    x: 520,
+                    y: 250,
                 },
                 geoPointId: '11.1',
             },
             {
                 id: '6',
                 position: {
-                    x: 860,
-                    y: 240,
+                    x: 600,
+                    y: 200,
                 },
-                geoPointId: '6.1',
+                geoPointId: '2.1',
             },
             {
                 id: '7',
                 position: {
-                    x: 820,
-                    y: 370,
+                    x: 660,
+                    y: 120,
                 },
-                geoPointId: '7.1',
+                geoPointId: '10.1',
             },
             {
                 id: '8',
                 position: {
-                    x: 680,
-                    y: 330,
-                },
-                geoPointId: '5.1',
-            },
-            {
-                id: '9',
-                position: {
-                    x: 605,
-                    y: 390,
-                },
-                geoPointId: '13.1',
-            },
-            {
-                id: '10',
-                position: {
-                    x: 420,
-                    y: 410,
-                },
-                geoPointId: '12.1',
-            },
-            {
-                id: '11',
-                position: {
-                    x: 550,
-                    y: 520,
+                    x: 860,
+                    y: 140,
                 },
                 geoPointId: '4.1',
             },
             {
-                id: '12',
+                id: '9',
                 position: {
-                    x: 600,
-                    y: 650,
+                    x: 760,
+                    y: 400,
+                },
+                geoPointId: '12.1',
+            },
+            {
+                id: '10',
+                position: {
+                    x: 750,
+                    y: 500,
                 },
                 geoPointId: '8.1',
+            },
+            {
+                id: '11',
+                position: {
+                    x: 800,
+                    y: 570,
+                },
+                geoPointId: '13.1',
+            },
+            {
+                id: '12',
+                position: {
+                    x: 800,
+                    y: 660,
+                },
+                geoPointId: '7.1',
             },
         ];
     }, []);
@@ -134,7 +134,8 @@ export default function Page_map({ onNext }: Props) {
     
     const onPointerClicked = useCallback((id: string) => {
         
-        console.log(`KTOS KLIKNAL ${id} `);
+        // console.log(`KTOS KLIKNAL ${id} `);
+        // alert (`KTOS KLIKNAL ${id} `);
         setSelectedPoint(id);
         setShowPopup(true);
         setTimeout(()=>{setShowTime(true)},300);

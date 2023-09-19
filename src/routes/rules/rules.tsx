@@ -1,12 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
-import { getGamePageRoute } from "../routes";
-import { useCallback, useState } from "react";
-import { Popup } from "../../molecules/popup/popup";
+import { Link } from "react-router-dom";
 import Box from "../../components/layout/box/box";
 import styles from './rules.module.scss';
 import { ButtonsRow } from "../../atoms/buttons-row/buttons-row";
 import { ButtonLike } from "../../atoms/button-like";
-import { PageHeader } from "../../components/layout/header/page-header";
 import {getTaskZero} from "../routes";
 
 

@@ -1,4 +1,3 @@
-import { Style } from "@material-ui/icons";
 import { useTimeToEnd } from "../../modules/game/hooks/use-time-to-end";
 import style from './timer.module.css'
 import timer from "../../assets/timer.png"

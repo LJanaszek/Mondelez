@@ -3,6 +3,7 @@ import BoxTask from "../../../layout/boxTask/box"
 import OrderQuestionLayout from "../../../order-question-widget"
 import styles from "../../../layout/boxTask/box.module.scss"
 import { ButtonLike } from "../../../../atoms/button-like";
+import { Popup } from "../../../../molecules/popup/popup";
 type Props = {
     onNext(): void
 }
@@ -10,6 +11,7 @@ type Props = {
 
 export default function Page23({onNext}: Props) {
     const [showNext, setShowNext] = useState(false);
+    const [showButton, setShowButton] = useState(false);
     return <BoxTask>
         <div className={styles.mainDiv}>
             <h1>Zarządzanie kryzysowe</h1>
@@ -28,7 +30,11 @@ export default function Page23({onNext}: Props) {
             {correctPlace: 8, text: "Poczekaj na przyjazd służb ratunkowych.",},
         ]}
         onComplete={() => setShowNext(true)}/>
-        {showNext && <div className={styles.section2}><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike></div>}
+        <div className={styles.section2}>
+        <ButtonLike><button onClick={()=>{setShowButton(true)}}>SPRAWDŹ</button></ButtonLike>
+        </div>
+        {!showNext && showButton && <div className={styles.section2}><Popup><p>Spróbuj jeszcze raz</p><ButtonLike> <button onClick={()=>{setShowButton(false)}}>Wróć</button></ButtonLike></Popup></div>}
+        {showNext && showButton && <div className={styles.section2}><Popup><p>BRAWO!</p><ButtonLike> <button onClick={onNext}>Zakończ zadanie</button></ButtonLike></Popup></div>}
         </BoxTask>
 
         

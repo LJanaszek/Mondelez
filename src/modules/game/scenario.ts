@@ -19,8 +19,8 @@ export const SCENARIO: GameScenario = {
             id: '2.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.65983, 
-                lng: 22.62036 
+                lat: 51.04375, 
+                lng: 16.97133 
                 
             },
             name: ['Punkt geo 1'],
@@ -42,8 +42,8 @@ export const SCENARIO: GameScenario = {
             id:'3.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.66575,
-                lng: 22.60127
+                lat: 51.02386,
+                lng: 16.9263
             },
             name: ["Punkt geo 2"],
             nextStep: '3.2'
@@ -64,8 +64,8 @@ export const SCENARIO: GameScenario = {
             id:'4.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.59569,  
-                lng: 22.60636
+                lat:51.05019, 
+                lng: 17.02108
             },
             name: ["Punkt geo 3"],
             nextStep: '4.2'
@@ -86,8 +86,8 @@ export const SCENARIO: GameScenario = {
             id:'5.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.62893, 
-                lng: 22.64306
+                lat: 51.0155,
+                lng: 16.9408
             },
             name: ["Punkt geo 4"],
             nextStep: '5.2'
@@ -108,8 +108,8 @@ export const SCENARIO: GameScenario = {
             id:'6.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.65039, 
-                lng: 22.69144 
+                lat: 51.01866, 
+                lng: 16.91966
             },
             name: ["Punkt geo 5"],
             nextStep: '6.2'
@@ -130,8 +130,8 @@ export const SCENARIO: GameScenario = {
             id:'7.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.62173,
-                lng: 22.67822 
+                lat: 50.9828,
+                lng: 17.00291
             },
             name: ["Punkt geo 6"],
             nextStep: '7.2'
@@ -152,8 +152,8 @@ export const SCENARIO: GameScenario = {
             id:'8.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.58355,  
-                lng: 22.62211
+                lat: 50.99836,
+                lng: 17.00497
             },
             name: ["Punkt geo 7"],
             nextStep: '8.2'
@@ -174,8 +174,8 @@ export const SCENARIO: GameScenario = {
             id:'9.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.65561, 
-                lng: 22.55675 
+                lat: 51.01147, 
+                lng: 16.95661
             },
             name: ["Punkt geo 8"],
             nextStep: '9.2'
@@ -196,8 +196,8 @@ export const SCENARIO: GameScenario = {
             id:'10.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.65244, 
-                lng: 22.67819 
+                lat: 51.05238,
+                lng: 16.97474
             },
             name: ["Punkt geo 9"],
             nextStep: '10.2'
@@ -218,8 +218,8 @@ export const SCENARIO: GameScenario = {
             id:'11.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.65582,
-                lng:  22.6981 
+                lat: 51.03272,
+                lng:  16.96011
             },
             name: ["Punkt geo 10"],
             nextStep: '11.2'
@@ -240,8 +240,8 @@ export const SCENARIO: GameScenario = {
             id:'12.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.61219, 
-                lng: 22.58269  
+                lat: 51.0155,
+                lng: 17.00097
             },
             name: ["Punkt geo 11"],
             nextStep: '12.2'
@@ -262,8 +262,8 @@ export const SCENARIO: GameScenario = {
             id:'13.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 49.61776, 
-                lng: 22.62526 
+                lat: 50.99044,
+                lng: 17.00866 
             },
             name: ["Punkt geo 12"],
             nextStep: '13.2'
