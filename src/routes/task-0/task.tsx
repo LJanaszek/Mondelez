@@ -11,7 +11,7 @@ export default function TaskZero() {
         <div className={styles.mainDiv}>
             <h1>Antyradar RST</h1>
 
-            <p>Bardzo zależy nam na Waszym bezpieczeństwie. Nie chcemy też żeby kierowca Waszego zespołu dostał mandat i punkty karne. Dlatego każdy samochód, biorący w udział w zawodach Safety Master, wyposażyliśmy w ANTYRADAR RST. Otrzymaliście go przed chwilą na spotkaniu. Rozpakujcie go teraz i przeczytajcie na głos instrukcję obsługi, którą znajdziecie na stronie 7.
+            <p>Bardzo zależy nam na Waszym bezpieczeństwie. Nie chcemy też żeby kierowca Waszego zespołu dostał mandat i punkty karne. Dlatego każdy samochód, biorący w udział w zawodach Safety Master, wyposażyliśmy w ANTYRADAR RST. <br />OTRZYMALIŚCIE GO PRZED CHWILĄ NA SPOTKANIU, W KOPERCIE.<br /> Rozpakujcie go teraz i przeczytajcie na głos instrukcję obsługi, którą znajdziecie na stronie 7.
                 <br />
                 Powodzenia!
             </p>

@@ -19,7 +19,7 @@ export default function Page1({onNext}: Props) {
     return <BoxTask>
     <div className={styles.mainDiv}>
     <h1>Antyradar RST</h1>
-    <p> Bardzo zależy nam na Waszym bezpieczeństwie. Nie chcemy też żeby kierowca Waszego zespołu dostał mandat i punkty karne. Dlatego każdy samochód, biorący w udział w zawodach Safety Master, wyposażyliśmy w ANTYRADAR RST. Otrzymaliście go przed chwilą na spotkaniu. Rozpakujcie go teraz i przeczytajcie na głos jego instrukcję obsługi, którą znajdziecie na stronie 7. Powodzenia!
+    <p> Bardzo zależy nam na Waszym bezpieczeństwie. Nie chcemy też żeby kierowca Waszego zespołu dostał mandat i punkty karne. Dlatego każdy samochód, biorący w udział w zawodach Safety Master, wyposażyliśmy w ANTYRADAR RST. <br />OTRZYMALIŚCIE GO, W KOPERCIE, PRZED CHWILĄ NA SPOTKANIU. Rozpakujcie go teraz i przeczytajcie na głos jego instrukcję obsługi, którą znajdziecie na stronie 7. Powodzenia!
     </p>
     <section className={styles.butttonLike}>
     <ButtonLike>
