@@ -35,98 +35,98 @@ export default function Page_map({ onNext }: Props) {
             {
                 id: '1',
                 position: {
-                    x: 440,
-                    y: 260,
+                    x: 240,
+                    y: 240,
                 },
-                geoPointId: '7.1',
+                geoPointId: '8.1',
             },
             {
                 id: '2',
                 position: {
-                    x: 650,
-                    y: 230,
+                    x: 500,
+                    y: 150,
                 },
-                geoPointId: '4.1',
+                geoPointId: '7.1',
             },
             {
                 id: '3',
                 position: {
-                    x: 750,
-                    y: 140,
-                },
-                geoPointId: '13.1',
-            },
-            {
-                id: '4',
-                position: {
-                    x: 940,
-                    y: 200,
+                    x: 620,
+                    y: 110,
                 },
                 geoPointId: '3.1',
             },
             {
+                id: '4',
+                position: {
+                    x: 810,
+                    y: 110,
+                },
+                geoPointId: '6.1',
+            },
+            {
                 id: '5',
                 position: {
-                    x: 830,
-                    y: 330,
+                    x: 980,
+                    y: 240,
                 },
-                geoPointId: '2.1',
+                geoPointId: '4.1',
             },
             {
                 id: '6',
                 position: {
-                    x: 780,
-                    y: 400,
+                    x: 960,
+                    y: 370,
                 },
-                geoPointId: '11.1',
+                geoPointId: '5.1',
             },
             {
                 id: '7',
                 position: {
-                    x: 700,
-                    y: 500,
+                    x: 830,
+                    y: 420,
                 },
                 geoPointId: '10.1',
             },
             {
                 id: '8',
                 position: {
-                    x: 750,
-                    y: 570,
+                    x: 770,
+                    y: 280,
                 },
-                geoPointId: '8.1',
+                geoPointId: '2.1',
             },
             {
                 id: '9',
                 position: {
-                    x: 660,
-                    y: 640,
+                    x: 870,
+                    y: 560,
                 },
-                geoPointId: '5.1',
+                geoPointId: '9.1',
             },
             {
                 id: '10',
                 position: {
-                    x: 600,
-                    y: 530,
+                    x: 800,
+                    y: 630,
                 },
                 geoPointId: '12.1',
             },
             {
                 id: '11',
                 position: {
-                    x: 550,
-                    y: 430,
+                    x: 500,
+                    y: 480,
                 },
-                geoPointId: '9.1',
+                geoPointId: '13.1',
             },
             {
                 id: '12',
                 position: {
-                    x: 600,
-                    y: 340,
+                    x: 400,
+                    y: 370,
                 },
-                geoPointId: '6.1',
+                geoPointId: '11.1',
             },
         ];
     }, []);
@@ -211,7 +211,7 @@ export default function Page_map({ onNext }: Props) {
     
     return <Box>
         <div className={style.mapPage}>
-            <h1>Radziejowice</h1>
+            <h1>Aubrecht</h1>
             <p>wybierzcie na mapie punkt do którego chcecie się udać</p>
             <div className={style.mapContainer}>
                 <MapComponent
