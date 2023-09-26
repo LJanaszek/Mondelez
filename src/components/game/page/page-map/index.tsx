@@ -35,98 +35,98 @@ export default function Page_map({ onNext }: Props) {
             {
                 id: '1',
                 position: {
-                    x: 360,
-                    y: 370,
+                    x: 440,
+                    y: 260,
                 },
-                geoPointId: '6.1',
+                geoPointId: '7.1',
             },
             {
                 id: '2',
                 position: {
-                    x: 410,
-                    y: 280,
+                    x: 650,
+                    y: 230,
                 },
-                geoPointId: '3.1',
+                geoPointId: '4.1',
             },
             {
                 id: '3',
                 position: {
-                    x: 460,
-                    y: 400,
+                    x: 750,
+                    y: 140,
                 },
-                geoPointId: '5.1',
+                geoPointId: '13.1',
             },
             {
                 id: '4',
                 position: {
-                    x: 530,
-                    y: 440,
+                    x: 940,
+                    y: 200,
                 },
-                geoPointId: '9.1',
+                geoPointId: '3.1',
             },
             {
                 id: '5',
                 position: {
-                    x: 520,
-                    y: 250,
-                },
-                geoPointId: '11.1',
-            },
-            {
-                id: '6',
-                position: {
-                    x: 600,
-                    y: 200,
+                    x: 830,
+                    y: 330,
                 },
                 geoPointId: '2.1',
             },
             {
+                id: '6',
+                position: {
+                    x: 780,
+                    y: 400,
+                },
+                geoPointId: '11.1',
+            },
+            {
                 id: '7',
                 position: {
-                    x: 660,
-                    y: 120,
+                    x: 700,
+                    y: 500,
                 },
                 geoPointId: '10.1',
             },
             {
                 id: '8',
                 position: {
-                    x: 860,
-                    y: 140,
-                },
-                geoPointId: '4.1',
-            },
-            {
-                id: '9',
-                position: {
-                    x: 760,
-                    y: 400,
-                },
-                geoPointId: '12.1',
-            },
-            {
-                id: '10',
-                position: {
                     x: 750,
-                    y: 500,
+                    y: 570,
                 },
                 geoPointId: '8.1',
             },
             {
+                id: '9',
+                position: {
+                    x: 660,
+                    y: 640,
+                },
+                geoPointId: '5.1',
+            },
+            {
+                id: '10',
+                position: {
+                    x: 600,
+                    y: 530,
+                },
+                geoPointId: '12.1',
+            },
+            {
                 id: '11',
                 position: {
-                    x: 800,
-                    y: 570,
+                    x: 550,
+                    y: 430,
                 },
-                geoPointId: '13.1',
+                geoPointId: '9.1',
             },
             {
                 id: '12',
                 position: {
-                    x: 800,
-                    y: 660,
+                    x: 600,
+                    y: 340,
                 },
-                geoPointId: '7.1',
+                geoPointId: '6.1',
             },
         ];
     }, []);
@@ -134,7 +134,7 @@ export default function Page_map({ onNext }: Props) {
     
     const onPointerClicked = useCallback((id: string) => {
         
-        // console.log(`KTOS KLIKNAL ${id} `);
+        console.log(`KTOS KLIKNAL ${id} `);
         // alert (`KTOS KLIKNAL ${id} `);
         setSelectedPoint(id);
         setShowPopup(true);
@@ -211,7 +211,7 @@ export default function Page_map({ onNext }: Props) {
     
     return <Box>
         <div className={style.mapPage}>
-            <h1>Wrocław</h1>
+            <h1>Radziejowice</h1>
             <p>wybierzcie na mapie punkt do którego chcecie się udać</p>
             <div className={style.mapContainer}>
                 <MapComponent

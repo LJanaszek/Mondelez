@@ -21,7 +21,7 @@ export default function SummaryPage({onNext}: Props) {
         opdowiedziałeś poprawnie na <span>{correctQuizQuestionCount} z 14 </span> pytań quizowych</p>
         
         </div>
-        <p className={styles.adress}>kierujcie się do bazy: Hotel Zamek Topacz</p>
+        <p className={styles.adress}>kierujcie się do bazy: Hotel Afrodyta Business & SPA</p>
         </Box>
 }
 
